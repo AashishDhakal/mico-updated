@@ -969,14 +969,6 @@
 		"oAP": "/common/views.py",
 		"oF": 0
 		},
-	"/db-bk.sqlite3": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/db-bk.sqlite3",
-		"oF": 0
-		},
 	"/db.sqlite3": {
 		"cB": 0,
 		"ft": 8192,
@@ -4767,16 +4759,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/static-root/css/slick-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/static-root/css/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/static-root/css/style-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -12744,7 +12726,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 625595014.09741199,
-	"displayValue": "mico-foundation",
+	"displayValue": "MicoFoundation-WebApp",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "/static-root/img/apple-touch-icon.png",
 	"iconImageWasSetByUser": 0

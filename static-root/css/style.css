@@ -2758,7 +2758,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .events-upcomingpart__detail .organizer span {
-  color: #22c122;
+  color: #d2a621;
 }
 
 .events-upcomingpart__detail .events-name {
@@ -3356,8 +3356,9 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .workwithus-block__form form .form-group .flex .skew-button {
-  background: #272216;
+    background: #272216;
     color: #f8ca16;
+    margin-left: 0rem;
 }
 
 .endowments-banner {
