@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Endowments - {% endblock %}
+{% block content %}
+<div class="endowments">
+    <div class="endowments-banner">
+        <div class="container">
+            <div class="endowments-donatebanner">
+                <div class="endowments-wrapper" >
+                <section class="top-section section">
+                    <div class="inner"> 
+                    <div class="title-group">
+                        <h1 class="title">
+                            Donate
+                        </h1>
+                        <h3 class="sub-title">
+                            Endowment
+                        </h3>
+                        <span class="strip"></span>
+                         <p class="text">
+                            1 dollar to one million future
+                        </p>
+                    </div>
+                   
+                    <div class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ratione molestiae eos reiciendis invento
+                        unt ratione molestiae eos reiciendis invento unt ratione molestiae eos reiciendis invento
+                    </div>
+                    <div class="waiting">
+                        what are you waiting for
+                        <span class="donte-text">
+                            Donate now ...!
+                        </span>
+                    </div>
+                    </div>
+                </section>
+                <div class="back-layer">
+                    <section class="form-section section">
+                        <div class="inner"> 
+                        <form action="{% url 'endowment' %}" method="POST">
+                            {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                            
+                        {% csrf_token %}    
+                            {{form|crispy}}
+                            <div class="form-group">
+                                <button class="primary-button">
+                                    donate now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    </section>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="white-strip">
+        
+    </div>
+    <div class="endowments-content">
+       <div class="container">
+            <div class="contentwrap">
+                <div class="flex">
+                    <div class="title">
+            endowments
+        </div>
+        <p class="text">
+            {% if context_content %}
+            {{ context_content.endowment_text | safe }}
+            {% endif %}
+        </p>
+        <div class="faq-accordion">
+           
+                <div class="panel-group" id="accordion">
+                     <div class="accordion-inner">
+                    {% if faqs %}
+                    {% for faq in faqs %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ faq.id }}">
+                                    {{ faq.title }}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ faq.id }}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="panel-body">
+                                    {{ faq.description | safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+{% endblock %}

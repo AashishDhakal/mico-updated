@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Resources - {% endblock %}
+{% block content %}
+<div class="resource">
+    <div class="container">
+      <div class="resource-top">
+        <div class="title">resource center</div>
+        <div class="title-second">
+          Browse our resource library to find our latest reports and publications.
+        </div>
+        <p class="text">
+          we make all of MICO's evaluation and research reports available for
+          public access in accordance with our
+          <span>Accountability Policy.</span> These are available at our
+          <span> Evaluation Library. </span>
+        </p>
+      </div>
+      <div class="resource-border">
+        <div class="border"></div>
+        <div class="form-group">
+          <label>sort page by:</label>
+          <select name="" class="form-control" id="">
+            <option hidden selected>Sort Page</option>
+            <option value="">Newest to Oldest</option>
+            <option value="">Oldest to Newest</option>
+          </select>
+        </div>
+      </div>
+      <div class="resource-list">
+        {% if resources %}
+        {% for resource in resources %}
+        <div class="list">
+          <div class="list-smalltitle">{{resource.category}}</div>
+          <div class="title">{{resource.title}}</div>
+          <div class="date">{{resource.published_by}}</div>
+          <p>
+            {{resources.description|safe}}
+          </p>
+          <div class="downloadable">
+            <a href="{{ resource.resource_file.url }}" download>Download</a>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

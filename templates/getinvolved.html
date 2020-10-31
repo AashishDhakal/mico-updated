@@ -1,0 +1,663 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Get Involved - {% endblock %}
+{% block content %}
+<div class="donate">
+    <div class="donate-banner" style="background-image: url('{% if context_content.getinvolved_banner %}{{ context_content.getinvolved_banner.url }}{% endif %}');">
+        <div class="container">
+            <div class="getinvolved-content">
+            <div class="title">
+                {{ context_content.getinvolved_banner_title }}
+            </div>
+            <p class="text">
+                {{ context_content.getinvolved_banner_text }}
+            </p>
+            <div class="getinvolvedbtn">
+                <a href="{% url 'donate' %}">
+                    <button class="primary-button">
+                        DONATE NOW
+                    </button>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="donate-line">
+      <div class="container">
+          <div class="flex" style="justify-content: space-between;">
+              <span>
+                  Join Hand With Us Today
+              </span>
+              <span>
+                  Create Positive Impression
+              </span>
+          </div>
+      </div>
+    </div>
+    <div class="donate-getinvolved">
+      <div class="container">
+        <div class="title">The Foundation in Action</div>
+        <p class="text">
+          The Mico Foundation works on capital devlopment projects; building new
+          features to enhance the physical appearance of The Mico University
+          College campus. We seek to create a more comfortable and user-friendly
+          campus environment for teaching and learning.
+        </p>
+        <div class="donate-getinvolved__pictures">
+          <div class="row">
+               <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    {% if images %}
+    {% for image in images %}
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="{{ image.image.url }}" itemprop="contentUrl" data-size="1024x1024">
+          <img src="{{ image.image.url }}" itemprop="thumbnail" alt="Image description" />
+      </a>
+        <figcaption itemprop="caption description">{{ image.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
+          </div>
+        </div>
+        <div class="donate-getinvolved__content">
+          <div class="title">DONATE TO AN ON-GOING PROJECT</div>
+          <div class="contentbox">
+            <p class="text">
+              MICO works around the globe to save lives, defeat poverty and
+              achieve social justice. We put women and girls in the center because
+              we know that we cannot overcome poverty until all people have equal
+              rights and opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="donate-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="donate-content__form">
+              <form action="{% url 'donate' %}" method='post'>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% csrf_token %}
+                <div class="donatelist owl-carousel owl-theme">
+                  {% if projects %}
+                  {% for project in projects %}
+                  <label for="donateToProject{{ project.id }}">
+                    <input
+                      type="radio"
+                      class="hiddeninput"
+                      id="donateToProject{{ project.id }}"
+                      name="donateName"
+                      checked
+                      value="project,{{ project.id }}"
+                    />
+                    <div class="donate-content__icon inside">
+                      <div class="text">donate to</div>
+                      <div class="image">
+                        <img src="{{ project.icon.url }}" alt="" />
+                      </div>
+                      <div class="name">{{ project.project_name }}</div>
+                    </div>
+                  </label>
+                  {% endfor %}
+                  {% endif %}
+                  {% if causes %}
+                  {% for cause in causes %}
+                  <label for="donateToCause{{ cause.id }}">
+                    <input
+                      type="radio"
+                      class="hiddeninput"
+                      id="donateToCause{{ cause.id }}"
+                      name="donateName"
+                      value="cause,{{ cause.id }}"
+                    />
+                    <div class="donate-content__icon inside">
+                      <div class="text">donate to</div>
+                      <div class="image">
+                        <img src="{{ cause.icon.url }}" alt="" />
+                      </div>
+                      <div class="name">{{ cause.title }}</div>
+                    </div>
+                  </label>
+                  {% endfor %}
+                  {% endif %}
+                </div>
+            <div class="row">
+            <div class="col-md-8">
+                <!-- <div class="donatename">donation duration</div>
+                <div class="duration">
+                  <div class="form-group">
+                    <label for="donateOneTime">
+                      <input
+                        type="radio"
+                        id="donateOneTime"
+                        class="hiddeninput"
+                        name="donateTime"
+                        value="onetime"
+                        checked
+                      />
+                      <div class="inside">
+                        <span>
+                          <i class="fas fa-check-circle"></i>
+                        </span>
+                        ONE-TIME
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-group leftspace">
+                    <label for="donateMonth">
+                      <input
+                        type="radio"
+                        id="donateMonth"
+                        class="hiddeninput"
+                        name="donateTime"
+                        value="monthly"
+                      />
+                      <div class="inside">
+                        <span>
+                          <i class="fas fa-check-circle"></i>
+                        </span>
+                        MONTHLY
+                      </div>
+                    </label>
+                  </div>
+                </div> -->
+                <div class="donatename">donation amount</div>
+                <div class="donateamount">
+                  <div class="form-group">
+                    <label for="donateAmount1">
+                      <input
+                        type="radio"
+                        id="donateAmount1"
+                        class="hiddeninput"
+                        name="donateAmount"
+                        value="50"
+                      />
+                      <div class="inside">$50</div>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="donateAmount2">
+                      <input
+                        type="radio"
+                        id="donateAmount2"
+                        class="hiddeninput"
+                        name="donateAmount"
+                        value="100"
+                      />
+                      <div class="inside">$100</div>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="donateAmount3">
+                      <input
+                        type="radio"
+                        id="donateAmount3"
+                        class="hiddeninput"
+                        name="donateAmount"
+                        value="150"
+                        checked
+                      />
+                      <div class="inside">$150</div>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="donateAmount4">
+                      <input
+                        type="radio"
+                        id="donateAmount4"
+                        class="hiddeninput"
+                        name="donateAmount"
+                        value="200"
+                      />
+  
+                      <div class="inside">$200</div>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="donateAmountOther">
+                      <input
+                        type="radio"
+                        id="donateAmountOther"
+                        class="hiddeninput"
+                        name="donateAmount"
+                        value="other"
+                      />
+  
+                      <div class="inside">Other</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group donateOtherAmt" id="donateOtherAmount">
+                        <label for="donateOtherAmt"> Specific Amount </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="donateOtherAmt"
+                          placeholder="Specific Amount"
+                          name="customAmount"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                <div class="donatename">personal info</div>
+                <div class="donateform">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>first name: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="First Name"
+                          name='firstName'
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>last name: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Last Name"
+                          name='lastName'
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>address line 1: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Address Line 1"
+                          name='addressOne'
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>address line 2:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Address Line 2"
+                          name='addressTwo'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>city: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="City"
+                          name="city"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>state/province: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="State/province"
+                          name="state"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>ZIP/Postal Code: <span>*</span></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="ZIP/ Postal Code"
+                          name="postcode"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>country: <span>*</span></label>
+                        <select
+                          class="selectpicker countrypicker form-control"
+                          data-default="US"
+                          data-flag="true"
+                          name="country"
+                        ></select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label> email address: <span>*</span> </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="Email Address"
+                          name="email"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label> donor phone number: (not required) </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Donor Phone Number"
+                          name="phone"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="hidden" value="0" name="subscribe">
+                        <input type="checkbox" checked value="1" name="subscribe"/>                        <span>
+                          Yes, I would like to recieve communication from MICO
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="donate-paymentlist">
+                        <div class="form-group">
+                          <label for="donateMastercard">
+                            <input
+                              type="radio"
+                              id="donateMastercard"
+                              class="hiddeninput"
+                              name="donatePaymentMethod"
+                              checked
+                              value="card"
+                            />
+                            <div class="image">
+                              <img src="{% static 'img/mastercard.png' %}" alt="" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label for="donateEcheck">
+                            <input
+                              type="radio"
+                              id="donateEcheck"
+                              class="hiddeninput"
+                              name="donatePaymentMethod"
+                              value="offline"
+                            />
+                            <div class="image">
+                              <img src="{% static 'img/echeck.png' %}" alt="" />
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <label for="donatePaypal">
+                            <input
+                              type="radio"
+                              id="donatePaypal"
+                              class="hiddeninput"
+                              name="donatePaymentMethod"
+                              value="paypal"
+                            />
+                            <div class="image">
+                              <img src="{% static 'img/paypal.png' %}" alt="" />
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                  <div class="donate-paymentlist__block">
+                    <div class="form-group" id="paymentMastercard">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="mastercard">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="form-group">
+                                    <label
+                                      >credit card number
+                                      <span>*</span></label
+                                    >
+                                    <input
+                                      type="text"
+                                      placeholder="Credit Card Number"
+                                      class="form-control"
+                                      required
+                                      name="cardNo"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label
+                                      >Expiration Date: <span>*</span></label
+                                    >
+                                    <select name="Month">
+                                      <option value="01">January</option>
+                                      <option value="02">February </option>
+                                      <option value="03">March</option>
+                                      <option value="04">April</option>
+                                      <option value="05">May</option>
+                                      <option value="06">June</option>
+                                      <option value="07">July</option>
+                                      <option value="08">August</option>
+                                      <option value="09">September</option>
+                                      <option value="10">October</option>
+                                      <option value="11">November</option>
+                                      <option value="12">December</option>
+                                  </select>
+                                  <select name="Year">
+                                    <option value="20"> 2020</option>
+                                    <option value="21"> 2021</option>
+                                    <option value="22"> 2022</option>
+                                    <option value="23"> 2023</option>
+                                    <option value="24"> 2024</option>
+                                    <option value="25"> 2025</option>
+                                    <option value="26"> 2026</option>
+                                    <option value="27"> 2027</option>
+                                    <option value="28"> 2028</option>
+                                    <option value="29"> 2029</option>
+                                    <option value="30"> 2030</option>
+                                </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label>CVV number: <span>*</span></label>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      required
+                                      name="cvv"
+                                    />
+                                  </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group text-center">
+                        <label class="text-center"> Amount </label>
+                        <div style="font-weight: 600" id="donateAmt"></div>                       </div>
+                    </div>
+                  </div>
+                </div>
+  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group ">
+                        <div class="flex" style="justify-content: center;">
+                          <button type="submit" class="skew-button">submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          <div class="col-md-4">
+            <div class="donate-content__right">
+              <div class="image">
+                <img src="{% static 'img/girls.png' %}" alt="" />
+              </div>
+              <div class="raisedamount">
+                <div class="flex">
+                  <label> RAISED $2345 </label>
+                  <div class="goal">GOAL $3700</div>
+                </div>
+                <div class="amountlabel">
+                  <div class="amountlabel-percentage">40%</div>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="heading">
+                bigger dreams! bigger hope. saving africa!
+              </div>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Cupiditate mollitia maxime voluptas possimus quos eaque veniam
+                deleniti magnam distinctio esse, optio voluptatem dolorum ab omnis
+                animi recusandae rem tenetur ut?
+              </p>
+              <div class="flex">
+                share on:
+                <div class="socialmedia">
+                  <div class="fb">
+                    <span>
+                      <i class="fab fa-facebook-f"></i>
+                    </span>
+                  </div>
+                  <div class="twitter">
+                    <span>
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                  </div>
+                  <div class="linkedin">
+                      <span>
+                          <i class="fab fa-linkedin-in"></i>
+                      </span>
+                  </div>
+                </div>
+              </div>
+            <div class="adimage">
+              {% if context_ad %}
+              <img src="{{ context_ad.image.url }}" alt="{{ ad.title }}" />
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+    </div>
+    </div>
+</div>
+    </div>
+  </div>
+{% endblock %}

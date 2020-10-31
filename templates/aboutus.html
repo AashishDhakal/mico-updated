@@ -1,0 +1,78 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block title %}About Us - {% endblock %}
+ {% block content %}
+ <div class="aboutus">
+  <div class="container">
+    <div class="aboutus-top">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="aboutus-top__content">
+            <div class="pattern"></div>
+            <h2 class="title">about us</h2>
+            <p class="text">
+              {{ context_content.about_description | safe }}
+            </p>
+            <div class="history">
+              <a href="{% url 'history' %}">
+                <button class="skew-button">our history</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="aboutus-top__image">
+            <img src="{% static 'img/about-image@2x.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aboutus-places">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="aboutus-places__content">
+            <div class="title">places we work</div>
+            <p class="text">
+              The Mico Foundation is led by a nine member Board of Directors
+              that ensures proper management in support of the mission of the
+              Mico University College and its outreach programmes.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="aboutus-places__image">
+            <img src="{% static 'img/jm-map.svg' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aboutus-news">
+      <div class="container">
+        <div class="row">
+          {% if works %}
+          {% for work in works %}
+          <div class="col-md-3">
+            <div class="about-card">
+              <div class="about-card__image">
+                <img src="{{ work.icon.url }}" alt="" />
+              </div>
+              <div class="about-card__title">
+                <div class="title">{{ work.title }}</div>
+                <span> {{ work.location }} </span>
+              </div>
+              <p class="about-card__text">
+                {{ work.get_short_text | safe }}
+              </p>
+              <div class="about-card__redirect">
+                <a href="{% url 'workdetail' work.slug %}"> Read more </a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

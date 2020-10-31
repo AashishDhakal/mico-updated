@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}Trustees - {% endblock %}
+{% block content %}
+<div class="trustees">
+  <div class="container">
+    <div class="trustees-quotation">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="quote-block">
+            “The longer I live, the more I am certain that the great difference
+            between men—between the feeble and the powerful, the great and the
+            insignificant—is energy, invincible determination—a purpose once
+            fixed, and then—death or victory! That quality will do anything that
+            can be done in this world, and no talents, no circumstances, no
+            opportunities, will make a two-legged creature a man without it”
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="name">thomas fowell buxton</div>
+        </div>
+      </div>
+    </div>
+    <div class="trustees-person">
+      <div class="row">
+        {% if trustees %}
+        {% for trustee in trustees %}
+        <div class="col-md-4">
+          <div class="trustees-person__card">
+            <div class="person__card">
+              <div class="person__card--image">
+                <img src="{{ trustee.photo.url }}" alt="" />
+              </div>
+              <div class="person__card--name">{{trustee.name}}</div>
+              <p class="post">trustee</p>
+              <p class="text">
+                {{trustee.bio|safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="trustees-content">
+        <div class="title">the lady mico trust</div>
+        <p class="text">
+          The Lady Mico Charity was established in 1835 by an Act of Parliament
+          in England and Wales. Sir Thomas Fowell Buxton spearheaded this
+          initiative and became the first chairman of the Charity The members of
+          the Lady Mico Charity went to work immediately and established what is
+          now the longest sustained education Charity in the West Indies The
+          Mico University College in Kingston Jamaica remains the only one of
+          the four teachers’ colleges and 300 elementary schools that were
+          established in the British colonies of Mauritius, Seychelles, and the
+          West Indies during the period of apprenticeship. the Charity to Trust
+          and continued its philanthropic work. The objective of The Lady Mico
+          Trust are to give support, over and above that available from the
+          Government of Jamaica to the Mico University College in Kingston,
+          Jamaica, and more generally to assist the promotion of education of
+          young persons in the West indies
+        </p>
+        <p class="text">
+          In recent years all available finance has been directed towards the
+          work of the University College, in which the trustees maintain a
+          strong interest and continues to contribute greatly to the training of
+          teachers at the University College. The Trustees consider that, within
+          their limited resources, they have fully complied with the duty of
+          Public Interest laid upon them under section 4 of the Charities Act
+          2006. Since the beginning of the Lady Mico Trust, members of the
+          Buxton family have lead in the sustainability and mission of the
+          Trust. Another note of significance is that in over 150 years of
+          history of the Lady Mico Trust, Professor the Honourable Errol
+          Lawrence Miller, OJ. was the first and only citizen outside of the
+          United Kingdom that was accorded the position as Trustee of the Lady
+          Mico Trust. In the year 2000, the assets of the Lady Mico Trust in
+          Jamaica were presented to The Mico Foundation, which now acts as the
+          chief custodian for all tangible assets of The Mico.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endblock %}

@@ -1,0 +1,44 @@
+
+{% block popup %}
+<div
+ class="modal fade"
+ id="myModal"
+ tabindex="-1"
+ role="dialog"
+ aria-labelledby="myModalLabel"
+>
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-body">
+	      <button
+         type="button"
+         class="close"
+         data-dismiss="modal"
+         aria-label="Close"
+       >
+         <span aria-hidden="true">X</span>
+       </button>
+       <div class="modal-body__image">
+         <img src="{{ popup.image.url }}" alt="" />
+       </div>
+       <div class="modal-header">
+      
+       <h4 class="modal-title title" id="myModalLabel">{{ popup.title_1 }}</h4>
+       <div class="sub-title">{{ popup.title_2 }}</div>
+     </div>
+       <div class="modal-body__content">
+         
+         <p class="text">
+           {{ popup.description | safe }}
+         </p>
+       </div>
+     </div>
+     <div class="modal-footer">
+       <a href="{{ popup.button_link }}">
+         <button type="button" class="skew-button">{{ popup.button_text }}</button>
+       </a>
+     </div>
+   </div>
+ </div>
+</div>
+{% endblock %}

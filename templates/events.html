@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Events - {% endblock %}
+{% block page_id %}events{% endblock %}
+
+{% block content %}
+<div class="events">
+    <div class="events-upcomingpart">
+      <div class="container">
+        <div class="row latest-event">
+          {% if latest %}
+          <div class="col-md-6">
+            <div class="events-upcomingpart__image">
+              <img src="{{ latest.thumbnail.url }}" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6 image-col">
+            <div class="events-upcomingpart__detail">
+              <div class="title"><span>upcoming</span> events</div>
+              <p class="text">
+                {{ latest.get_short_text | safe }}
+              </p>
+              <div class="date">{{ latest.date.date }}</div>
+              <div class="organizer">
+                organized by: <span> {{ latest.organized_by }} </span>
+              </div>
+              <div class="events-name">
+                <a href="{% url 'eventdetail' latest.slug %}">{{ latest.title }}</a>
+              </div>
+              <div class="events-schedule">
+                <div class="time">
+                  <span><i class="fas fa-clock"></i> </span>
+                  <p>starts {{ latest.date.time }}</p>
+                </div>
+                <div class="location">
+                  <span> <i class="fas fa-map-marker-alt"></i></span>
+                  <p>{{ latest.location }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="events-cardsection">
+      <div class="container">
+        <div class="row">
+          {% if events %}
+          {% for event in events %}
+          <div class="col-md-6">
+            <div class="events-singlecard">
+              <div class="events-singlecard__image">
+                <img src="{{ event.thumbnail.url }}" alt="" />
+                <div class="date">
+                  <p>{{ event.date.date}}</p>
+                </div>
+              </div>
+              <div class="events-singlecard__contentwrap">
+                <div class="title"><a href="{% url 'eventdetail' event.slug %}">{{ event.title }}</a></div>
+                <p class="text">
+                  {{ event.get_short_text | safe }}
+                </p>
+                <div class="schedule">
+                  <div class="time">
+                    <span><i class="fas fa-clock"></i> </span>
+                    <p>starts {{ event.date.time }}</p>
+                  </div>
+                  <div class="location">
+                    <span> <i class="fas fa-map-marker-alt"></i></span>
+                    <p>{{ event.location }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

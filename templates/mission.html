@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Our Mission - {% endblock %}
+{% block content %}
+<div class="mission">
+  <div class="mission-banner" style='background-image: url("{{ context_content.mission_banner.url }}");'>
+    <div class="mission-banner__content">
+      <div class="container">
+        <div class="statement">
+          <span>
+            <img
+              src="{% static 'img/missionpage/our-mission-icon@2x-213x300.png' %}"
+              alt=""
+            />
+          </span>
+          <div class="title">mission statement</div>
+        </div>
+        <div class="block">
+          <p>
+            Develop, expand and manage the tangible and intangible assets of the
+            Foundation and preserve the heritage of the Lady Mico Trust.
+          </p>
+          <p>
+            Create and encourage opportunities for entrepreneurship and
+            increased financial support for the University College
+          </p>
+          <p>
+            Maintain an efficient system of estates and infrastructure
+            management that will ensure optimal use by The Mico University
+            College.
+          </p>
+          <p>
+            Provide avenues of support for the wellbeing and interest of
+            Students & employees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mission-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mission-content__vision">
+            <div class="vision-image">
+              <img src="{% static 'img/missionpage/our-vision.png' %}" alt="" />
+            </div>
+            <div class="vision-name">our vision</div>
+            <p>
+              To be an active, dependable and viable source for endowment,
+              economic enterprises, assets preservation and an enabling
+              environment for the development of social capital.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mission-content__blankimg">
+            <img src="{% static 'img/missionpage/vision-icon.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mission-values">
+    <div class="container">
+      <div class="mission-values__corevalue">
+        <span>
+          <img src="{% static 'img/missionpage/corevalue.png' %}" alt="" />
+        </span>
+        <div class="title">core values</div>
+      </div>
+      <div class="mission-values__list">
+        <div class="row">
+          {% if values %}
+          {% for value in values %}
+          <div class="col-md-4">
+            <div class="values-block">
+              <div class="values-block__icon">
+                <img src="{{ value.icon.url }}" alt="" />
+              </div>
+              <h2>{{ value.title }}</h2>
+              <div class="values-block__hoverwords">
+                {{ value.short_desc }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endblock %}

@@ -1,0 +1,17 @@
+
+/*Main Navigation Styles*/
+.login-page, .register-page {
+	background-color: rgb(244, 193, 35) !important; 
+}
+
+.login-box, .register-box {
+	width: 22rem;	
+}
+
+.login-box .card, .register-box .card {
+	    box-shadow: 0 0 1px rgba(0, 0, 0, 0.09), 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+
+.login-logo img {
+	width: 15rem;
+}

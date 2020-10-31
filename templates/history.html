@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}History - {% endblock %}
+{% block content %}
+<div class="history">
+    <div class="history-heading">
+      <div class="container">
+        <div class="title">our history</div>
+      </div>
+    </div>
+    <div class="history-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="content-wrapper">
+            <div class="col-md-4 col-sm-12">
+              <div class="title">Chairmans</div>
+              <div class="history-content__timesection">
+                <span class="virtial-timeline"></span>
+                <div class="timeline-strap"></div>
+               
+                {% if chairmans %}
+                 <ul class="timeline-list">
+                  {% for history in chairmans %}
+                  <li class="timeline-item">
+                    <div class="timeline-block">
+                      <div class="timeline-block__image">
+                        <img src="{{history.image.url}}" alt="" />
+                      </div>
+                      <div class="timeline-block__detail">
+                        <div class="year">{{history.name}}</div>
+                        <p class="desc">Food distribution in the jabel El halal area in Egypt.</p>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+
+              </div>
+              <div class="title" >Secretary Managers</div>
+              <div class="history-content__timesection">
+                <div class="timeline-strap"></div>
+                {% if secretaries %}
+                  {% for history in secretaries %}
+                <div class="timeline-block">
+                  <div class="timeline-block__image">
+                    <img src="{{history.image.url}}" alt="" />
+                  </div>
+                  <div class="timeline-block__detail">
+                    <div class="year" style="text-align: center;">{{history.name}}</div>
+                  </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+              </div>
+              <div class="title" >Directors</div>
+            <div class="history-content__timesection">
+              <div class="timeline-strap"></div>
+              {% if directors %}
+                {% for history in directors %}
+              <div class="timeline-block">
+                <div class="timeline-block__image">
+                  <img src="{{history.image.url}}" alt="" />
+                </div>
+                <div class="timeline-block__detail">
+                  <div class="year" style="text-align: center;">{{history.name}}</div>
+                </div>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+              <div class="history-content__words">
+                <div id="text">
+                  <p>
+                    {% if context_content %}
+                    {{ context_content.history_description | safe }}
+                    {% endif %}
+                  </p>
+                </div>
+                <div class="readmore">
+                  <button class="primary-button" id="readmore">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Sponsorship - {% endblock %}
+{% block content %}
+<div class="sponsorship">
+  <div class="sponsorship-banner" style="background-image: url('{% if context_content.sponsorship_banner %}{{ context_content.sponsorship_banner.url }}{% endif %}');">
+    <div class="sponsorship-banner__content">
+      <div class="container">
+       <div class="bgshade">
+            <div class="title">Sponsorship: Help Support the Mico Foundation</div>
+        <p class="text">
+          {{ context_content.sponsorship_banner_text }}
+        </p>
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="sponsorship-content">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                <div class="sponsorship-content__part">
+                    <p class="text">
+                    served over
+                    </p>
+                    <div class="number">
+                        760, 000
+                    </div>
+                    <p class="text">
+                        children </br>
+                        in 23 </br>
+                        countries.
+                    </p>
+                    <a href="">
+                        <button class="primary-button">
+                            view our programs
+                        </button>
+                    </a>
+                </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="sponsorship-content__contents">
+                      <div class="title">
+                          who we are ? </br>
+                          organization you can trust
+                      </div>
+                    <p>
+                        {% if context_content %}
+                            {{ context_content.sponsorship_who_we_are | safe }}
+                        {% endif %}
+                    </p>
+                      <a href="{% url 'about' %}">
+                        <button class="primary-button">
+                          learn more
+                        </button>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="sponsorship-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                  <div class="title">
+          we are project builders
+      </div>
+      <p class="text">
+          have project in mind? and is need of our expertise. Please complete the form below and we will be in touch with you as soon as possible.
+      </p>
+      <form action="{% url 'sponsorship' %}" method="POST">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+       {% endif %}
+           
+       {% csrf_token %}       
+          {{ form | crispy }}
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                     <div class="flex">
+                          <button type='submit' class="skew-button">
+                          submit
+                      </button>
+                     </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="sponsorship-lastsection">
+      <div class="sponsorship-lastsection__image">
+          <img src="{% if context_content.sponsorship_become_sponsor_image %}{{ context_content.sponsorship_become_sponsor_image.url }}{% endif %}" alt="">
+      </div>
+      <div class="container">
+          <div class="sponsorship-lastsection__content">
+              <div class="title">
+              become a sponsor
+          </div>
+          <p class="second-title">
+              {{ context_content.sponsorship_become_sponsor_title }}
+          </p>
+          <p class="text">
+              {{ context_content.sponsorship_become_sponsor_text | safe }}
+          </p>
+          </div>
+      </div>
+  </div>
+</div>
+ {% endblock %}

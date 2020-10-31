@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}News Room - {% endblock %}
+{% block content %}
+<div class="newsroom">
+    <div class="newsroom-heading">
+      <div class="container">
+        <div class="flex">
+          <div class="title">MICO foundation newsroom</div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="SEARCH" />
+            <button class="search-icon">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newsroom-content">
+      <div class="container">
+        <div class="title">latest news posts</div>
+        {% if news %}
+        {% for new in news %}
+        <a href="{% url 'newsdetail' new.slug %}"> 
+        <div class="newsroom-content__card">
+          <div class="card-image">
+            <img src="{{new.thumbnail.url}}" alt="" />
+          </div>
+          <div class="card-content">
+            <div class="card-content__tags">
+              <div class="tags purpose">{{new.category}}</div>
+              <div class="tags time">{{new.time}}</div>
+            </div>
+            <div class="card-content__title title" style="font-size: 1.5em;">
+              <a href="{% url 'newsdetail' new.slug %}">{{new.title}}</a>
+            </div>
+            <p class="text">
+              {{new.get_short_text|safe}}
+            </p>
+            <div class="card-content__shortdescribe">
+              <div class="speaker">
+                speaker: <span> {{new.speaker}} </span>
+              </div>
+              <div class="date">
+                Date:
+                <span>{{new.date}}</span>
+              </div>
+              <div class="keyword">
+                Keyword:
+                <span> {{new.keyword}} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="newsroom-carousel">
+      <div class="container">
+        <div class="tags">IN THE NEWS</div>
+        <h2 class="heading">News & Stories</h2>
+      </div>
+      <div class="container-fluid">
+        <div class="newsslide owl-carousel owl-theme">
+          {% if carousel_news %}
+          {% for news in carousel_news %}
+          <a href="{% url 'newsdetail' news.slug %}">
+          <div class="newsslide-carousel__card">
+            <div class="causes-card__image">
+              <img src="{{ news.thumbnail.url }}" alt="" />
+            </div>
+            <p class="text">
+              {{ news.title }}
+            </p>
+            <div class="name" style="font-size: 1.5em;">{{ news.speaker }}</div>
+            <div class="position" style="color: #f4b223;">{{ news.category }}</div>
+          </div>
+        </a>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

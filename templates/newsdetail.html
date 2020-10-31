@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ news.title }} - {% endblock %}
+{% block content %}
+<div class="newssingle">
+  <div class="container-fluid">
+    <div class="newssingle-banner">
+      <img src="{{ news.thumbnail.url }}" alt="" />
+      <div class="newssingle-banner__content">
+        <div class="container-fluid">
+          {{ news.title }}
+        </div>
+      </div>
+    </div>
+    <div class="newssingle-flex">
+      <div class="newssingle-content">
+        <div class="title">{{ news.title }}</div>
+        <p>
+          {{ news.description | safe }}
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      {% if images %}
+      <div class="newssingle-gallery owl-carousel owl-theme">
+        {% for image in images %}
+        <div class="newssingle-image">
+          <img src="{{ image.image.url }}" alt="" />
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="newssingle-target">
+        <div class="newssingle-target__previous">
+          <span class="material-icons"> keyboard_arrow_left </span>
+          <div class="block">
+            <div class="target">previous post</div>
+            {% if previous_news %}
+            <div class="postname">
+              <a href="{% url 'newsdetail' previous_news.slug %}">
+                {{ previous_news.title }}
+              </a>
+            </div>
+            {% else %}
+            <div class="postname">
+              <a href="">
+                This is the first.
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="newssingle-target__next">
+          <div class="block">
+            <div class="target">next post</div>
+            {% if next_news %}
+            <div class="postname">
+              <a href="{% url 'newsdetail' next_news.slug %}">
+                {{ next_news.title }}
+              </a>
+            </div>
+            {% else %}
+            <div class="postname">
+              <a href="">
+                This is the last.
+              </a>
+            </div>
+            {% endif %}
+          </div>
+          <span class="material-icons"> keyboard_arrow_right </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

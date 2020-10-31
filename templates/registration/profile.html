@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load gravatar %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="message-top">
+	<div class="container">
+	  <div class="title">Dashboard</div>
+	</div>
+  </div>
+<div class="container" style="padding-top: 10px;">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<div class="profile-userpic">
+                    <div class="text-center">
+					<img src="{{ loggedin_user|gravatar }}" class="mg-responsive center-block" alt="">
+                        </div>
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+                        {{ loggedin_user.first_name }} {{ loggedin_user.last_name }}
+					</div>
+					<div class="profile-usertitle-job">
+                        {{ loggedin_user.username }}<br>
+                        {{ loggedin_user.email }}<br>
+					</div>
+				</div>
+				<div class="profile-userbuttons">
+                    <a class="btn btn-danger btn-sm" href="{% url 'password_change' %}">Change Password</a>
+				</div>
+				<div class="profile-usermenu">
+					<ul class="list-group">
+						<li>
+							<a href="" target="_blank">
+							<i class="fa fa-check"></i>
+							Resources </a>
+						</li>
+						<li>
+							<a href="{% url 'logout' %}">
+							<i class="fa fa-flag"></i>
+							Logout </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="resource-list">
+				{% if resources %}
+				{% for resource in resources %}
+				<div class="list">
+				  <div class="list-smalltitle">{{resource.category}}</div>
+				  <div class="title">{{resource.title}}</div>
+				  <div class="date">{{resource.published_by}}</div>
+				  <p>
+					{{resources.description|safe}}
+				  </p>
+				  <div class="downloadable">
+					<a href="{{ resource.resource_file.url }}" download>Download</a>
+				  </div>
+				</div>
+				{% endfor %}
+				{% endif %}
+			  </div>
+	</div>
+</div>
+</div>
+{% endblock %}

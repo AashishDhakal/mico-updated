@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ work.title }} - {% endblock %}
+{% block content %}
+<div class="newssingle">
+    <div class="newssingle-banner">
+      <img src="{% static 'img/sponsor-gate-scaled.jpg' %}" alt="" />
+    </div>
+    <div class="container">
+      <div class="newssingle-content">
+        <div class="title">{{ work.title }}</div>
+        <p>
+          {{ work.detail | safe }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

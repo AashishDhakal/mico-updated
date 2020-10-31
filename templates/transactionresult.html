@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="message-top">
+    <div class="container">
+      <div class="title">Donation Successful</div>
+    </div>
+  </div>
+<div class="row" style="padding-top: 10px;padding-bottom: 10px;">
+<div class="col-md-4" style="float: none; margin: 0 auto;">
+  <div class="alert alert-success">Donation Successfull. Thank your for your donation</div>
+  <h2>Donation Receipt</h2>
+  <table>
+    <tr>
+      <th>Donor</th>
+      <td>{{ donation.first_name }} {{ donation.last_name }}</td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td>{{ donation.created_at }}</td>
+    </tr>
+    <tr>
+      <th>Total Donation</th>
+      <td>USD {{ donation.amount }}</td>
+    </tr>
+    <tr>
+      <th>Donation</th>
+      <td>{% if donation.project %}{{ donation.project.project_name }}{% else %}{{ donation.cause.title }}{% endif %}</td>
+    </tr>
+    <tr>
+      <th>Donation ID</th>
+      <td>{{ donation.donation_id }}</td>
+    </tr>
+    <tr>
+      <th>Payment Method</th>
+      <td>{{ donation.method }}</td>
+    </tr>
+  </table>
+</div>
+</div>
+{% endblock %}

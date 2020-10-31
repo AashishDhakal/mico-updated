@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Directors - {% endblock %}
+{% block content %}
+<div class="director">
+  <div class="director-top">
+    <div class="container">
+      <div class="title">board of directors</div>
+      <p class="text">
+        The Mico Foundation is supervised by a nine-member Board of Directors.
+        Members to the Board of Directors are drawn in equal number from the
+        Trustees, The University College and the Alumni Association (MOSA. There
+        are two (2) ex-officio members, one of whom is the President of The Mico
+        and the other a member of The Lady Mico Trustees resident in Jamaica, or
+        if not, a person named by the Trustees. A Director is elected to serve
+        for three (3) years in the first instance and is eligible to be
+        re-elected to serve for a maximum of two (2) additional three (3) years
+        term. The only exceptions are the Chancellor of The Mico who shall serve
+        for the duration of being Chancellor. The resident Trustee of The Lady
+        Mico Trust, who shall serve as ex-officio member for the duration of
+        his/her being Trustee, The President of The Mico who shall serve as
+        ex-officio member for the duration of his/her tenure as President.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="director-list">
+      {% if directors %}
+      {% for director in directors %}
+      <div class="director-list__block">
+        <div class="block-image">
+          <img src="{{ director.photo.url }}" alt="" />
+        </div>
+        <div class="block-content">
+          <div class="position">{{ director.designation }}</div>
+          <div class="title">
+            {{ director.name }}
+          </div>
+          <p class="text">
+            {{ director.bio | safe }}
+        </div>
+      </div>
+   {% endfor %}
+   {% endif %}
+    </div>
+  </div>
+</div>
+ {% endblock %}

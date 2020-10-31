@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Work With Us - {% endblock %}
+{% block content %}
+<div class="workwithus">
+    <div class="workwithus-banner" style="background-image: url('{% if context_content.workwithus_banner %}{{ context_content.workwithus_banner.url }}{% endif %}');">
+      <div class="workwithus-banner__content">
+        <div class="container">
+          <div class="title">{{ context_content.workwithus_banner_title }}</div>
+          <p class="text">
+           {{ context_content.workwithus_banner_text_1 | safe }}
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="workwithus-banner__donate">
+          <div class="hearticon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <p>
+            {{ context_content.workwithus_banner_text_2 | safe }}
+          </p>
+          <p class="bold">Thank you! We appreciate your generosity!</p>
+          <div class="donatebtn">
+            <a href="">
+              <button class="primary-button">DONATE NOW</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="workwithus-block">
+      <div class="container">
+        <div class="space">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="workwithus-block__words">
+                <div class="inner">
+                  <div class="title">our work</div>
+                  <p class="text">
+                    In 2019, we worked in 100 countries, reaching nearly 70 million
+                    people around the world through 1,000 programs.
+                  </p>
+                </div>
+                <div class="circle-line-layer"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="workwithus-block__image">
+                <img src="{% static 'img/projectgirl.jpg' %}" alt="" />
+                <div class="innerwords">
+                  <p>the mico holding firm to our</p>
+                  <h1>Heritage</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="workwithus-block__form">
+                <div class="wordswrap">
+                  <div class="title">we are project builders</div>
+                  <p class="text">
+                    have project in mind? and is need of our expertise. Please
+                    complete the form below and we will be in touch with you as
+                    soon as possible.
+                  </p>
+                </div>
+                <form action="{% url 'workwithus' %}" method="POST">
+                  {% if messages %}
+                  {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+                  {% endfor %}
+                  {% endif %}
+                  {% if form.errors %}
+                  {% for field in form %}
+                      {% for error in field.errors %}
+                          <div class="alert alert-danger">
+                              <strong>{{ error|escape }}</strong>
+                          </div>
+                      {% endfor %}
+                  {% endfor %}
+                  {% for error in form.non_field_errors %}
+                      <div class="alert alert-danger">
+                          <strong>{{ error|escape }}</strong>
+                      </div>
+                  {% endfor %}
+                  {% endif %}
+                  {% csrf_token %}
+                  {{form | crispy}}
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <div class="flex">
+                          <button type="submit" class="skew-button">submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="workwithus-block__image">
+                <img src="{% static 'img/projectgirl.jpg' %}" alt="" />
+                <div class="innerwords">
+                  <p>the mico holding firm to our</p>
+                  <h1>Heritage</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Messages - {% endblock %}
+{% block content %}
+<div class="message">
+  <div class="message-top">
+    <div class="container">
+      <div class="title">messages</div>
+    </div>
+  </div>
+  <div class="message-profile">
+    <div class="container">
+      <div class="row">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="col-md-4">
+          <div class="profile-card">
+            <div class="profile-card__name">{{ message.message_by }}</div>
+            <div class="post">{{ message.designation }}</div>
+            <div class="profile-card__image">
+              <img src="{{ message.photo.url }}" alt="" />
+            </div>
+            <div class="profile-card__cta">
+              <a href="{% url 'messagedetail' message.slug %}">
+                <button class="skew-button">Read</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        {%  endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="message-joinblock">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="message-joinblock__content">
+            <div class="title">join</div>
+            <p class="text">
+              Interested in becoming involved with CARE throughout
+              the year ? join one of our networks or committees.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="message-joinblock__image">
+            <span class="tint"></span>
+            <img src="{% static 'img/sponsor-gate-scaled.jpg' %}" alt="" />
+            <div class="inside">
+              <div class="inside-text">
+                mico's official gate opening ceremony
+              </div>
+              <p>
+                the foundation opens gate for the university college feb 2019
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="circle-line-layer"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

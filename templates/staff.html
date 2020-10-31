@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Our Staffs - {% endblock %}
+{% block content %}
+<div class="staff">
+  <div class="container">
+    <div class="staff-topsection">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="staff-topsection__content">
+            <div class="title">our team</div>
+            <p class="text">
+              A workforce of seven-team members led by the Secretary Manager
+              manages the daily affairs of The Mico Foundation. The staff is
+              guided by the vision and mission of the Foundation and is
+              committed to provide the necessary support to ensure the highest
+              quality service and the success of the projects that are
+              undertaken. The entrenched values of accountability, transparency,
+              integrity and partnership are defining measures by which the staff
+              conducts the business of the Foundation.
+            </p>
+            <p class="text">
+              A workforce of seven-team members led by the Secretary Manager
+              manages the daily affairs of The Mico Foundation. The staff is
+              guided by the vision and mission of the Foundation
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="staff-topsection__image">
+            <img src="/img/slide2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="staff-list">
+    <div class="container">
+      <div class="row">
+        {% if teams %}
+        {% for team in teams %}
+        <div class="col-md-6">
+          <div class="staff-list__card">
+            <div class="card-image">
+              <img src="{{team.photo.url}}" alt="" />
+            </div>
+            <div class="card-content">
+              <div class="name">{{ team.name }}</div>
+              <p class="post">{{ team.designation }}</p>
+              <p class="text">
+              {{team.bio|safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+ {% endblock %}

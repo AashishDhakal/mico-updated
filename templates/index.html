@@ -1,0 +1,298 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block content %}
+ {% if sliders %}
+ <div class="slider">
+   {% for slider in sliders %}
+   <div class="banner">
+    <img src="{{ slider.image.url }}" alt="" />
+    <div class="banner-content">
+      <div class="title">{{ slider.title_1 }}</div>
+      <div class="inside">
+        {% if slider.title_2 %}
+        <div class="inside-title">{{ slider.title_2 }}</div>
+        {% endif %}
+        {% if slider.short_desc %}
+        <p>{{ slider.short_desc }}</p>
+        {% endif %}
+      </div>
+    </div> 
+  </div>
+    {% endfor %}
+</div> 
+{% endif %}
+
+<div class="home-cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="home-cta__block">
+          <div class="imagepart partfirst">
+            <img src="{% static 'img/main-icon-1.svg' %}" alt="">
+          </div>
+          <div class="content">
+            <div class="title">get involved</div>
+            <p class="text">
+              Join The Mico Foundation and do something 
+              today to make a diffrence for generations to come.
+            </p>
+            <a href="">
+              <button class="line-button">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+            </a>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4">
+        <div class="home-cta__block">
+          <div class="imagepart partsecond">
+            <img src="{% static '/img/main-icon-2.svg' %}" alt="">
+          </div>
+          <div class="content">
+            <div class="title">donate</div>
+            <p class="text">
+            "You make a living by what you get. You make a life by what you give". Make a 
+            gift to The Mico.
+            </p>
+            <a href="{% url 'donate' %}">
+              <button class="line-button">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+            </a>
+          </div>
+        </div>
+      </div>
+       <div class="col-md-4">
+        <div class="home-cta__block">
+          <div class="imagepart partthird">
+            <img src="{% static 'img/main-icon-3.svg' %}" alt="">
+          </div>
+          <div class="content">
+            <div class="title">Sponsorship</div>
+            <p class="text">
+            True Happiness comes by helping others reach their goals.
+            "When Action Meets Compassion, Lives Change."
+            </p>
+            <a href="{% url 'sponsorship' %}">
+              <button class="line-button">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% if homepage_content.chairman_photo %}
+ <div class="home-chairman">
+  <div class="container">
+    <div class="bgimg" style="background-image: url({{ homepage_content.chairman_photo.url }});">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="home-chairman__content">
+            <div class="title">chairman's message</div>
+            <p class="text">
+              {{ homepage_content.chairman_message }}
+            </p>
+            <div class="name">{{ homepage_content.chairman_name }}</div>
+            <a href="{{ homepage_content.message_link }}"> message continues </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+ <div class="home-projects">
+  <div class="container">
+    <div class="title text-center">projects</div>
+    <div class="home-projects__block">
+      <div class="top-tile">
+        {% if homepage_content.project_1 %}
+        <div class="tile">
+          <div class="tile-image">
+            <img src="{{ homepage_content.project_1.thumbnail.url }}" alt="" />
+          </div>
+          <div class="tile-content">
+            <div class="title">{{ homepage_content.project_1.project_name }}</div>
+            <p class="text">
+              {{ homepage_content.project_1.detail | safe }}
+            </p>
+            <div class="flex">
+              <a href="{% url 'projectdetail' homepage_content.project_1.slug %}">
+                <button class="blank-btn">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+              </a>
+              <a href="{% url 'projectdonate' homepage_content.project_1.slug %}">
+                  <div class="donation-button">
+                      donate now <span>
+                  <i class="fas fa-hand-holding-usd"></i>
+                      </span>
+                  </div>
+              </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if homepage_content.project_2 %}
+        <div class="tile responsivetile">
+          <div class="tile-content">
+            <div class="title">{{ homepage_content.project_2.project_name }}</div>
+            <p class="text">
+              {{ homepage_content.project_2.detail | safe }}
+            </p>
+            <div class="flex">
+              <a href="{% url 'projectdetail' homepage_content.project_2.slug %}">
+                <button class="blank-btn">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+              </a>
+              <a href="{% url 'projectdonate' homepage_content.project_2.slug %}">
+                  <div class="donation-button">
+                      donate now <span>
+                  <i class="fas fa-hand-holding-usd"></i>
+                      </span>
+                  </div>
+              </a>
+              </button>
+            </div>
+          </div>
+          <div class="tile-image">
+            <img src="{{ homepage_content.project_2.thumbnail.url }}" alt="" />
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="bot-tile">
+        {% if homepage_content.project_3 %}
+        <div class="tile responsivetile">
+          <div class="tile-image">
+            <img src="{{ homepage_content.project_3.thumbnail.url }}" alt="" />
+          </div>
+          <div class="tile-content">
+            <div class="title ">{{ homepage_content.project_3.project_name }}</div>
+            <p class="text">
+              {{ homepage_content.project_3.detail | safe }}
+            </p>
+            <div class="flex">
+              <a href="{% url 'projectdetail' homepage_content.project_3.slug %}">
+                <button class="blank-btn">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
+              </a>
+              <a href="{% url 'projectdonate' homepage_content.project_3.slug %}">
+                  <div class="donation-button">
+                      donate now <span>
+                  <i class="fas fa-hand-holding-usd"></i>
+                      </span>
+                  </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+<!-- here includes home-newsroom -->
+<div class="home-newsroom">
+  <div class="container">
+    <div class="title">newsroom</div>
+    <p class="text">
+      The Foundation in action, building infrastructure, supporting students and
+      staff, preserving the heritage of the Lady Mico Trust.
+    </p>
+    <div class="home-newsroom__list">
+      <div class="row">
+        {% if context_news %}
+        {% for new in context_news %}
+        <div class="col-md-4">
+          <a href="{% url 'newsdetail' new.slug %}">
+            <div class="newsroom-card">
+              <div class="newsroom-card__image">
+                <img src="{{ new.thumbnail.url }}" alt="" />
+              </div>
+              <div class="content">
+                <div class="name">
+                  {{ new.title }}
+                </div>
+                <div class="date">{{ new.date }}</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- home mail -->
+<div class="home-mail">
+  <div class="container">
+    <div class="home-mail__content">
+      <div class="title">
+        Join the fight. Sign up for
+        our mailing <br> list.
+      </div>
+      <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="First Name*" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Last Name*" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email*" name="email" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="primary-button" style="border: 2px solid #f4b223;">
+            SUBMIT <span class="material-icons">
+keyboard_backspace
+</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div><div class="home-events">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="home-events__content">
+          <div class="title">upcoming events</div>
+          <p class="text">
+            Be the first to see what the foundation have in store.
+          </p>
+          <ul class="home-events__list">
+            {% if events %}
+            {% for event in events %}
+            <li class="events-list">
+              <div class="events-list__date">
+                <p class="day">{{ event.date.date.day }}</p>
+                <p class="month">{{ event.date.date | date:'F' }}</p>
+              </div>
+              <a href="">
+                <div class="events-list__content">
+                  <div class="title"><a href="{% url 'eventdetail' event.slug %}">{{ event.title }}</a></div>
+                  <div class="date">
+                    {{ event.get_short_text | safe }}
+                  </div>
+                  <div class="location">
+                    {{ event.location }}
+                  </div>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+            {% endif %}
+            <!-- events list break -->
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="home-events__partnerlogo">
+          {% if context_ad %}
+          <img src="{{ context_ad.image.url }}" alt="{{ context_ad.title }}" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

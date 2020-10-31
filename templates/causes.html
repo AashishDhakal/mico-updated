@@ -1,0 +1,43 @@
+ {% extends 'base.html' %}
+ {% block title %}Causes - {% endblock %}
+ {% block content %}
+ <div class="causes-page">
+  <div class="container">
+    <div class="small-title">causes</div>
+    <h2 class="title">donate now and help people in need</h2>
+    <div class="causes-page__list">
+      <div class="row">
+        {% if causes %}
+        {% for cause in causes %}
+        <div class="col-md-4">
+          <div class="causes-card">
+            <div class="causes-card__image">
+              <img src="{{ cause.thumbnail.url }}" alt="" />
+            </div>
+            <div class="causes-card__content">
+              <div class="title">{{ cause.title }}</div>
+              <p class="text">
+                {{ cause.get_short_text | safe }}
+              </p>
+              <div class="range" >
+                <label class="range-percentage" style="left: calc({% widthratio cause.sum cause.goal 100 %}% - 9%)">{% widthratio cause.sum cause.goal 100 %}%</label>
+              </div>
+              <div class="flex">
+                <div class="donateamount">${{ cause.sum }} raised of ${{ cause.goal }}</div>
+                <a href="{% url 'causesdonate' cause.slug %}">
+                  <span>
+                    <i class="fas fa-heart"></i>
+                  </span>
+                  donate
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+ {% endblock %}

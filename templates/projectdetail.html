@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ project.project_name }} - {% endblock %}
+{% block content %}
+<div class="newssingle">
+    <div class="newssingle-banner">
+      <img src="{{ project.thumbnail.url }}" alt="" />
+    </div>
+    <div class="container">
+      <div class="newssingle-content">
+        <div class="title">{{ project.project_name }}</div>
+        <p>
+          {{ project.detail | safe }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

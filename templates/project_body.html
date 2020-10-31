@@ -1,0 +1,44 @@
+{% if project %}
+<div id="donateToProject{{ project.id }}">
+<div class="donate-content__right" id="donateToProject{{ project.id }}">
+    <div class="image">
+        <img src="{{ project.thumbnail.url }}" alt="" />
+    </div>
+    <div class="raisedamount">
+        <div class="flex">
+            <label> RAISED ${{ project.sum }} </label>
+            <div class="goal">GOAL ${{ project.goal }}</div>
+        </div>
+        <div class="amountlabel">
+            <div class="amountlabel-percentage">{% widthratio project.sum project.goal 100 %}%</div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="heading">
+            {{ project.project_name }}
+        </div>
+        <p class="text">
+                {{ project.detail | safe }}
+              </p>
+              <div class="flex">
+                share on:
+                <div class="socialmedia">
+                  <div class="fb">
+                    <span>
+                      <i class="fab fa-facebook-f"></i>
+                    </span>
+                  </div>
+                  <div class="twitter">
+                    <span>
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                  </div>
+                  <div class="linkedin">
+                      <span>
+                          <i class="fab fa-linkedin-in"></i>
+                      </span>
+                  </div></div></div>
+    </div>
+</div>
+{% endif %}
