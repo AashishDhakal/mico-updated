@@ -185,6 +185,11 @@ span {
   position: absolute;
   bottom: 33px;
   left: 6%;
+  text-align: center;
+}
+
+.banner-content .title {
+  text-shadow: 0 0 1rem #0a0701;
 }
 
 .banner-content .title, .banner-content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .banner-content .title {
@@ -192,10 +197,11 @@ span {
 }
 
 .banner-content .inside {
-  background: #000;
+  background: #000000c9;
   color: #fff;
   padding: 1em 2em;
   text-align: center;
+  border-radius: 0.8rem 0.8rem 20rem 0.8rem;
 }
 
 .banner-content .inside-title {
@@ -656,7 +662,7 @@ header .navbar .logo {
 
 header .navbar .logo img {
   object-fit: contain;
-  width: 9rem;
+  width: 11.5rem;
 }
 
 header .navbar label {
@@ -1263,9 +1269,12 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .home-chairman {
-  padding: 3em 0 0 0;
+  padding: 0rem;
   background: #000;
   color: #fff;
+}
+.home-chairman .container{
+   
 }
 
 .home-chairman .bgimg {
@@ -1273,11 +1282,16 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   background-size: contain;
   background-position: right bottom;
   background-repeat: no-repeat;
-   
+  padding: 5.5rem 0rem;
+  background-position-x: 105%;
 }
 
 .home-chairman__content {
   padding-bottom: 3em;
+}
+
+.home-chairman__content .text, .home-chairman__content .title {
+  color: rgb(214, 214, 214);
 }
 
 .home-chairman__content .title, .home-chairman__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-chairman__content .title {
@@ -1334,7 +1348,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   padding: 0 2em;
   font-weight: 100;
   margin-top: 1rem;
-  color: rgba(93, 92, 91, 0.97);
+  color: rgba(73, 73, 72, 0.97);
 }
 
 .home-newsroom__list {
@@ -1353,7 +1367,8 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.76);
+  background: rgb(11,10,9);
+  background: linear-gradient(180deg, rgba(11,10,9,0) 0%, rgba(12, 11, 8, 0.6) 97%);
   display: block;
   right: 0;
   right: 0;
@@ -1366,6 +1381,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   height: 300px;
   overflow: hidden;
   transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .home-newsroom__list .newsroom-card__image:hover {
@@ -1388,7 +1404,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 .home-newsroom__list .newsroom-card .content .name {
   font-size: 1.2em;
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: 500;
   overflow: hidden;
   -webkit-line-clamp: 2;
   display: -webkit-box;
@@ -1399,6 +1415,8 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   text-transform: capitalize;
   font-size: 0.8em;
   margin-top: 0.5em;
+  color: #d9cb9e;
+  font-weight: 500;
 }
 
 .home-mail {
@@ -1416,7 +1434,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 
 .home-mail__content .title, .home-mail__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-mail__content .title {
-  color: #000;
+  color: rgb(36, 36, 36);
   font-size: 2.5em;
 }
 
@@ -1458,8 +1476,19 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   padding: 3em 0;
 }
 
+.no-event {
+  margin: 0.5rem 0rem;
+  color: rgb(197, 196, 193);
+  font-size: 1.3rem;
+  border: 1px solid #f8f5f2;
+  display: inline-block;
+  padding: 4rem;
+  border-radius: 4px;
+  background-color: #faf9f6;
+}
+
 .home-events__content .title, .home-events__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-events__content .title {
-  color: #000;
+  color: rgb(49, 49, 47);
 }
 
 .home-events__content .text {
@@ -2317,9 +2346,11 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   font-size: 1.6em;
 }
 
-.staff-list .staff-list__card .card-content .text {
+.staff-list .staff-list__card .card-content .text,
+.staff-list .staff-list__card .card-content p {
   font-size: 0.9em;
   margin-top: 1.4em;
+  line-height: 1.4rem;
 }
 
 @media only screen and (max-width: 768px) {

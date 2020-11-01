@@ -279,8 +279,17 @@ keyboard_backspace
                 </div>
               </a>
             </li>
+            {% empty %}
+              
             {% endfor %}
+            {% else %}
+              <li>
+                <span class="no-event">
+                  <p>No upcoming event. . .</p>
+                </span>
+              </li>
             {% endif %}
+
             <!-- events list break -->
           </ul>
         </div>
