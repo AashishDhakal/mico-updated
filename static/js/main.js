@@ -412,10 +412,12 @@ donateAmount = () => {
   // execute above function
   initPhotoSwipeFromDOM('.my-gallery');
   
-  $(document).ready(function() {
-      $('#donateForm input').on('change', function () {
-          let donate_name= $('input[name=donateName]:checked', '#donateForm').val();
-          update_data(donate_name);
-      });
-  });
+$(document).ready(function() {
+    let donate_name= $('input[name=donateName]:checked', '#donateForm').val();
+    update_data(donate_name);
+    $('#donateForm input').on('change', function () {
+        donate_name= $('input[name=donateName]:checked', '#donateForm').val();
+        update_data(donate_name);
+    });
+});
   
