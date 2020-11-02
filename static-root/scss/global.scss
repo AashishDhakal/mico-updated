@@ -196,6 +196,21 @@ header .navbar-list .dropdown-content .dropdown-newsroom .newsroom-card {
 	padding: 0px;	
 }
 
+.modal-body button.close {
+	background: url(../img/close-icon.svg) no-repeat center center transparent;
+	width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    opacity: 1;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-size: 80%; 
+}
+
+.modal-body button.close span {
+	font-size: 0px;
+}
+
 .modal-content {
 	border-radius: 1.2rem;
 	overflow: hidden;
@@ -433,7 +448,7 @@ header .navbar-list .dropdown-content .dropdown-newsroom .newsroom-card {
  }
 
  .history-content__words {
-	 background-color:  #ffc60a ;
+	 background-color:  #ffd400 ;
  }
  
  .history-content__words * p  {

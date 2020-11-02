@@ -125,10 +125,10 @@
                     <li><a href="{% url 'newsroom' %}">
                             newsroom
                         </a></li>
-                    <li><a href="">
+                    <li><a href="http://www.themico.edu.jm/">
                             mico university college
                         </a></li>
-                    <li><a href="">
+                    <li><a href="{% url 'contact' %}">
                             contact us
                         </a></li>
                         {% if request.user.is_authenticated %}
@@ -443,10 +443,10 @@
             <div class="footer-section">
               <div class="title">impact</div>
               <ul class="footer-section__list">
-                <li><a href=""> history </a></li>
-                <li><a href=""> our mission </a></li>
-                <li><a href=""> trustees </a></li>
-                <li><a href=""> directors </a></li>
+                <li><a href="{% url 'workwithus' %}"> work wiht us </a></li>
+                <li><a href="{% url 'sponsorship' %}"> sponsorship </a></li>
+                <li><a href="{% url 'resources' %}"> resource center </a></li>
+                <li><a href="{% url 'donate' %}"> donate </a></li>
               </ul>
             </div>
           </div>
@@ -454,7 +454,10 @@
             <div class="footer-section">
               <div class="title">messages</div>
               <ul class="footer-section__list">
-                <li><a href="{% url 'messages' %}"> messages </a></li>
+                
+                <li><a href="/message/mr-burchell-duhaney-jp/">manager message </a></li>
+                <li><a href="/message/dr-sylvester-tulloch-cd/"> chairman message </a></li>
+                <li><a href="/message/rev-rachel-benson-dl/"> trust message </a></li>
               </ul>
             </div>
           </div>
