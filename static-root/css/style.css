@@ -2229,10 +2229,14 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .trustees-person .trustees-person__card {
   margin-bottom: 1.5em;
+  width: 96%;
+  margin: auto;
 }
 
 .trustees-person .trustees-person__card .person__card--image {
   height: 380px;
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 .trustees-person .trustees-person__card .person__card--image img {
