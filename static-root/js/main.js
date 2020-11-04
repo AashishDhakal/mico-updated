@@ -1,14 +1,17 @@
 
-donateAmount = () => {
-    if (document.getElementById("donateAmountOther").checked) {
-      document.getElementById("donateOtherAmount").style.display = "block";
-    } else {
-      document.getElementById("donateOtherAmount").style.display = "none";
-    }
+    var donateAmount = () => {
+        var donateOther = document.getElementById("donateAmountOther");
+        if (donateOther != null ) {
+            if (document.getElementById("donateAmountOther").checked) {
+            document.getElementById("donateOtherAmount").style.display = "block";
+            } else {
+            document.getElementById("donateOtherAmount").style.display = "none";
+            }
+        }
   };
   window.addEventListener("click", donateAmount);
   
-  donatePayment = () => {
+  var donatePayment = () => {
     let masterCard = document.getElementById("donateMastercard");
     let echeck = document.getElementById("donateEcheck");
     let donateMastercard = document.getElementById("paymentMastercard");
@@ -36,7 +39,7 @@ donateAmount = () => {
     document.getElementById("donateAmt").innerHTML = "$ 150";
   };
   
-  donateAmountFunction = () => {
+  var donateAmountFunction = () => {
     let fiftyAmt = document.getElementById("donateAmount1");
     let hundredAmt = document.getElementById("donateAmount2");
     let onefiftyAmt = document.getElementById("donateAmount3");
@@ -60,7 +63,7 @@ donateAmount = () => {
   };
   window.addEventListener("click", donateAmountFunction);
   
-  readmore = () => {
+  var readmore = () => {
     let readmore = document.getElementById("readmore");
     let text = document.getElementById("text");
     text.classList.toggle("expanding");
