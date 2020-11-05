@@ -2233,6 +2233,10 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   margin: auto;
 }
 
+.trustees-person .trustees-person__card span {
+  line-height: 1.6rem;
+}
+
 .trustees-person .trustees-person__card .person__card--image {
   height: 380px;
   border-radius: 2rem;
@@ -2249,12 +2253,14 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   padding-top: 0.4em;
   border-top: 6px solid #df7121;
   margin-top: 0.6em;
+  color: #262625;
 }
 
 .trustees-person .trustees-person__card .person__card .post {
   text-transform: capitalize;
   font-weight: 600;
   margin-bottom: 0.6em;
+  color: #b3b3b3;
 }
 
 .trustees-content {
@@ -2268,6 +2274,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .trustees-content .text {
   margin: 1.5em 0;
+  line-height: 1.65rem;
 }
 
 @media only screen and (max-width: 768px) {
