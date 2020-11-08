@@ -4,5 +4,5 @@ INTERP = "/home/themico1/mico_foundation/bin/python"
 
 if sys.executable != INTERP : os.execl(INTERP, INTERP, *sys.argv)
 
-#from mico_site.flask_app import app as application
+#Import mico django application to passenger
 from MICO.wsgi import application

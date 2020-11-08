@@ -2113,14 +2113,6 @@
 		"oAP": "/donations/views.py",
 		"oF": 0
 		},
-	"/flask_app.py": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/flask_app.py",
-		"oF": 0
-		},
 	"/manage.py": {
 		"cB": 0,
 		"ft": 8192,
