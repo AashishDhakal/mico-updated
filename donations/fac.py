@@ -5,6 +5,7 @@ import hashlib
 import base64
 import datetime
 
+from django.conf import settings
 
 
 passwd = '3KNfgohb'
@@ -21,7 +22,7 @@ def authorize(cvv, expiry, card_no, amount, order_number, issue_number='', start
     hash = hashlib.sha1(string_to_hash)
     signature = base64.b64encode(hash.digest())
     signature = signature.decode('utf-8')
-    print(signature)
+   
     card_details = {
         'CardCVV2': f'{cvv}',
         'CardExpiryDate': f'{expiry}',
@@ -45,7 +46,7 @@ def authorize(cvv, expiry, card_no, amount, order_number, issue_number='', start
     AuthorizeRequest = {
         'CardDetails': card_details,
         'TransactionDetails': transaction_details,
-        'MerchantResponseURL': "https://test.themicofoundationja.com/donate/transaction/"
+        'MerchantResponseURL': settings.MERCHANT_RESPONSE_URL
     }
     try:
         client = Client(wsdl='https://ecm.firstatlanticcommerce.com/PGService/Services.svc?wsdl')

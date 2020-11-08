@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os.path as os_path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -57,6 +58,8 @@ SYSTEM_APPS = [
 INSTALLED_APPS = DJANGO_APPS + VENDER_APPS + SYSTEM_APPS
 
 MIDDLEWARE = [
+    'MICO.middleware.DisableClientSideCachingMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'MICO.middleware.UserAgentMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    
     #'MICO.middleware.UserActivityLogMiddleware'
 ]
 
@@ -145,6 +149,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+#MEDIA_ROOT = os_path.join(os_path.abspath(os_path.join(__file__ ,"../../../..")), 'public_html/media')
+
 AUTH_USER_MODEL = 'users.User'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -184,3 +190,7 @@ JAZZMIN_SETTINGS = {
     "copyright": "Mico Foundation",
 
 }
+
+MERCHANT_RESPONSE_URL = "https://themicofoundationja.com/donate/transaction/"
+
+CLEAR_BROWSER_CACHE = True

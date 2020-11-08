@@ -296,7 +296,7 @@ def save_transaction(request):
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
 
-            if  request.POST['ReferenceNo'] != 1:
+            if   u'ReferenceNo' not in request.POST or request.POST['ReferenceNo'] != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
             order_id = request.POST['OrderID']
@@ -348,6 +348,7 @@ def save_transaction(request):
             request.session['donate_message'] = str(e)
             return HttpResponseRedirect(reverse('donate'))
         except Exception as e:
+            request.session['donate_message'] = str(e)
             return HttpResponseRedirect(reverse('donate'))
 
     return render(request, 'transactionresult.html', {

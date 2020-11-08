@@ -1,6 +1,8 @@
 from users.models import ActivityLog
 import json
 from django.utils.functional import SimpleLazyObject
+from django.conf import settings
+from django.utils.cache import add_never_cache_headers
 from .utils import get_user_agent
 
 
@@ -99,4 +101,22 @@ class UserActivityLogMiddleware(BaseMiddleware):
                             ip_address=log_data['ip_address'], browser_used=log_data['browser_used'],
                             device_used=log_data['device_used']
                         )
+        return response
+
+class DisableClientSideCachingMiddleware :
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        response = self.get_response(request)
+
+        return self.process_response(request, response)
+
+    def process_response(self, request, response):
+        add_never_cache_headers(response)
+        if settings.CLEAR_BROWSER_CACHE:
+            response["Pragma"] = "no-cache"
+            response["Expires"] = "-1"
+            response["Strict-Transport-Security"]: "max-age=0"
         return response

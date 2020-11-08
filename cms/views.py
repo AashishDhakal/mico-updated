@@ -42,6 +42,7 @@ from django.views.decorators.csrf import csrf_exempt
 def homepage(request):
     sliders = Slider.objects.all()
     popups = Popup.objects.all()
+    
     homepage_content = HomepageManagement.objects.first()
     events = Event.objects.filter(date__date__gte=datetime.datetime.now())
     if request.method == 'POST':
