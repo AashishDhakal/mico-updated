@@ -24,6 +24,7 @@ from .models import (
     ContentManagement,
     NewsCategory,
     GetInvolvedImage,
+    Policy,
 )
 
 from django_summernote.admin import SummernoteModelAdmin
@@ -99,6 +100,9 @@ class ContentAdmin(SummernoteModelAdmin):
      'sponsorship_become_sponsor_text', 'workwithus_banner_text_1', 'workwithus_banner_text_2',
      ]
 
+class PolicyAdmin(SummernoteModelAdmin):
+    prepopulated_fields = {'slug': ('title', ), }
+    summernote_fields = ['description', ]
 
 admin.site.register(Slider)
 admin.site.register(NewsCategory)
@@ -123,3 +127,4 @@ admin.site.register(WorkWithUs)
 admin.site.register(Sponsorship)
 admin.site.register(ContentManagement, ContentAdmin)
 admin.site.register(GetInvolvedImage)
+admin.site.register(Policy, PolicyAdmin)

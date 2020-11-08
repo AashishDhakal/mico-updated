@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.urls import reverse
 from .models import Causes, CausesDonation, ProjectDonation, Project, Transaction
 from django.conf import settings
+from django.shortcuts import reverse
 from decimal import Decimal
 from paypal.standard.forms import PayPalPaymentsForm
 from django.views.decorators.csrf import csrf_exempt
@@ -19,7 +20,7 @@ from common.models import Subscriber
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-
+from . import exceptions as error
 
 # Create your views here.
 def CauseView(request):
@@ -277,59 +278,78 @@ def process_paypal(request):
 def payment_done(request):
     return render(request, 'payment_done.html')
 
-
 @csrf_exempt
 def payment_canceled(request):
     return render(request, 'payment_cancelled.html')
-
 
 @csrf_exempt
 def save_transaction(request):
     data = ''
     donation = None
+    request.session.modified = True
+    
+    #request.session['donate_message'] = 'Some Error Message'
+    #return HttpResponseRedirect(reverse('donate'))
+
     if request.POST:
-        order_id = request.POST['OrderID']
-        response_code = request.POST['ResponseCode']
-        reason_code = request.POST['ReasonCode']
-        reason_code_desc = request.POST['ReasonCodeDesc']
-        reference_no = request.POST['ReferenceNo']
-        padded_card_no = request.POST['PaddedCardNo']
-        auth_code = request.POST['AuthCode']
-        cvv2_result = request.POST['CVV2Result']
-        original_response = request.POST['OriginalResponseCode']
-        signature = request.POST['Signature']
-        data = reason_code_desc
-        if [order_id, response_code, reason_code, reason_code_desc, reference_no, padded_card_no, auth_code, cvv2_result, original_response, signature]:
-            Transaction.objects.create(
-                order_id=order_id,
-                response_code=response_code,
-                reason_code=reason_code,
-                reason_code_desc=reason_code_desc,
-                reference_no=reference_no,
-                padded_card_no=padded_card_no,
-                auth_code=auth_code,
-                cvv2_result=cvv2_result,
-                original_response=original_response,
-                signature=signature
-            )
-            try:
-                donation = CausesDonation.objects.get(donation_id=order_id)
-                donation.status = 'Paid'
-                donation.save()
-            except CausesDonation.DoesNotExist:
-                donation = ProjectDonation.objects.get(donation_id=order_id)
-                donation.status = 'Paid'
-                donation.save()
-        if donation:
-            send_mail(
-                subject="Mico Foundation Donation Receipt",
-                from_email="info@themicofoundationja.com",
-                recipient_list = [donation.email, ],
-                message = 'Donation Receipt',
-                html_message= render_to_string('donation_receipt.html', {
-                    'donation': donation,
-                }),
-            )
+        try:
+            if u'OrderID' not in request.POST:
+                raise error.PaymentError('Unable to process donation.')
+
+            if  request.POST['ReferenceNo'] != 1:
+                raise error.CardError(request.POST['ReasonCodeDesc'])
+
+            order_id = request.POST['OrderID']
+            response_code = request.POST['ResponseCode']
+            reason_code = request.POST['ReasonCode']
+            reason_code_desc = request.POST['ReasonCodeDesc']
+            reference_no = request.POST['ReferenceNo']
+            padded_card_no = request.POST['PaddedCardNo']
+            auth_code = request.POST['AuthCode']
+            cvv2_result = request.POST['CVV2Result']
+            original_response = request.POST['OriginalResponseCode']
+            signature = request.POST['Signature']
+            data = reason_code_desc
+            if [order_id, response_code, reason_code, reason_code_desc, reference_no, padded_card_no, auth_code, cvv2_result, original_response, signature]:
+                Transaction.objects.create(
+                    order_id=order_id,
+                    response_code=response_code,
+                    reason_code=reason_code,
+                    reason_code_desc=reason_code_desc,
+                    reference_no=reference_no,
+                    padded_card_no=padded_card_no,
+                    auth_code=auth_code,
+                    cvv2_result=cvv2_result,
+                    original_response=original_response,
+                    signature=signature
+                )
+                try:
+                    donation = CausesDonation.objects.get(donation_id=order_id)
+                    donation.status = 'Paid'
+                    donation.save()
+                except CausesDonation.DoesNotExist:
+                    donation = ProjectDonation.objects.get(donation_id=order_id)
+                    donation.status = 'Paid'
+                    donation.save()
+            if donation:
+                send_mail(
+                    subject="Mico Foundation Donation Receipt",
+                    from_email="info@themicofoundationja.com",
+                    recipient_list = [donation.email, ],
+                    message = 'Donation Receipt',
+                    html_message= render_to_string('donation_receipt.html', {
+                        'donation': donation,
+                    }),
+                )
+        except error.CardError as e:
+            request.session['donate_message'] = str(e)
+            return HttpResponseRedirect(reverse('donate'))
+        except error.PaymentError as e:
+            request.session['donate_message'] = str(e)
+            return HttpResponseRedirect(reverse('donate'))
+        except Exception as e:
+            return HttpResponseRedirect(reverse('donate'))
+
     return render(request, 'transactionresult.html', {
         'data': data,
         'donation': donation,

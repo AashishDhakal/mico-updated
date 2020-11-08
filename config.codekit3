@@ -433,6 +433,14 @@
 		"oAP": "/cms/migrations/0040_auto_20201023_0749.py",
 		"oF": 0
 		},
+	"/cms/migrations/0041_policy.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/0041_policy.py",
+		"oF": 0
+		},
 	"/cms/migrations/__init__.py": {
 		"cB": 0,
 		"ft": 8192,
@@ -761,6 +769,14 @@
 		"oAP": "/cms/migrations/__pycache__/0040_auto_20201023_0749.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0041_policy.cpython-38.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0041_policy.cpython-38.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/__init__.cpython-38.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1009,6 +1025,22 @@
 		"oAP": "/donations/__pycache__/apps.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/context_processors.cpython-38.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/context_processors.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/exceptions.cpython-38.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/exceptions.cpython-38.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/fac.cpython-38.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1071,6 +1103,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/apps.py",
+		"oF": 0
+		},
+	"/donations/context_processors.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/context_processors.py",
+		"oF": 0
+		},
+	"/donations/exceptions.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/exceptions.py",
 		"oF": 0
 		},
 	"/donations/fac.py": {
@@ -12449,6 +12497,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/staff.html",
+		"oF": 0
+		},
+	"/templates/terms/terms.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/terms/terms.html",
 		"oF": 0
 		},
 	"/templates/transactionresult.html": {

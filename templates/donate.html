@@ -228,6 +228,13 @@
                     </label>
                   </div>
                 </div> -->
+                {% block error_message %}
+                  {% if message %}
+                      <div id="error_message" class="alert alert-{{ message_type }}">
+                        <p>{{ message }}</p>
+                      </div>
+                  {% endif %}
+                {% endblock %}
                 <div class="donatename">donation amount</div>
                 <div class="donateamount">
                   <div class="form-group">
