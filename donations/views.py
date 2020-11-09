@@ -296,7 +296,7 @@ def save_transaction(request):
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
             
-            if   u'ReferenceNo' not in request.POST and int(request.POST['ResponseCode']) != 1:
+            if   u'ReferenceNo' not in request.POST or int(request.POST['ResponseCode']) != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
             order_id = request.POST['OrderID']
