@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Policy - {% endblock %}
+{% block content %}
+ <div class="terms-wrapper">
+  <div class="container">
+    <div class="policies-terms">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="policy-article">
+              <div class="policy-head">
+                <h1 class="policy-title">{{ policy.title }}</h1>
+                <span class="date">Updated on {{ policy.date_updated }}.</span>
+              </div>
+              
+              <article class="policy-body">
+                {{ policy.description | safe }}
+              </article>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

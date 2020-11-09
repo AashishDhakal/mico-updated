@@ -23,6 +23,7 @@
       sizes="16x16"
       href="{% static 'img/favicon-16x16.png' %}"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="manifest" href="{% static 'img/site.webmanifest' %}" />
     <link rel="mask-icon" href="{% static 'img/safari-pinned-tab.svg' %}" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
@@ -423,9 +424,6 @@
                   <img src="{% static 'img/white-logo.svg' %}" alt="logo" />
                 </a>
               </div>
-              <div class="footer-content__copy">
-                Copyright &copy; The Mico Foundation. All Rights Reserved.
-              </div>
             </div>
           </div>
           <div class="col-md-2">
@@ -461,6 +459,21 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div class="row sub-footer">
+          <div class="col-md-4">
+            <div class="footer-content__copy">
+              <p class="copyright">Copyright &copy; The Mico Foundation. All Rights Reserved.</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <ul class="policy"> 
+              <li><a href="{% url 'terms' slug='terms' %}">Terms of Use</a>|</li>
+              <li><a href="{% url 'terms' slug='privacy' %}">Privacy Policy</a>|</li>
+              <li><a href="{% url 'terms' slug='refund' %}">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
         </div>
       </div>
     </div>

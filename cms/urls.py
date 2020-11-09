@@ -1,4 +1,5 @@
 from django.urls import path, include
+from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
         path('projects/<slug>/', views.project_detail, name='projectdetail'),
         path('message/<slug>/', views.message_detail, name='messagedetail'),
         path('update-content/', views.update_content, name='updatecontent'),
+        url(r"^terms/(?P<slug>[\w-]+)$", views.terms_policy, name="terms"),
 ]

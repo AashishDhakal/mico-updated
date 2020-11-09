@@ -1,5 +1,6 @@
 from django.db import models
 from common.models import MicoModel
+from django.utils.translation import gettext_lazy as _
 import html
 from djsingleton.models import SingletonModel, SingletonActiveModel
 
@@ -59,6 +60,31 @@ class Resource(MicoModel):
     def __str__(self):
         return self.title
 
+class Policy(MicoModel):
+
+    class Meta:
+        app_label = "cms"
+        verbose_name = _('Policy')
+        verbose_name_plural = _('Policies')
+
+    title = models.CharField(max_length=300)
+    slug = models.SlugField(blank=True, null=True)
+
+    Terms, Privacy, Refund = ('Terms', 'Privacy', 'Refund')
+    type = models.CharField(choices=(
+        (Terms, 'Terms of Use'),
+        (Privacy, 'Privacy Policy'),
+        (Refund, 'Refund Policy'),
+    ), max_length=30, default=Terms)
+
+    published = models.BooleanField("Publish", default=True)
+    description = models.TextField()
+    
+    date_updated = models.DateField(_("Date Updated"), auto_now=True)
+    date_created = models.DateField(_("Date Updated"), auto_now=True)
+    
+    def __str__(self):
+        return self.title
 
 # added subject field to the model
 class Contact(MicoModel):

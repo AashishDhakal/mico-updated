@@ -182,6 +182,9 @@
                     </label>
                   </div>
                 </div> -->
+                {% block error_message %}
+                  {% include 'partials/messages.html' %}
+                {% endblock %}
                 <div class="donatename">donation amount</div>
                 <div class="donateamount">
                   <div class="form-group">
@@ -406,158 +409,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="donate-paymentlist">
-                        <div class="form-group">
-                          <label for="donateMastercard">
-                            <input
-                              type="radio"
-                              id="donateMastercard"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              checked
-                              value="card"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/credit-card-icon.svg' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <label for="donateEcheck">
-                            <input
-                              type="radio"
-                              id="donateEcheck"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              value="offline"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/offline-icon.svg' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <label for="donatePaypal">
-                            <input
-                              type="radio"
-                              id="donatePaypal"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              value="paypal"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/pay-pal-icon.svg' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="donate-paymentlist__block">
-                    <div class="form-group" id="paymentMastercard">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="mastercard">
-                              <div class="row">
-                                <div class="col-md-8">
-                                  <div class="form-group card">
-                                    <label
-                                      >credit card number
-                                      <span>*</span></label
-                                    >
-                                    <input
-                                      type="text"
-                                      placeholder="Credit Card Number"
-                                      class="form-control"
-                                      name="cardNo"
-                                      id="cardNo"
-                                      onkeyup="cc_format('cardNo','cstCCardType');"
-                                    />
-                                    <span id="cstCCardType">
-                                       <ul class="card-type-list">
-                                          <li class="card-type" data-logo="VISA_CARD" aria-hidden="false"></li>
-                                          <li class="card-type" data-logo="MASTER_CARD" aria-hidden="false"></li>
-                                          <li class="card-type" data-logo="AMERICAN_EXPRESS_CARD" aria-hidden="false"></li>
-                                          <li class="card-type" data-logo="DISCOVER_CARD" aria-hidden="false"></li>
-                                       </ul>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <label
-                                      >Expiration Date <span>*</span></label
-                                    >
-                                    <div class="select-group">
-                                    <select name="Month">
-                                      <option value="01">01</option>
-                                      <option value="02">02 </option>
-                                      <option value="03">03</option>
-                                      <option value="04">04</option>
-                                      <option value="05">05</option>
-                                      <option value="06">06</option>
-                                      <option value="07">07</option>
-                                      <option value="08">08</option>
-                                      <option value="09">09</option>
-                                      <option value="10">10</option>
-                                      <option value="11">11</option>
-                                      <option value="12">12</option>
-                                  </select>
-                                  <select name="Year">
-                                    <option value="20"> 2020</option>
-                                    <option value="21"> 2021</option>
-                                    <option value="22"> 2022</option>
-                                    <option value="23"> 2023</option>
-                                    <option value="24"> 2024</option>
-                                    <option value="25"> 2025</option>
-                                    <option value="26"> 2026</option>
-                                    <option value="27"> 2027</option>
-                                    <option value="28"> 2028</option>
-                                    <option value="29"> 2029</option>
-                                    <option value="30"> 2030</option>
-                                </select>
-                              </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <label>CVV <span>*</span></label>
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      name="cvv"
-                                    />
-                                  </div>
-                                </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group amount-box">
-                        <label class="text-center"> Amount </label>
-                        <div style="font-weight: 600" id="donateAmt"></div>
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group ">
-                        <div class="flex donate-btn-box">
-                          <button type="submit" class="donate-btn skew-button">Donate Now</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {% include 'partials/payment_types.html' %}
                 </div>
               </form>
             </div>
