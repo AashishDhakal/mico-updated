@@ -296,7 +296,7 @@ def save_transaction(request):
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
 
-            if   u'ReferenceNo' not in request.POST or request.POST['ReferenceNo'] != 1:
+            if   u'ReferenceNo' not in request.POST or request.POST['ResponseCode'] != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
             order_id = request.POST['OrderID']
@@ -325,22 +325,29 @@ def save_transaction(request):
                 )
                 try:
                     donation = CausesDonation.objects.get(donation_id=order_id)
-                    donation.status = 'Paid'
+                    if response_code == '1':
+                        donation.status = 'Paid'
+                    else:
+                        donation.status = reason_code_desc
                     donation.save()
                 except CausesDonation.DoesNotExist:
                     donation = ProjectDonation.objects.get(donation_id=order_id)
-                    donation.status = 'Paid'
+                    if response_code == '1':
+                        donation.status = 'Paid'
+                    else:
+                        donation.status = reason_code_desc
                     donation.save()
             if donation:
-                send_mail(
-                    subject="Mico Foundation Donation Receipt",
-                    from_email="info@themicofoundationja.com",
-                    recipient_list = [donation.email, ],
-                    message = 'Donation Receipt',
-                    html_message= render_to_string('donation_receipt.html', {
-                        'donation': donation,
-                    }),
-                )
+                if donation.status == 'Paid':
+                    send_mail(
+                        subject="Mico Foundation Donation Receipt",
+                        from_email="info@themicofoundationja.com",
+                        recipient_list = [donation.email, ],
+                        message = 'Donation Receipt',
+                        html_message= render_to_string('donation_receipt.html', {
+                            'donation': donation,
+                        }),
+                    )
         except error.CardError as e:
             request.session['donate_message'] = str(e)
             return HttpResponseRedirect(reverse('donate'))
