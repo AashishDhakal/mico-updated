@@ -117,6 +117,6 @@ class DisableClientSideCachingMiddleware :
         add_never_cache_headers(response)
         if settings.CLEAR_BROWSER_CACHE:
             response["Pragma"] = "no-cache"
-            response["Expires"] = "-1"
+            response["Expires"] = "26/07/1971"
             response["Strict-Transport-Security"]: "max-age=0"
         return response

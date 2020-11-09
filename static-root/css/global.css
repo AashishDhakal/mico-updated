@@ -973,3 +973,9 @@ body#events {
   margin-bottom: 2rem !important;
   line-height: 1.6rem;
   font-size: 1rem; }
+
+.alert-danger {
+  color: #ed0c08;
+  background-color: #ffe7e4;
+  border-color: #ffcece;
+  border-radius: 0.7rem; }

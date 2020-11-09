@@ -13093,14 +13093,6 @@
 		"oAP": "/templates/director.html",
 		"oF": 0
 		},
-	"/templates/donate copy.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/templates/donate copy.html",
-		"oF": 0
-		},
 	"/templates/donate.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13219,6 +13211,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/offlinedonation.html",
+		"oF": 0
+		},
+	"/templates/partials/messages.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/partials/messages.html",
+		"oF": 0
+		},
+	"/templates/partials/payment_types.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/partials/payment_types.html",
 		"oF": 0
 		},
 	"/templates/partials/popup_modal.html": {
