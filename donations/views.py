@@ -287,15 +287,12 @@ def save_transaction(request):
     data = ''
     donation = None
     request.session.modified = True
-    
-    #request.session['donate_message'] = 'Some Error Message'
-    #return HttpResponseRedirect(reverse('donate'))
-    
+
     if request.POST:
         try:
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
-            
+
             if   u'ReferenceNo' not in request.POST or int(request.POST['ResponseCode']) != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
@@ -311,7 +308,7 @@ def save_transaction(request):
             signature = request.POST['Signature']
             data = reason_code_desc
             if [order_id, response_code, reason_code, reason_code_desc, reference_no, padded_card_no, auth_code, cvv2_result, original_response, signature]:
-                Transaction.objects.create(
+                Transaction.objects.get_or_create(
                     order_id=order_id,
                     response_code=response_code,
                     reason_code=reason_code,
@@ -362,3 +359,4 @@ def save_transaction(request):
         'data': data,
         'donation': donation,
     })
+
