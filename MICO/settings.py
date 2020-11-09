@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os.path as os_path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -57,6 +58,8 @@ SYSTEM_APPS = [
 INSTALLED_APPS = DJANGO_APPS + VENDER_APPS + SYSTEM_APPS
 
 MIDDLEWARE = [
+    'MICO.middleware.DisableClientSideCachingMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'MICO.middleware.UserAgentMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    
     #'MICO.middleware.UserActivityLogMiddleware'
 ]
 
@@ -82,13 +86,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cms.context_processors.common',
+                "donations.context_processors.messages",
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'MICO.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -99,7 +103,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -118,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -146,6 +148,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+#MEDIA_ROOT = os_path.join(os_path.abspath(os_path.join(__file__ ,"../../../..")), 'public_html/media')
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -186,3 +190,13 @@ JAZZMIN_SETTINGS = {
     "copyright": "Mico Foundation",
 
 }
+
+MERCHANT_RESPONSE_URL = "https://themicofoundationja.com/donate/transaction/"
+
+FAC_MERCHANT_PASSWORD = '3KNfgohb' 
+FAC_MERCHANT_ID = '88802474' 
+FAC_ACQUIRER_ID = '464748' 
+FAC_CURRENCY_CODE = '840'
+
+FAC_MODE_PROD = False
+CLEAR_BROWSER_CACHE = True

@@ -194,7 +194,7 @@
                   {% endif %}
                 </div>
             <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <!-- <div class="donatename">donation duration</div>
                 <div class="duration">
                   <div class="form-group">
@@ -233,6 +233,9 @@
                     </label>
                   </div>
                 </div> -->
+                {% block error_message %}
+                  {% include 'partials/messages.html' %}
+                {% endblock %}
                 <div class="donatename">donation amount</div>
                 <div class="donateamount">
                   <div class="form-group">
@@ -456,195 +459,58 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="donate-paymentlist">
-                        <div class="form-group">
-                          <label for="donateMastercard">
-                            <input
-                              type="radio"
-                              id="donateMastercard"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              checked
-                              value="card"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/mastercard.png' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <label for="donateEcheck">
-                            <input
-                              type="radio"
-                              id="donateEcheck"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              value="offline"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/echeck.png' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                        <div class="form-group">
-                          <label for="donatePaypal">
-                            <input
-                              type="radio"
-                              id="donatePaypal"
-                              class="hiddeninput"
-                              name="donatePaymentMethod"
-                              value="paypal"
-                            />
-                            <div class="image">
-                              <img src="{% static 'img/paypal.png' %}" alt="" />
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                  <div class="donate-paymentlist__block">
-                    <div class="form-group" id="paymentMastercard">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="mastercard">
-                              <div class="row">
-                                <div class="col-md-8">
-                                  <div class="form-group">
-                                    <label
-                                      >credit card number
-                                      <span>*</span></label
-                                    >
-                                    <input
-                                      type="text"
-                                      placeholder="Credit Card Number"
-                                      class="form-control"
-                                      required
-                                      name="cardNo"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <label
-                                      >Expiration Date: <span>*</span></label
-                                    >
-                                    <select name="Month">
-                                      <option value="01">January</option>
-                                      <option value="02">February </option>
-                                      <option value="03">March</option>
-                                      <option value="04">April</option>
-                                      <option value="05">May</option>
-                                      <option value="06">June</option>
-                                      <option value="07">July</option>
-                                      <option value="08">August</option>
-                                      <option value="09">September</option>
-                                      <option value="10">October</option>
-                                      <option value="11">November</option>
-                                      <option value="12">December</option>
-                                  </select>
-                                  <select name="Year">
-                                    <option value="20"> 2020</option>
-                                    <option value="21"> 2021</option>
-                                    <option value="22"> 2022</option>
-                                    <option value="23"> 2023</option>
-                                    <option value="24"> 2024</option>
-                                    <option value="25"> 2025</option>
-                                    <option value="26"> 2026</option>
-                                    <option value="27"> 2027</option>
-                                    <option value="28"> 2028</option>
-                                    <option value="29"> 2029</option>
-                                    <option value="30"> 2030</option>
-                                </select>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="form-group">
-                                    <label>CVV number: <span>*</span></label>
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      required
-                                      name="cvv"
-                                    />
-                                  </div>
-                                </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group text-center">
-                        <label class="text-center"> Amount </label>
-                        <div style="font-weight: 600" id="donateAmt"></div>                       </div>
-                    </div>
-                  </div>
-                </div>
-  
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group ">
-                        <div class="flex" style="justify-content: center;">
-                          <button type="submit" class="skew-button">submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          <div class="col-md-4">
-            <div class="donate-content__right">
-              <div class="image">
-                <img src="{% static 'img/girls.png' %}" alt="" />
+                  {% include 'partials/payment_types.html' %}
               </div>
-              <div class="raisedamount">
+            </div>
+          <div class="col-md-5">
+            <div class="donate-project-card">
+              <div class="content-donate">
+              <div class="donate-content__right">
+                <div class="image">
+                  <img src="{% static 'img/girls.png' %}" alt="" />
+                </div>
+                <div class="raisedamount">
+                  <div class="flex">
+                    <label> RAISED $2345 </label>
+                    <div class="goal">GOAL $3700</div>
+                  </div>
+                  <div class="amountlabel">
+                    <div class="amountlabel-percentage">40%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <div class="heading">
+                  bigger dreams! bigger hope. saving africa!
+                </div>
+                <p class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cupiditate mollitia maxime voluptas possimus quos eaque veniam
+                  deleniti magnam distinctio esse, optio voluptatem dolorum ab omnis
+                  animi recusandae rem tenetur ut?
+                </p>
                 <div class="flex">
-                  <label> RAISED $2345 </label>
-                  <div class="goal">GOAL $3700</div>
-                </div>
-                <div class="amountlabel">
-                  <div class="amountlabel-percentage">40%</div>
+                  share on:
+                  <div class="socialmedia">
+                    <div class="fb">
+                      <span>
+                        <i class="fab fa-facebook-f"></i>
+                      </span>
+                    </div>
+                    <div class="twitter">
+                      <span>
+                        <i class="fab fa-twitter"></i>
+                      </span>
+                    </div>
+                    <div class="linkedin">
+                        <span>
+                            <i class="fab fa-linkedin-in"></i>
+                        </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="content">
-              <div class="heading">
-                bigger dreams! bigger hope. saving africa!
-              </div>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Cupiditate mollitia maxime voluptas possimus quos eaque veniam
-                deleniti magnam distinctio esse, optio voluptatem dolorum ab omnis
-                animi recusandae rem tenetur ut?
-              </p>
-              <div class="flex">
-                share on:
-                <div class="socialmedia">
-                  <div class="fb">
-                    <span>
-                      <i class="fab fa-facebook-f"></i>
-                    </span>
-                  </div>
-                  <div class="twitter">
-                    <span>
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                  </div>
-                  <div class="linkedin">
-                      <span>
-                          <i class="fab fa-linkedin-in"></i>
-                      </span>
-                  </div>
-                </div>
-              </div>
             <div class="adimage">
               {% if context_ad %}
               <img src="{{ context_ad.image.url }}" alt="{{ ad.title }}" />

@@ -23,6 +23,7 @@ from .models import (
     WorkWithUs,
     Sponsorship,
     GetInvolvedImage,
+    Policy,
 )
 from donations.models import Causes, CausesDonation, ProjectDonation
 from django.db.models import Sum
@@ -41,6 +42,7 @@ from django.views.decorators.csrf import csrf_exempt
 def homepage(request):
     sliders = Slider.objects.all()
     popups = Popup.objects.all()
+    
     homepage_content = HomepageManagement.objects.first()
     events = Event.objects.filter(date__date__gte=datetime.datetime.now())
     if request.method == 'POST':
@@ -412,3 +414,11 @@ def update_content(request):
     else:
         cause = get_object_or_404(Causes, id=donation_id)
         return render(request, 'cause_body.html', {'cause': cause})
+
+
+def terms_policy(request, slug):
+    policy = get_object_or_404(Policy, type=slug.capitalize())
+
+    return render(request, 'terms/terms.html', {
+        'policy': policy,
+    })
