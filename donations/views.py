@@ -362,6 +362,3 @@ def save_transaction(request):
         'data': data,
         'donation': donation,
     })
-
-
-
