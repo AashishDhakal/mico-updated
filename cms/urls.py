@@ -3,7 +3,8 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-        path('', views.homepage, name = 'home'),
+        path('', views.maintenance, name = 'maintenance'),
+         path('home/', views.homepage, name = 'home'),
         path('about/', views.aboutpage, name = 'about'),
         path('causes/', views.causesview, name = 'causes'),
         path('directors/', views.directorview, name = 'directors'),

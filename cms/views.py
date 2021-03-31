@@ -38,6 +38,9 @@ import datetime
 from django.views.decorators.csrf import csrf_exempt
 
 
+def maintenance(request):
+    return render(request, 'maintenance.html', {})
+
 # Create your views here.
 def homepage(request):
     sliders = Slider.objects.all()
@@ -221,11 +224,37 @@ def workwithus(request):
         return render(request, 'workwithus.html', context)
     return render(request, 'workwithus.html', context)
 
+def proper_round(num, dec=0):
+    num = str(num)[:str(num).index('.')+dec+2]
+    if num[-1]>='5':
+        return float(num[:-2-(not dec)]+str(int(num[-2-(not dec)])+1))
+    return float(num[:-1])
 
 def staffs(request):
     teams = Team.objects.all()
+
+    count = 0
+    teams_dic = { }
+    temp = []
+    
+    for i in range(0, len(teams)):
+ 
+        if (count == 2 ):
+            count = 0;
+            #temp.append(teams[i-1])
+            teams_dic[len(teams_dic)] = temp
+            temp = []
+
+        temp.append(teams[i])
+        count +=1
+        if (i == len(teams) - 1 ):
+            teams_dic[len(teams_dic)] = temp
+            break
+
     return render(request, 'staff.html', {
         'teams': teams,
+        'teams_dic': teams_dic,
+        'row_count': int(proper_round(len(teams) / 2))
     })
 
 

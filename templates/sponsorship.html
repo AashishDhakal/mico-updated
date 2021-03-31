@@ -21,22 +21,11 @@
           <div class="row">
               <div class="col-md-4">
                 <div class="sponsorship-content__part">
-                    <p class="text">
-                    served over
-                    </p>
-                    <div class="number">
-                        760, 000
+                   <div class="home-events__partnerlogo">
+                    {% if context_ad %}
+                    <img src="{{ context_ad.image.url }}" alt="{{ context_ad.title }}" />
+                    {% endif %}
                     </div>
-                    <p class="text">
-                        children </br>
-                        in 23 </br>
-                        countries.
-                    </p>
-                    <a href="">
-                        <button class="primary-button">
-                            view our programs
-                        </button>
-                    </a>
                 </div>
               </div>
               <div class="col-md-8">

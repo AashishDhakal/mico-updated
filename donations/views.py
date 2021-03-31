@@ -287,16 +287,14 @@ def save_transaction(request):
     data = ''
     donation = None
     request.session.modified = True
-    
-    #request.session['donate_message'] = 'Some Error Message'
-    #return HttpResponseRedirect(reverse('donate'))
+    transaction = None
 
     if request.POST:
         try:
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
 
-            if   u'ReferenceNo' not in request.POST or request.POST['ResponseCode'] != 1:
+            if   u'ReferenceNo' not in request.POST or int(request.POST['ResponseCode']) != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
             order_id = request.POST['OrderID']
@@ -311,7 +309,7 @@ def save_transaction(request):
             signature = request.POST['Signature']
             data = reason_code_desc
             if [order_id, response_code, reason_code, reason_code_desc, reference_no, padded_card_no, auth_code, cvv2_result, original_response, signature]:
-                Transaction.objects.create(
+                transaction = Transaction.objects.get_or_create(
                     order_id=order_id,
                     response_code=response_code,
                     reason_code=reason_code,
@@ -321,7 +319,8 @@ def save_transaction(request):
                     auth_code=auth_code,
                     cvv2_result=cvv2_result,
                     original_response=original_response,
-                    signature=signature
+                    signature=signature,
+                    currency='USD' if settings.FAC_CURRENCY_CODE == 840 else "JMD"
                 )
                 try:
                     donation = CausesDonation.objects.get(donation_id=order_id)
@@ -359,6 +358,8 @@ def save_transaction(request):
             return HttpResponseRedirect(reverse('donate'))
 
     return render(request, 'transactionresult.html', {
+        'currency': 'USD' if settings.FAC_CURRENCY_CODE == 840 else "JMD",
         'data': data,
         'donation': donation,
     })
+

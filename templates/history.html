@@ -12,12 +12,13 @@
         <div class="row">
           <div class="content-wrapper">
             <div class="col-md-4 col-sm-12">
+              {% if chairmans %}
               <div class="title">Chairmans</div>
               <div class="history-content__timesection">
                 <span class="virtial-timeline"></span>
                 <div class="timeline-strap"></div>
                
-                {% if chairmans %}
+              
                  <ul class="timeline-list">
                   {% for history in chairmans %}
                   <li class="timeline-item">
@@ -27,48 +28,64 @@
                       </div>
                       <div class="timeline-block__detail">
                         <div class="year">{{history.name}}</div>
-                        <p class="desc">Food distribution in the jabel El halal area in Egypt.</p>
+                        <p class="desc">{{history.start_year}} - {% if history.end_year == None %} Present {% else %} {{ history.end_year }} {% endif %}</p>
                       </div>
                     </div>
                   </li>
                 {% endfor %}
                 </ul>
-                {% endif %}
+                
 
               </div>
+              {% endif %}
+               {% if secretaries %}
               <div class="title" >Secretary Managers</div>
               <div class="history-content__timesection">
                 <div class="timeline-strap"></div>
-                {% if secretaries %}
+               
+                
+                 <ul class="timeline-list">
                   {% for history in secretaries %}
-                <div class="timeline-block">
-                  <div class="timeline-block__image">
-                    <img src="{{history.image.url}}" alt="" />
-                  </div>
-                  <div class="timeline-block__detail">
-                    <div class="year" style="text-align: center;">{{history.name}}</div>
-                  </div>
-                </div>
+                  <li class="timeline-item">
+                    <div class="timeline-block">
+                      <div class="timeline-block__image">
+                        <img src="{{history.image.url}}" alt="" />
+                      </div>
+                      <div class="timeline-block__detail">
+                        <div class="year">{{history.name}}</div>
+                        <p class="desc">{{history.start_year}} - {% if history.end_year == None %} Present {% else %} {{ history.end_year }} {% endif %}</p>
+                      </div>
+                    </div>
+                  </li>
                 {% endfor %}
-                {% endif %}
+                </ul>
+               
               </div>
+               {% endif %}
+               {% if directors %}
               <div class="title" >Directors</div>
             <div class="history-content__timesection">
               <div class="timeline-strap"></div>
-              {% if directors %}
-                {% for history in directors %}
-              <div class="timeline-block">
-                <div class="timeline-block__image">
-                  <img src="{{history.image.url}}" alt="" />
-                </div>
-                <div class="timeline-block__detail">
-                  <div class="year" style="text-align: center;">{{history.name}}</div>
-                </div>
-              </div>
-              {% endfor %}
-              {% endif %}
+             
+                <ul class="timeline-list">
+                  {% for history in directors %}
+                  <li class="timeline-item">
+                    <div class="timeline-block">
+                      <div class="timeline-block__image">
+                        <img src="{{history.image.url}}" alt="" />
+                      </div>
+                      <div class="timeline-block__detail">
+                        <div class="year">{{history.name}}</div>
+                        <p class="desc">{{history.start_year}} - {% if history.end_year == None %} Present {% else %} {{ history.end_year }} {% endif %}</p>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+                </ul>
+             
             </div>
           </div>
+           {% endif %}
             </div>
             <div class="col-md-8 col-sm-12">
               <div class="history-content__words">

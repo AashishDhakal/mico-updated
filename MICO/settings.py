@@ -171,7 +171,6 @@ PAYPAL_RECEIVER_EMAIL = 'youremail@mail.com'
 
 PAYPAL_TEST = True
 
-
 EMAIL_BACKEND = 'common.backends.ConfiguredEmailBackend'
 
 JAZZMIN_SETTINGS = {
