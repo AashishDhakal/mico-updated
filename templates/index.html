@@ -4,7 +4,7 @@
  {% if sliders %}
  <div class="slider">
    {% for slider in sliders %}
-   <div class="banner">
+   <div class="banner" >
     <img src="{{ slider.image.url }}" alt="" />
     <div class="banner-content">
       <div class="title">{{ slider.title_1 }}</div>
@@ -22,6 +22,27 @@
 </div> 
 {% endif %}
 
+{% if homepage_content.chairman_photo %}
+ <div class="home-chairman">
+  <div class="container">
+    <div class="bgimg" style="background-image: url({{ homepage_content.chairman_photo.url }});">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="home-chairman__content">
+            <div class="title">chairman's message</div>
+            <p class="text">
+              {{ homepage_content.chairman_message }}
+            </p>
+            <div class="name">{{ homepage_content.chairman_name }}</div>
+            <a href="{{ homepage_content.message_link }}"> message continues </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 <div class="home-cta">
   <div class="container">
     <div class="row">
@@ -36,7 +57,7 @@
               Join The Mico Foundation and do something 
               today to make a diffrence for generations to come.
             </p>
-            <a href="">
+            <a href="{url 'getinvolved'}">
               <button class="line-button">learn more <span class="dot-group"><i></i><i></i><i></i></span></button>
             </a>
           </div>
@@ -79,30 +100,10 @@
     </div>
   </div>
 </div>
-{% if homepage_content.chairman_photo %}
- <div class="home-chairman">
-  <div class="container">
-    <div class="bgimg" style="background-image: url({{ homepage_content.chairman_photo.url }});">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="home-chairman__content">
-            <div class="title">chairman's message</div>
-            <p class="text">
-              {{ homepage_content.chairman_message }}
-            </p>
-            <div class="name">{{ homepage_content.chairman_name }}</div>
-            <a href="{{ homepage_content.message_link }}"> message continues </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
 
  <div class="home-projects">
   <div class="container">
-    <div class="title text-center">projects</div>
+    <div class="title text-center project">projects</div>
     <div class="home-projects__block">
       <div class="top-tile">
         {% if homepage_content.project_1 %}
@@ -223,11 +224,10 @@
   </div>
   <!-- home mail -->
 <div class="home-mail">
-  <div class="container">
+  <div class="container-fluid">
     <div class="home-mail__content">
       <div class="title">
-        Join the fight. Sign up for
-        our mailing <br> list.
+        Join The Mico Foundation in doing something today to make <br>a difference for generations to come.
       </div>
       <form action="{% url 'home' %}" method="POST">
         {% csrf_token %}

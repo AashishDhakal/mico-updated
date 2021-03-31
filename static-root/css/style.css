@@ -466,8 +466,8 @@ footer .footer-section__list li a::before {
 }
 
 .popup {
-  border: 1px solid #ededed;
-  background-color: #f1f1f1;
+  border: 1px solid #ffeb3b;
+  background-color: #ffeb3b;
   height: 90px;
   padding: 1rem;
   overflow: hidden;
@@ -506,8 +506,13 @@ footer .footer-section__list li a::before {
   overflow: hidden;
   position: relative;
   transition: all 0.2s ease-out;
+  color: #090015;
+  
 }
-
+.popup  .popup__button button {
+  background-color: #1c1c1c;
+  color: rgb(235, 235, 235);
+}
 .popup__image .wrap img {
   width: 100%;
   height: auto;
@@ -524,6 +529,7 @@ footer .footer-section__list li a::before {
 
 .popup__description .title {
 	margin-top: 1.2rem;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .popup__description p {
@@ -608,7 +614,7 @@ header .navbar {
 }
 
 header .navbar-top {
-  background: #ffd400;
+  background: #ffeb3b;
   padding: 1em 0;
   color: #e0e0e0;
   font-size: 0.7em;
@@ -1292,14 +1298,16 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .home-chairman__content .text, .home-chairman__content .title {
   color: rgb(214, 214, 214);
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .home-chairman__content .title, .home-chairman__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-chairman__content .title {
-  font-size: 2em;
+  font-size: 2.5em;
   text-transform: capitalize;
   font-weight: 600;
   color: #ffdd01;
   padding-bottom: 1em;
+  
 }
 
 .home-chairman__content .text {
@@ -1433,11 +1441,14 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 
-.home-mail__content .title, .home-mail__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-mail__content .title {
+ .home-mail__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-mail__content .title {
   color: rgb(36, 36, 36);
   font-size: 2.5em;
 }
-
+.home-mail__content .title {
+  font-size: 1.6rem;
+  color: rgb(36, 36, 36);
+}
 .home-mail__content form {
   display: flex;
   margin-top: 2.5em;
@@ -1445,6 +1456,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .home-mail__content form .form-group {
   margin-right: 0.4em;
+  flex: auto;
 }
 
 .home-mail__content form .form-group .form-control {
@@ -1470,6 +1482,10 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   transform: rotate(180deg);
   font-size: 20px;
   margin-left: 0.2em;
+}
+
+.home-projects .title.project {
+  font-size: 2.4rem;
 }
 
 .home-events {
@@ -1611,6 +1627,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   font-weight: 600;
   text-align: center;
   margin: 1rem auto;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .home-cta__block .content .text{
@@ -1636,6 +1653,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .home-projects .title, .home-projects .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-projects .title {
   color: #000;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .home-projects__block {
@@ -1715,7 +1733,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .home-projects__block .bot-tile .tile-content {
   flex: 0.3;
-  background: #6f6f6fbf;
+  background: #6f6f6f;
 }
 
 .home-projects__block .bot-tile .tile-content .flex {
@@ -1749,6 +1767,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   }
   .home-mail__content .title, .home-mail__content .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .home-mail__content .title {
     font-size: 1.8em;
+    font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
   }
   .home-mail__content form {
     display: block;
@@ -1794,7 +1813,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .aboutus-top__content {
   /*background: #ffdd01;*/
-  background: rgb(255, 239, 180);
+  background: rgb(248, 248, 248);
   padding: 2em 2em 6em 2em;
   position: relative;
   background-image: url("/static/img/layer01.png");
@@ -1806,6 +1825,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   color: #000;
   font-size: 3.5em;
   margin: 1em 0 0.5em 0;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif
 }
 
 .aboutus-top__content .text {
@@ -1888,7 +1908,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .director-top {
-  background: #ffd400;
+  background: #f8f4e1;
   padding: 2em 0 5em 0;
   background-image: url("/static/img/layer01.png");
   background-repeat: no-repeat;
@@ -1898,6 +1918,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 .director-top .title, .director-top .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .director-top .title {
   margin-bottom: 0.5em;
   color: #000;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .director-top .text {
@@ -1918,8 +1939,8 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .director-list__block .block-image img {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
 }
 
 .director-list__block .block-content .position {
@@ -1928,9 +1949,10 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .director-list__block .block-content .title {
   text-transform: capitalize;
-  color: #000;
+  color: #ffc60a;
   font-size: 1.8em;
   margin-bottom: 0.5em;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 @media only screen and (max-width: 740px) {
@@ -2296,7 +2318,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .staff-topsection {
-  background: rgb(255, 239, 180);
+  background: rgb(250, 241, 210);
   padding: 2em 2em 5em 2em;
   margin: 2em 0;
   background-image: url("/static/img/layer01.png");
@@ -2309,6 +2331,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   color: #000;
   font-size: 3em;
   margin: 1em 0 0.5em 0;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
   
 }
 
@@ -2318,7 +2341,13 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .staff-topsection__image {
-  height: 400px;
+  height: auto;
+  width: 22rem;
+  position: absolute;
+  z-index: 9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.096);
 }
 
 .staff-topsection__image img {
@@ -2331,14 +2360,20 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .staff-list .staff-list__card {
   display: flex;
-  margin: 2em 0;
+  margin: 1em 0;
+  background-color: rgb(248, 248, 248);
+  padding: 3rem 2rem;
 }
-
+.card-holder {
+  width: 85%;
+  margin: 1rem auto;
+  display: flex;
+}
 .staff-list .staff-list__card .card-image {
-  height: 9.5rem;
-  width: 10rem;
-  border: 2px solid #f2f2f2;;
-  border-radius: 50%;
+  height: 18rem;
+  width: 16rem;
+  border: 2px solid #e7e5e5;;
+  border-radius: 0%;
   overflow: hidden;
   margin-right: 1em;
 }
@@ -2349,6 +2384,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 
 .staff-list .staff-list__card .card-content {
   width: 75%;
+  padding-left: 2rem;
 }
 
 .staff-list .staff-list__card .card-content .name {
@@ -2362,6 +2398,10 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   font-size: 0.9em;
   margin-top: 1.4em;
   line-height: 1.4rem;
+}
+
+.staff-list .staff-list__card .card-content .post {
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2381,12 +2421,16 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
     margin-top: 1.5em;
     width: 100%;
   }
+
+  
 }
 
 @media only screen and (max-width: 425px) {
   .staff-list .staff-list__card .card-image {
     width: 45%;
   }
+
+  
 }
 
 .mission-banner {
@@ -2691,19 +2735,22 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .history-content__timesection .timeline-block__image {
-  height: 180px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
 }
 
 .history-content__timesection .timeline-block__image img {
   object-fit: contain;
 }
 
-/*
-.history-content__timesection .timeline-block__detail {
-   text-align: right; 
+
+.history-content__timesection .timeline-block__detail .desc {
+   margin-bottom: 1rem;
+   font-weight: 500;
+   font-size: 0.9rem;
+   line-height: 1rem;
 }
-*/
+
 
 .history-content__timesection .timeline-block__detail .year {
   font-weight: 600;
@@ -2718,7 +2765,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .history-content__words {
-  background-color: #ffc60a;
+  background-color: #f3f3f3;
   padding: 4em 2em;
   background-image: url("/static/img/layer01.png");
   background-repeat: no-repeat;
@@ -2970,6 +3017,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
    .history-heading {
 	 height: 10rem;
  }
+ 
 }
 
 .resource-top {
@@ -2979,6 +3027,16 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 .resource-top .title, .resource-top .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .resource-top .title {
   font-size: 2.5em;
   color: #000;
+}
+
+.aboutus .sponsorship-banner__content .bgshade{
+  background-color: #fffbc7e8;
+  color: black;
+}
+
+.aboutus  .sponsorship-banner__content .title {
+  color: black !important;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif
 }
 
 .resource-top .title-second {
@@ -3287,6 +3345,14 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   text-align: center;
 }
 
+
+.workwithus-banner__content *, .workwithus-banner__content .title{
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.479);
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+
 .workwithus-banner__donate {
   position: relative;
   padding: 1em;
@@ -3298,7 +3364,7 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
 }
 
 .workwithus-banner__donate .primary-button {
-	background-color: #415568 !important;
+	background-color: #ffc60a !important;
 }
 
 .workwithus-banner__donate .hearticon {
@@ -3319,6 +3385,8 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   justify-content: center;
 }
 
+
+
 .workwithus-banner__donate .donatebtn a .primary-button, .workwithus-banner__donate .donatebtn a .skew-button, .workwithus-banner__donate .donatebtn .home-projects__block .tile .flex a .blank-btn, .home-projects__block .tile .flex .workwithus-banner__donate .donatebtn a .blank-btn, .workwithus-banner__donate .donatebtn a .home-projects__block .tile .flex .donation-button, .home-projects__block .tile .flex .workwithus-banner__donate .donatebtn a .donation-button {
   background: blue;
 }
@@ -3327,11 +3395,26 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
   margin: 3em 0;
 }
 
+.workwithus-block__words .title {
+  font-size: 1.3rem;
+  font-family: "Fira Sans Condensed",Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
 .workwithus-block__words {
   background: #292947;
-  height: 400px;
   padding: 2em;
+  padding-bottom: 3.6rem;
   color: #fff;
+}
+
+.workwithus-block__words .work-list{
+  list-style: disc;
+}
+
+.workwithus-block__words .work-list li{
+  list-style: disc;
+  margin: 0.8rem 0rem;
+  color: #f1f1f1c9;
 }
 
 .workwithus-block__words .title, .workwithus-block__words .aboutus-news .about-card__title .title, .aboutus-news .about-card__title .workwithus-block__words .title {
@@ -4132,6 +4215,11 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
     flex: unset;
     border: unset;
   }
+
+  .staff-topsection__image {
+    height: auto;
+    width: 60%;
+  }
 }
 
 .donate-getinvolved {
@@ -4215,6 +4303,29 @@ header .navbar-list .dropdown:hover .dropdown-content .dropdown-newsroom .newsro
     height: unset;
     margin-bottom: 1em;
   }
+
+  .staff-topsection__image {
+    height: auto;
+    width: 10rem;
+    position: static !important;
+    z-index: 9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.096);
+  }
+  
+}
+
+@media only screen and (max-width: 990px) {
+  
+  .staff-topsection__image {
+    height: auto;
+    width: 40%;
+    position: static !important;
+    z-index: 9;
+    margin: 0rem auto;
+  }
+  
 }
 
 

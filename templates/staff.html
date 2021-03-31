@@ -2,12 +2,12 @@
 {% block title %}Our Staffs - {% endblock %}
 {% block content %}
 <div class="staff">
-  <div class="container">
+  <div class="container-fluid">
     <div class="staff-topsection">
       <div class="row">
         <div class="col-md-6">
           <div class="staff-topsection__content">
-            <div class="title">our team</div>
+            <div class="title">management team</div>
             <p class="text">
               A workforce of seven-team members led by the Secretary Manager
               manages the daily affairs of The Mico Foundation. The staff is
@@ -27,34 +27,44 @@
         </div>
         <div class="col-md-6">
           <div class="staff-topsection__image">
-            <img src="/img/slide2.jpg" alt="" />
+            <img src="/media/teams/team-main.jpg" alt="" />
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="staff-list">
-    <div class="container">
-      <div class="row">
-        {% if teams %}
-        {% for team in teams %}
-        <div class="col-md-6">
-          <div class="staff-list__card">
-            <div class="card-image">
-              <img src="{{team.photo.url}}" alt="" />
-            </div>
-            <div class="card-content">
-              <div class="name">{{ team.name }}</div>
-              <p class="post">{{ team.designation }}</p>
-              <p class="text">
-              {{team.bio|safe}}
-              </p>
-            </div>
+    <div class="container-fluid">
+      {% if teams_dic %}
+         {% for team in teams %}
+          <div class="row">
+           
+            
+              <div class="col-md-12">
+                
+                  {% if team %}
+                 
+                    <div class="staff-list__card">
+                     <div class="card-holder">
+                      <div class="card-image">
+                        <img src="{{team.photo.url}}" alt="" />
+                      </div>
+                      <div class="card-content">
+                        <div class="name">{{ team.name }}</div>
+                        <p class="post">{{ team.designation }}</p>
+                        <p class="text">
+                        {{team.bio|safe}}
+                        </p>
+                      </div>
+                    </div>
+                    </div>
+                 {% endif %}
+                 
+              </div>
+            
           </div>
-        </div>
-        {% endfor %}
-        {% endif %}
-      </div>
+         {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>

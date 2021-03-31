@@ -1,5 +1,5 @@
 
-    var donateAmount = () => {
+var donateAmount = () => {
         var donateOther = document.getElementById("donateAmountOther");
         if (donateOther != null ) {
             if (document.getElementById("donateAmountOther").checked) {
@@ -9,6 +9,9 @@
             }
         }
   };
+
+  var videoModal = null;
+
   window.addEventListener("click", donateAmount);
   
   var donatePayment = () => {
@@ -38,7 +41,7 @@
   window.onload = function () {
     document.getElementById("donateAmt").innerHTML = "$ 150";
   };
-  
+
   var donateAmountFunction = () => {
     let fiftyAmt = document.getElementById("donateAmount1");
     let hundredAmt = document.getElementById("donateAmount2");
@@ -75,24 +78,69 @@
     }
   };
   
-  window.addEventListener("click", readmore);
-  $('.toast').fadeIn(400).delay(3000).fadeOut(400);
-  
-  $(document).ready(function() {
-    if(sessionStorage.getItem('popState') != 'shown'){
-      $("#myModal").modal("show");
-      $('.popup').toggleClass('is--hidden');
-      sessionStorage.setItem('popState','shown');
-    }
-    $('.close').click(function() // You are clicking the close button
-    {
-      $('.popup').toggleClass('is--hidden');
+
+  var popupsModal = function() {
+
+    var popState = false;
+
+    window.addEventListener("click", readmore);
+    $('.toast').fadeIn(400).delay(3000).fadeOut(400);
+    
+    $(document).ready(function() {
+        if(sessionStorage.getItem('popState') != 'shown'){
+        $("#myModal").modal("show");
+            popState = true;
+        $('.popup').toggleClass('is--hidden');
+        sessionStorage.setItem('popState','shown');
+        }
+
+        $('.close').click(function() {
+            videoModal.show();
+            $('.popup').toggleClass('is--hidden');
+        });
     });
-  });
-  
-  $('.cancel').click(function() {
-    $('.popup').toggleClass('is--hidden');
-  });
+    
+    $('.popup .cancel').click(function() {
+        $('.popup').toggleClass('is--hidden');
+    });
+
+    return {
+        visible: popState
+    }
+}();
+
+
+videoModal = function () {
+    let modal = $('.video-modal'),
+        video = modal.find('video'),
+        holder = $('.video-box.inview'),
+        closeBtn = modal.find('.video-cancel .cancel'),
+        visible = false;
+    function close(evt) {
+        video.detach().appendTo(holder);
+        modal.addClass("hidden");
+        modal.removeClass("show");
+
+        visible = false;
+    }
+
+    function show() {
+        if ( !visible ) { 
+            modal.addClass('show');
+            visible  = true;
+        }
+    }
+
+    closeBtn.click(close);
+
+    if(sessionStorage.getItem('popState') == 'shown') {
+        (!popupsModal.visible && show());
+    }
+
+    return {
+        show: show
+    }
+}();
   
   
   function cc_format(ccid,ctid) {
@@ -302,8 +350,6 @@
               nodeIndex++;
           }
   
-  
-  
           if(index >= 0) {
               // open PhotoSwipe if valid index found
               openPhotoSwipe( index, clickedGallery );
@@ -412,8 +458,8 @@
       }
   };
   
-  // execute above function
-  initPhotoSwipeFromDOM('.my-gallery');
+// execute above function
+initPhotoSwipeFromDOM('.my-gallery');
   
 $(document).ready(function() {
     let donate_name= $('input[name=donateName]:checked', '#donateForm').val();

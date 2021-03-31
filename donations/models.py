@@ -76,6 +76,7 @@ class Transaction(MicoModel):
     response_code = models.CharField(max_length=10)
     reason_code = models.CharField(max_length=10)
     reason_code_desc = models.CharField(max_length=500)
+    currency = models.CharField(max_length=6, blank=True, null=True)
     reference_no = models.CharField(max_length=100)
     padded_card_no = models.CharField(max_length=100)
     auth_code = models.CharField(max_length=100)

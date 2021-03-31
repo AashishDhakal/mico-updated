@@ -7,7 +7,7 @@
 		"uuidString": "D1878903-4E89-4AC1-9D55-C6C98F0FB252"
 		}
 	],
-"creatorBuild": "31934",
+"creatorBuild": "32137",
 "files": {
 	"/.gitignore": {
 		"cB": 0,
@@ -15,6 +15,12 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/.gitignore",
+		"oF": 0
+		},
+	"/.idea": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/.idea",
 		"oF": 0
 		},
 	"/cms/__init__.py": {
@@ -49,6 +55,14 @@
 		"oAP": "/cms/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/cms/__pycache__/__init__.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/__pycache__/admin.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -71,6 +85,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/__pycache__/admin.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/__pycache__/admin.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/admin.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/__pycache__/context_processors.cpython-36.pyc": {
@@ -97,6 +119,14 @@
 		"oAP": "/cms/__pycache__/context_processors.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/__pycache__/context_processors.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/context_processors.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/__pycache__/forms.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -119,6 +149,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/__pycache__/forms.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/__pycache__/forms.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/forms.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/__pycache__/models.cpython-36.pyc": {
@@ -145,6 +183,14 @@
 		"oAP": "/cms/__pycache__/models.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/__pycache__/models.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/models.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/__pycache__/urls.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -169,6 +215,14 @@
 		"oAP": "/cms/__pycache__/urls.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/__pycache__/urls.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/urls.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/__pycache__/views.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -191,6 +245,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/__pycache__/views.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/__pycache__/views.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/__pycache__/views.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/admin.py": {
@@ -553,6 +615,14 @@
 		"oAP": "/cms/migrations/0041_policy.py",
 		"oF": 0
 		},
+	"/cms/migrations/0042_auto_20201109_1613.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/0042_auto_20201109_1613.py",
+		"oF": 0
+		},
 	"/cms/migrations/__init__.py": {
 		"cB": 0,
 		"ft": 8192,
@@ -585,6 +655,14 @@
 		"oAP": "/cms/migrations/__pycache__/0001_initial.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0001_initial.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0001_initial.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0002_auto_20200829_1055.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -607,6 +685,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0002_auto_20200829_1055.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0002_auto_20200829_1055.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0002_auto_20200829_1055.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0003_auto_20200829_1101.cpython-36.pyc": {
@@ -633,6 +719,14 @@
 		"oAP": "/cms/migrations/__pycache__/0003_auto_20200829_1101.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0003_auto_20200829_1101.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0003_auto_20200829_1101.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0004_contact_subject.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -655,6 +749,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0004_contact_subject.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0004_contact_subject.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0004_contact_subject.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0005_project.cpython-36.pyc": {
@@ -681,6 +783,14 @@
 		"oAP": "/cms/migrations/__pycache__/0005_project.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0005_project.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0005_project.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0006_missionvalue.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -703,6 +813,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0006_missionvalue.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0006_missionvalue.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0006_missionvalue.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0007_resource_access_level.cpython-36.pyc": {
@@ -729,6 +847,14 @@
 		"oAP": "/cms/migrations/__pycache__/0007_resource_access_level.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0007_resource_access_level.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0007_resource_access_level.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0008_event_organized_by.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -751,6 +877,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0008_event_organized_by.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0008_event_organized_by.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0008_event_organized_by.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0009_auto_20200920_0206.cpython-36.pyc": {
@@ -777,6 +911,14 @@
 		"oAP": "/cms/migrations/__pycache__/0009_auto_20200920_0206.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0009_auto_20200920_0206.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0009_auto_20200920_0206.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0010_auto_20200921_0650.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -799,6 +941,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0010_auto_20200921_0650.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0010_auto_20200921_0650.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0010_auto_20200921_0650.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0011_faq.cpython-36.pyc": {
@@ -825,6 +975,14 @@
 		"oAP": "/cms/migrations/__pycache__/0011_faq.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0011_faq.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0011_faq.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0012_auto_20200924_0414.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -847,6 +1005,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0012_auto_20200924_0414.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0012_auto_20200924_0414.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0012_auto_20200924_0414.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0013_advertisement_popup.cpython-36.pyc": {
@@ -873,6 +1039,14 @@
 		"oAP": "/cms/migrations/__pycache__/0013_advertisement_popup.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0013_advertisement_popup.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0013_advertisement_popup.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0014_remove_advertisement_link.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -895,6 +1069,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0014_remove_advertisement_link.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0014_remove_advertisement_link.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0014_remove_advertisement_link.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0015_gallery.cpython-36.pyc": {
@@ -921,6 +1103,14 @@
 		"oAP": "/cms/migrations/__pycache__/0015_gallery.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0015_gallery.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0015_gallery.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0016_auto_20201006_1043.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -943,6 +1133,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0016_auto_20201006_1043.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0016_auto_20201006_1043.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0016_auto_20201006_1043.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0017_auto_20201006_1130.cpython-36.pyc": {
@@ -969,6 +1167,14 @@
 		"oAP": "/cms/migrations/__pycache__/0017_auto_20201006_1130.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0017_auto_20201006_1130.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0017_auto_20201006_1130.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0018_remove_project_is_full.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -991,6 +1197,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0018_remove_project_is_full.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0018_remove_project_is_full.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0018_remove_project_is_full.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0019_auto_20201006_1308.cpython-36.pyc": {
@@ -1017,6 +1231,14 @@
 		"oAP": "/cms/migrations/__pycache__/0019_auto_20201006_1308.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0019_auto_20201006_1308.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0019_auto_20201006_1308.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0020_auto_20201007_0250.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1039,6 +1261,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0020_auto_20201007_0250.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0020_auto_20201007_0250.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0020_auto_20201007_0250.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0021_endowment.cpython-36.pyc": {
@@ -1065,6 +1295,14 @@
 		"oAP": "/cms/migrations/__pycache__/0021_endowment.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0021_endowment.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0021_endowment.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0022_contentmanagement_sponsorship_workwithus.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1087,6 +1325,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0022_contentmanagement_sponsorship_workwithus.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0022_contentmanagement_sponsorship_workwithus.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0022_contentmanagement_sponsorship_workwithus.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0023_contentmanagement_endowment_text.cpython-36.pyc": {
@@ -1113,6 +1359,14 @@
 		"oAP": "/cms/migrations/__pycache__/0023_contentmanagement_endowment_text.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0023_contentmanagement_endowment_text.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0023_contentmanagement_endowment_text.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0024_project_icon.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1135,6 +1389,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0024_project_icon.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0024_project_icon.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0024_project_icon.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0025_auto_20201008_1823.cpython-36.pyc": {
@@ -1161,6 +1423,14 @@
 		"oAP": "/cms/migrations/__pycache__/0025_auto_20201008_1823.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0025_auto_20201008_1823.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0025_auto_20201008_1823.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0026_contentmanagement_featured_project.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1183,6 +1453,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0026_contentmanagement_featured_project.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0026_contentmanagement_featured_project.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0026_contentmanagement_featured_project.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0027_auto_20201013_1752.cpython-36.pyc": {
@@ -1209,6 +1487,14 @@
 		"oAP": "/cms/migrations/__pycache__/0027_auto_20201013_1752.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0027_auto_20201013_1752.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0027_auto_20201013_1752.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0028_contentmanagement_about_description.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1231,6 +1517,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0028_contentmanagement_about_description.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0028_contentmanagement_about_description.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0028_contentmanagement_about_description.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0029_auto_20201014_1054.cpython-36.pyc": {
@@ -1257,6 +1551,14 @@
 		"oAP": "/cms/migrations/__pycache__/0029_auto_20201014_1054.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0029_auto_20201014_1054.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0029_auto_20201014_1054.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0030_popup_short_desc_for_top.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1279,6 +1581,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0030_popup_short_desc_for_top.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0030_popup_short_desc_for_top.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0030_popup_short_desc_for_top.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0031_contentmanagement_donate_page_banner.cpython-36.pyc": {
@@ -1305,6 +1615,14 @@
 		"oAP": "/cms/migrations/__pycache__/0031_contentmanagement_donate_page_banner.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0031_contentmanagement_donate_page_banner.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0031_contentmanagement_donate_page_banner.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0032_remove_contentmanagement_donate_page_banner.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1327,6 +1645,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0032_remove_contentmanagement_donate_page_banner.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0032_remove_contentmanagement_donate_page_banner.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0032_remove_contentmanagement_donate_page_banner.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0033_contentmanagement_donate_page_banner.cpython-36.pyc": {
@@ -1353,6 +1679,14 @@
 		"oAP": "/cms/migrations/__pycache__/0033_contentmanagement_donate_page_banner.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0033_contentmanagement_donate_page_banner.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0033_contentmanagement_donate_page_banner.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0034_auto_20201020_0200.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1375,6 +1709,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0034_auto_20201020_0200.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0034_auto_20201020_0200.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0034_auto_20201020_0200.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0035_auto_20201020_0212.cpython-36.pyc": {
@@ -1401,6 +1743,14 @@
 		"oAP": "/cms/migrations/__pycache__/0035_auto_20201020_0212.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0035_auto_20201020_0212.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0035_auto_20201020_0212.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0036_auto_20201020_0222.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1423,6 +1773,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0036_auto_20201020_0222.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0036_auto_20201020_0222.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0036_auto_20201020_0222.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0037_newspost_category.cpython-36.pyc": {
@@ -1449,6 +1807,14 @@
 		"oAP": "/cms/migrations/__pycache__/0037_newspost_category.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0037_newspost_category.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0037_newspost_category.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0038_auto_20201020_1758.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1471,6 +1837,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0038_auto_20201020_1758.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0038_auto_20201020_1758.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0038_auto_20201020_1758.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/0039_getinvolvedimage.cpython-36.pyc": {
@@ -1497,6 +1871,14 @@
 		"oAP": "/cms/migrations/__pycache__/0039_getinvolvedimage.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0039_getinvolvedimage.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0039_getinvolvedimage.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0040_auto_20201023_0749.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1521,6 +1903,14 @@
 		"oAP": "/cms/migrations/__pycache__/0040_auto_20201023_0749.cpython-38.pyc",
 		"oF": 0
 		},
+	"/cms/migrations/__pycache__/0040_auto_20201023_0749.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0040_auto_20201023_0749.cpython-39.pyc",
+		"oF": 0
+		},
 	"/cms/migrations/__pycache__/0041_policy.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1535,6 +1925,30 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/cms/migrations/__pycache__/0041_policy.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0041_policy.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0041_policy.cpython-39.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0042_auto_20201109_1613.cpython-38.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0042_auto_20201109_1613.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/0042_auto_20201109_1613.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/cms/migrations/__pycache__/0042_auto_20201109_1613.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/migrations/__pycache__/__init__.cpython-36.pyc": {
@@ -1559,6 +1973,14 @@
 		"hM": 0,
 		"oA": 1,
 		"oAP": "/cms/migrations/__pycache__/__init__.cpython-38.pyc",
+		"oF": 0
+		},
+	"/cms/migrations/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/cms/migrations/__pycache__/__init__.cpython-39.pyc",
 		"oF": 0
 		},
 	"/cms/models.py": {
@@ -1625,6 +2047,14 @@
 		"oAP": "/common/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/common/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/common/__pycache__/__init__.cpython-39.pyc",
+		"oF": 0
+		},
 	"/common/__pycache__/admin.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1647,6 +2077,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/common/__pycache__/admin.cpython-38.pyc",
+		"oF": 0
+		},
+	"/common/__pycache__/admin.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/__pycache__/admin.cpython-39.pyc",
 		"oF": 0
 		},
 	"/common/__pycache__/models.cpython-36.pyc": {
@@ -1673,6 +2111,14 @@
 		"oAP": "/common/__pycache__/models.cpython-38.pyc",
 		"oF": 0
 		},
+	"/common/__pycache__/models.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/__pycache__/models.cpython-39.pyc",
+		"oF": 0
+		},
 	"/common/__pycache__/views.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1695,6 +2141,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/common/__pycache__/views.cpython-38.pyc",
+		"oF": 0
+		},
+	"/common/__pycache__/views.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/__pycache__/views.cpython-39.pyc",
 		"oF": 0
 		},
 	"/common/admin.py": {
@@ -1785,6 +2239,14 @@
 		"oAP": "/common/migrations/__pycache__/0001_initial.cpython-38.pyc",
 		"oF": 0
 		},
+	"/common/migrations/__pycache__/0001_initial.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/migrations/__pycache__/0001_initial.cpython-39.pyc",
+		"oF": 0
+		},
 	"/common/migrations/__pycache__/0002_newsletter_subscriber.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1807,6 +2269,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/common/migrations/__pycache__/0002_newsletter_subscriber.cpython-38.pyc",
+		"oF": 0
+		},
+	"/common/migrations/__pycache__/0002_newsletter_subscriber.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/migrations/__pycache__/0002_newsletter_subscriber.cpython-39.pyc",
 		"oF": 0
 		},
 	"/common/migrations/__pycache__/0003_emailsetting.cpython-36.pyc": {
@@ -1833,6 +2303,14 @@
 		"oAP": "/common/migrations/__pycache__/0003_emailsetting.cpython-38.pyc",
 		"oF": 0
 		},
+	"/common/migrations/__pycache__/0003_emailsetting.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/migrations/__pycache__/0003_emailsetting.cpython-39.pyc",
+		"oF": 0
+		},
 	"/common/migrations/__pycache__/0004_auto_20201014_1119.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1857,6 +2335,14 @@
 		"oAP": "/common/migrations/__pycache__/0004_auto_20201014_1119.cpython-38.pyc",
 		"oF": 0
 		},
+	"/common/migrations/__pycache__/0004_auto_20201014_1119.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/common/migrations/__pycache__/0004_auto_20201014_1119.cpython-39.pyc",
+		"oF": 0
+		},
 	"/common/migrations/__pycache__/__init__.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1879,6 +2365,14 @@
 		"hM": 0,
 		"oA": 1,
 		"oAP": "/common/migrations/__pycache__/__init__.cpython-38.pyc",
+		"oF": 0
+		},
+	"/common/migrations/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/common/migrations/__pycache__/__init__.cpython-39.pyc",
 		"oF": 0
 		},
 	"/common/models.py": {
@@ -1945,6 +2439,14 @@
 		"oAP": "/donations/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/donations/__pycache__/__init__.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/admin.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -1967,6 +2469,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/__pycache__/admin.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/admin.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/admin.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/__pycache__/apps.cpython-36.pyc": {
@@ -1993,6 +2503,14 @@
 		"oAP": "/donations/__pycache__/apps.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/apps.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/apps.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/context_processors.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2009,6 +2527,14 @@
 		"oAP": "/donations/__pycache__/context_processors.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/context_processors.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/context_processors.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/exceptions.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2023,6 +2549,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/__pycache__/exceptions.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/exceptions.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/exceptions.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/__pycache__/fac.cpython-36.pyc": {
@@ -2049,6 +2583,14 @@
 		"oAP": "/donations/__pycache__/fac.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/fac.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/fac.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/forms.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2071,6 +2613,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/__pycache__/forms.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/forms.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/forms.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/__pycache__/models.cpython-36.pyc": {
@@ -2097,6 +2647,14 @@
 		"oAP": "/donations/__pycache__/models.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/models.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/models.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/signals.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2119,6 +2677,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/__pycache__/signals.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/signals.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/signals.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/__pycache__/urls.cpython-36.pyc": {
@@ -2145,6 +2711,14 @@
 		"oAP": "/donations/__pycache__/urls.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/__pycache__/urls.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/urls.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/__pycache__/views.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2167,6 +2741,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/__pycache__/views.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/__pycache__/views.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/__pycache__/views.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/admin.py": {
@@ -2337,6 +2919,14 @@
 		"oAP": "/donations/migrations/0015_auto_20201021_1450.py",
 		"oF": 0
 		},
+	"/donations/migrations/0016_transaction_currency.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/0016_transaction_currency.py",
+		"oF": 0
+		},
 	"/donations/migrations/__init__.py": {
 		"cB": 0,
 		"ft": 8192,
@@ -2369,6 +2959,14 @@
 		"oAP": "/donations/migrations/__pycache__/0001_initial.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0001_initial.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0001_initial.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0002_causes_slug.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2391,6 +2989,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0002_causes_slug.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0002_causes_slug.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0002_causes_slug.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0003_causesdonation_projectdonation.cpython-36.pyc": {
@@ -2417,6 +3023,14 @@
 		"oAP": "/donations/migrations/__pycache__/0003_causesdonation_projectdonation.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0003_causesdonation_projectdonation.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0003_causesdonation_projectdonation.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0004_auto_20200929_0611.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2439,6 +3053,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0004_auto_20200929_0611.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0004_auto_20200929_0611.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0004_auto_20200929_0611.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0005_auto_20200929_0614.cpython-36.pyc": {
@@ -2465,6 +3087,14 @@
 		"oAP": "/donations/migrations/__pycache__/0005_auto_20200929_0614.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0005_auto_20200929_0614.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0005_auto_20200929_0614.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0006_auto_20200929_0615.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2487,6 +3117,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0006_auto_20200929_0615.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0006_auto_20200929_0615.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0006_auto_20200929_0615.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0007_transaction.cpython-36.pyc": {
@@ -2513,6 +3151,14 @@
 		"oAP": "/donations/migrations/__pycache__/0007_transaction.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0007_transaction.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0007_transaction.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0008_auto_20201007_1751.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2535,6 +3181,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0008_auto_20201007_1751.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0008_auto_20201007_1751.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0008_auto_20201007_1751.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0009_auto_20201008_0455.cpython-36.pyc": {
@@ -2561,6 +3215,14 @@
 		"oAP": "/donations/migrations/__pycache__/0009_auto_20201008_0455.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0009_auto_20201008_0455.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0009_auto_20201008_0455.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0010_auto_20201008_0457.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2583,6 +3245,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0010_auto_20201008_0457.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0010_auto_20201008_0457.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0010_auto_20201008_0457.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0011_auto_20201008_0457.cpython-36.pyc": {
@@ -2609,6 +3279,14 @@
 		"oAP": "/donations/migrations/__pycache__/0011_auto_20201008_0457.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0011_auto_20201008_0457.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0011_auto_20201008_0457.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0012_causes_icon.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2631,6 +3309,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0012_causes_icon.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0012_causes_icon.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0012_causes_icon.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0013_auto_20201008_1823.cpython-36.pyc": {
@@ -2657,6 +3343,14 @@
 		"oAP": "/donations/migrations/__pycache__/0013_auto_20201008_1823.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0013_auto_20201008_1823.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0013_auto_20201008_1823.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/0014_auto_20201021_1337.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2679,6 +3373,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/donations/migrations/__pycache__/0014_auto_20201021_1337.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0014_auto_20201021_1337.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0014_auto_20201021_1337.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/migrations/__pycache__/0015_auto_20201021_1450.cpython-36.pyc": {
@@ -2705,6 +3407,30 @@
 		"oAP": "/donations/migrations/__pycache__/0015_auto_20201021_1450.cpython-38.pyc",
 		"oF": 0
 		},
+	"/donations/migrations/__pycache__/0015_auto_20201021_1450.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0015_auto_20201021_1450.cpython-39.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0016_transaction_currency.cpython-38.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0016_transaction_currency.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/0016_transaction_currency.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/donations/migrations/__pycache__/0016_transaction_currency.cpython-39.pyc",
+		"oF": 0
+		},
 	"/donations/migrations/__pycache__/__init__.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -2727,6 +3453,14 @@
 		"hM": 0,
 		"oA": 1,
 		"oAP": "/donations/migrations/__pycache__/__init__.cpython-38.pyc",
+		"oF": 0
+		},
+	"/donations/migrations/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/donations/migrations/__pycache__/__init__.cpython-39.pyc",
 		"oF": 0
 		},
 	"/donations/models.py": {
@@ -4047,6 +4781,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/media/teams/causes1.png": {
+		"ft": 32768,
+		"iS": 111027,
+		"oA": 0,
+		"oAP": "/media/teams/causes1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/media/teams/echeck.png": {
 		"ft": 32768,
 		"iS": 3970,
@@ -4168,6 +4913,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/media/teams/team-main.jpg": {
+		"ft": 16384,
+		"iS": 186645,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/media/teams/team-main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/media/teams/test1.png": {
 		"ft": 32768,
 		"iS": 62794,
@@ -4200,6 +4956,25 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/media/trustee/main.jpg": {
+		"ft": 16384,
+		"iS": 70921,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/media/trustee/main.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/media/videos/mico_psa_final.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/media/videos/mico_psa_final.mp4",
+		"oF": 0
 		},
 	"/media/workwithusbanner/sponsorshippic.jpg": {
 		"ft": 16384,
@@ -4255,6 +5030,14 @@
 		"oAP": "/MICO/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/MICO/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/MICO/__pycache__/__init__.cpython-39.pyc",
+		"oF": 0
+		},
 	"/MICO/__pycache__/middleware.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -4269,6 +5052,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/MICO/__pycache__/middleware.cpython-38.pyc",
+		"oF": 0
+		},
+	"/MICO/__pycache__/middleware.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/MICO/__pycache__/middleware.cpython-39.pyc",
 		"oF": 0
 		},
 	"/MICO/__pycache__/settings.cpython-36.pyc": {
@@ -4295,6 +5086,14 @@
 		"oAP": "/MICO/__pycache__/settings.cpython-38.pyc",
 		"oF": 0
 		},
+	"/MICO/__pycache__/settings.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/MICO/__pycache__/settings.cpython-39.pyc",
+		"oF": 0
+		},
 	"/MICO/__pycache__/urls.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -4319,6 +5118,14 @@
 		"oAP": "/MICO/__pycache__/urls.cpython-38.pyc",
 		"oF": 0
 		},
+	"/MICO/__pycache__/urls.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/MICO/__pycache__/urls.cpython-39.pyc",
+		"oF": 0
+		},
 	"/MICO/__pycache__/utils.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -4333,6 +5140,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/MICO/__pycache__/utils.cpython-38.pyc",
+		"oF": 0
+		},
+	"/MICO/__pycache__/utils.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/MICO/__pycache__/utils.cpython-39.pyc",
 		"oF": 0
 		},
 	"/MICO/__pycache__/wsgi.cpython-36.pyc": {
@@ -4357,6 +5172,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/MICO/__pycache__/wsgi.cpython-38.pyc",
+		"oF": 0
+		},
+	"/MICO/__pycache__/wsgi.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/MICO/__pycache__/wsgi.cpython-39.pyc",
 		"oF": 0
 		},
 	"/MICO/asgi.py": {
@@ -6432,6 +7255,150 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Black.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Black.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Black.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Black.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Bold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Bold.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Bold.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Bold.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-ExtraBold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-ExtraBold.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-ExtraBold.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-ExtraBold.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-ExtraLight.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-ExtraLight.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-ExtraLight.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-ExtraLight.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Light.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Light.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Light.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Light.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Medium.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Medium.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Medium.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Medium.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Regular.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Regular.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-SemiBold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-SemiBold.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-SemiBold.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-SemiBold.woff2",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Thin.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Thin.woff",
+		"oF": 0
+		},
+	"/static-root/fonts/fira_sans/FiraSansCondensed-Thin.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/static-root/fonts/fira_sans/FiraSansCondensed-Thin.woff2",
+		"oF": 0
+		},
 	"/static-root/fonts/fontawesome-webfont.eot": {
 		"cB": 0,
 		"ft": 8192,
@@ -6682,124 +7649,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/static-root/fonts/replica/Replica-Regular.woff",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdlight-webfont.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdlight-webfont.eot",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdlight-webfont.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/static-root/fonts/replica2/replicastdlight-webfont.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 52780316221407,
-		"prP": 0
-		},
-	"/static-root/fonts/replica2/replicastdlight-webfont.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdlight-webfont.ttf",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdlight-webfont.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdlight-webfont.woff",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdlight-webfont.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdlight-webfont.woff2",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdregular-webfont.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdregular-webfont.eot",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdregular-webfont.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/static-root/fonts/replica2/replicastdregular-webfont.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 52780316221407,
-		"prP": 0
-		},
-	"/static-root/fonts/replica2/replicastdregular-webfont.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdregular-webfont.ttf",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdregular-webfont.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdregular-webfont.woff",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/replicastdregular-webfont.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/replicastdregular-webfont.woff2",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/ReplicaStdRegular.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/ReplicaStdRegular.eot",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/ReplicaStdRegular.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/static-root/fonts/replica2/ReplicaStdRegular.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 52780316221407,
-		"prP": 0
-		},
-	"/static-root/fonts/replica2/ReplicaStdRegular.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/ReplicaStdRegular.ttf",
-		"oF": 0
-		},
-	"/static-root/fonts/replica2/ReplicaStdRegular.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/static-root/fonts/replica2/ReplicaStdRegular.woff",
 		"oF": 0
 		},
 	"/static-root/fonts/ss-social/ss-social-regular.eot": {
@@ -8003,15 +8852,26 @@
 		"opt": 0,
 		"q": 100
 		},
-	"/static-root/img/sponsorshippic.jpg": {
+	"/static-root/img/sponsorshippic-bk.jpg": {
 		"ft": 16384,
 		"iS": 512109,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/static-root/img/sponsorshippic-bk.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/static-root/img/sponsorshippic.jpg": {
+		"ft": 16384,
+		"iS": 1544702,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/static-root/img/sponsorshippic.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/static-root/img/staff1.png": {
@@ -8328,14 +9188,14 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/static-root/scss/_fonts.css",
 		"oF": 0,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/static-root/scss/about-menu-icon.svg": {
 		"ft": 2097152,
@@ -8351,27 +9211,27 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/static-root/css/admin-global.css",
 		"oF": 2,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/static-root/scss/global.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/static-root/css/global.css",
-		"oF": 2,
+		"oF": 3,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/static-root/scss/newsroom-bg.svg": {
 		"ft": 2097152,
@@ -13717,6 +14577,22 @@
 		"oAP": "/templates/aboutus.html",
 		"oF": 0
 		},
+	"/templates/admin/ cm/406.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/admin/ cm/406.html",
+		"oF": 0
+		},
+	"/templates/admin/ cm/406.shtml": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/admin/ cm/406.shtml",
+		"oF": 0
+		},
 	"/templates/admin/login.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -13851,6 +14727,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/login.html",
+		"oF": 0
+		},
+	"/templates/maintenance.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/maintenance.html",
 		"oF": 0
 		},
 	"/templates/message.html": {
@@ -14181,6 +15065,14 @@
 		"oAP": "/users/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/users/__pycache__/__init__.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/__pycache__/admin.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14203,6 +15095,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/__pycache__/admin.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/__pycache__/admin.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/admin.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/__pycache__/forms.cpython-36.pyc": {
@@ -14229,6 +15129,14 @@
 		"oAP": "/users/__pycache__/forms.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/__pycache__/forms.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/forms.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/__pycache__/models.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14251,6 +15159,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/__pycache__/models.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/__pycache__/models.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/models.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/__pycache__/tokens.cpython-36.pyc": {
@@ -14277,6 +15193,14 @@
 		"oAP": "/users/__pycache__/tokens.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/__pycache__/tokens.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/tokens.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/__pycache__/urls.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14301,6 +15225,14 @@
 		"oAP": "/users/__pycache__/urls.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/__pycache__/urls.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/urls.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/__pycache__/views.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14323,6 +15255,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/__pycache__/views.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/__pycache__/views.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/__pycache__/views.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/admin.py": {
@@ -14429,6 +15369,14 @@
 		"oAP": "/users/migrations/__pycache__/0001_initial.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/migrations/__pycache__/0001_initial.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0001_initial.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/migrations/__pycache__/0002_user_is_director.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14451,6 +15399,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/migrations/__pycache__/0002_user_is_director.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/migrations/__pycache__/0002_user_is_director.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0002_user_is_director.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/migrations/__pycache__/0003_activitylog.cpython-36.pyc": {
@@ -14477,6 +15433,14 @@
 		"oAP": "/users/migrations/__pycache__/0003_activitylog.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/migrations/__pycache__/0003_activitylog.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0003_activitylog.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/migrations/__pycache__/0004_auto_20200924_0812.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14499,6 +15463,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/migrations/__pycache__/0004_auto_20200924_0812.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/migrations/__pycache__/0004_auto_20200924_0812.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0004_auto_20200924_0812.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/migrations/__pycache__/0005_delete_activitylog.cpython-36.pyc": {
@@ -14525,6 +15497,14 @@
 		"oAP": "/users/migrations/__pycache__/0005_delete_activitylog.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/migrations/__pycache__/0005_delete_activitylog.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0005_delete_activitylog.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/migrations/__pycache__/0006_activitylog.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14549,6 +15529,14 @@
 		"oAP": "/users/migrations/__pycache__/0006_activitylog.cpython-38.pyc",
 		"oF": 0
 		},
+	"/users/migrations/__pycache__/0006_activitylog.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/migrations/__pycache__/0006_activitylog.cpython-39.pyc",
+		"oF": 0
+		},
 	"/users/migrations/__pycache__/__init__.cpython-36.pyc": {
 		"cB": 0,
 		"ft": 8192,
@@ -14571,6 +15559,14 @@
 		"hM": 0,
 		"oA": 1,
 		"oAP": "/users/migrations/__pycache__/__init__.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/migrations/__pycache__/__init__.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/users/migrations/__pycache__/__init__.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/models.py": {
@@ -14603,6 +15599,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/users/templatetags/__pycache__/gravatar.cpython-38.pyc",
+		"oF": 0
+		},
+	"/users/templatetags/__pycache__/gravatar.cpython-39.pyc": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/users/templatetags/__pycache__/gravatar.cpython-39.pyc",
 		"oF": 0
 		},
 	"/users/templatetags/gravatar.py": {
@@ -14651,10 +15655,10 @@
 "manualImportLinks": {
 	},
 "projectAttributes": {
-	"creationDate": 625595014.09741199,
+	"creationDate": 625595014,
 	"displayValue": "MicoFoundation-WebApp",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "/static-root/img/apple-touch-icon.png",
+	"iconImageName": "/static/img/apple-touch-icon.png",
 	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
@@ -15145,7 +16149,7 @@
 			},
 		"camelcase": {
 			"active": 0,
-			"optionString": "{'properties': 'always', 'ignoreDestructuring': false}"
+			"optionString": "{'properties': 'always'}"
 			},
 		"capitalized-comments": {
 			"active": 0,
@@ -15225,11 +16229,11 @@
 			},
 		"func-name-matching": {
 			"active": 0,
-			"optionString": "'always', {'considerPropertyDescriptor': false, 'includeCommonJSModuleExports': false}"
+			"optionString": "'always', {'includeCommonJSModuleExports': false}"
 			},
 		"func-names": {
 			"active": 0,
-			"optionString": "'always', {'generators': 'always'}"
+			"optionString": "'always'"
 			},
 		"func-style": {
 			"active": 0,
@@ -15251,6 +16255,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"grouped-accessor-pairs": {
+			"active": 0,
+			"optionString": "'anyOrder'"
+			},
 		"guard-for-in": {
 			"active": 0,
 			"optionString": ""
@@ -15269,7 +16277,7 @@
 			},
 		"id-match": {
 			"active": 0,
-			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true, 'ignoreDestructuring': false}"
+			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
 			},
 		"implicit-arrow-linebreak": {
 			"active": 0,
@@ -15361,7 +16369,7 @@
 			},
 		"new-parens": {
 			"active": 0,
-			"optionString": "'always'"
+			"optionString": ""
 			},
 		"newline-per-chained-call": {
 			"active": 0,
@@ -15413,7 +16421,7 @@
 			},
 		"no-confusing-arrow": {
 			"active": 0,
-			"optionString": "{'allowParens': true}"
+			"optionString": "{'allowParens': false}"
 			},
 		"no-console": {
 			"active": 1,
@@ -15426,6 +16434,10 @@
 		"no-constant-condition": {
 			"active": 1,
 			"optionString": "{'checkLoops': true}"
+			},
+		"no-constructor-return": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-continue": {
 			"active": 0,
@@ -15452,6 +16464,10 @@
 			"optionString": ""
 			},
 		"no-dupe-class-members": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-dupe-else-if": {
 			"active": 1,
 			"optionString": ""
 			},
@@ -15745,7 +16761,7 @@
 			},
 		"no-self-assign": {
 			"active": 1,
-			"optionString": "{'props': true}"
+			"optionString": "{'props': false}"
 			},
 		"no-self-compare": {
 			"active": 0,
@@ -15753,6 +16769,10 @@
 			},
 		"no-sequences": {
 			"active": 0,
+			"optionString": ""
+			},
+		"no-setter-return": {
+			"active": 1,
 			"optionString": ""
 			},
 		"no-shadow": {
@@ -15773,7 +16793,7 @@
 			},
 		"no-tabs": {
 			"active": 0,
-			"optionString": "{allowIndentationTabs: false}"
+			"optionString": ""
 			},
 		"no-template-curly-in-string": {
 			"active": 0,
@@ -15909,7 +16929,7 @@
 			},
 		"object-curly-newline": {
 			"active": 0,
-			"optionString": "{'ObjectExpression': {'multiline': true, 'consistent': true}, 'ObjectPattern': {'multiline': true, 'consistent': true}}"
+			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
 			},
 		"object-curly-spacing": {
 			"active": 0,
@@ -15958,6 +16978,10 @@
 		"prefer-destructuring": {
 			"active": 0,
 			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
+		"prefer-exponentiation-operator": {
+			"active": 0,
+			"optionString": ""
 			},
 		"prefer-named-capture-group": {
 			"active": 0,
@@ -16045,7 +17069,7 @@
 			},
 		"sort-keys": {
 			"active": 0,
-			"optionString": "'asc', {'caseSensitive': true, 'natural': false, 'minKeys': 2}"
+			"optionString": "'asc', {'caseSensitive': true, 'natural': false}"
 			},
 		"sort-vars": {
 			"active": 0,
@@ -16133,7 +17157,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://127.0.0.1:8000/",
+	"externalServerAddress": "http://localhost:8000/",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -16655,13 +17679,13 @@
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
+		"compilerType": 1,
 		"createSourceMap": 0,
-		"debugStyle": 0,
 		"decimalPrecision": 10,
+		"emitCharset": 1,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 1
+		"shouldRunBless": 0
 		},
 	"languageDefaultsSLIM": {
 		"autoOutputAction": 0,
@@ -16813,7 +17837,7 @@
 			"flagValue": -1
 			},
 		"dead_code": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"directives": {
@@ -16845,7 +17869,7 @@
 			"flagValue": -1
 			},
 		"hoist_funs": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"hoist_props": {
@@ -16889,7 +17913,7 @@
 			"flagValue": -1
 			},
 		"keep_fargs": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"keep_fnames": {
@@ -17017,7 +18041,7 @@
 			"flagValue": -1
 			},
 		"unused": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"warnings": {

@@ -3,6 +3,18 @@
  {% block title %}About Us - {% endblock %}
  {% block content %}
  <div class="aboutus">
+ <div class="sponsorship-banner" style="background-image: url('{% if context_content.sponsorship_banner %}{{ context_content.sponsorship_banner.url }}{% endif %}');">
+    <div class="sponsorship-banner__content">
+      <div class="container">
+       <div class="bgshade">
+            <div class="title">The Mico Foundation At A Glance</div>
+        <p class="text">
+          The Foundation has been the main driver for building the capacity to sustain the physical development of The Mico as it seeks to diversify and move to new levels for education delivery. We seek to strengthen opportunities for more students engagement and widen our support for education research.
+        </p>
+       </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="aboutus-top">
       <div class="row">
@@ -26,6 +38,15 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="video-section">
+    <div class="row">
+            <div class="col-12">
+                <div class="video-box inview">
+                    <!-- video will be inserted here !-->
+                </div>
+            </div>
+        </div>
     </div>
     <div class="aboutus-places">
       <div class="row">
@@ -71,8 +92,26 @@
           {% endfor %}
           {% endif %}
         </div>
+    
       </div>
     </div>
   </div>
+</div>
+<div class="video-modal">
+    <div class="popup__cancel video-cancel">
+        <button class="cancel vid"></button>
+    </div>
+    <div class="modal-content">
+         <div class="row">
+            <div class="col-12">
+                <div class="video-box">
+                <video style="width: 90vw; max-width:100%;" controls autoplay>
+                  <source src="/media/videos/mico_psa_final.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -134,7 +134,7 @@
                         </a></li>
                         {% if request.user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">
-                            Dashboard
+                            Login
                         </a></li>
                         {% else %}
                         <li><a href="{% url 'login' %}">
@@ -285,13 +285,13 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <div class="title dropdown">
-                                            about
+                                            The Mico Foundation
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <ul class="dropdown-content__list">
                                                     <li class="title">
-                                                        the foundation
+                                                        
                                                     </li>
                                                     <li><a href="{% url 'history' %}" class="{% if url_name == 'history' %}active{% endif %}">
                                                             history
@@ -316,7 +316,7 @@
                                             <div class="col-md-4">
                                                 <ul class="dropdown-content__list">
                                                     <li class="title">
-                                                        impact
+                                                        
                                                     </li>
                                                     <li><a href="{% url 'workwithus' %}" class="{% if url_name == 'workwithus' %}active{% endif %}">
                                                             work with us
@@ -333,7 +333,7 @@
                                             <div class="col-md-4">
                                                 <ul class="dropdown-content__list">
                                                     <li class="title">
-                                                        campaigns
+                                                        
                                                     </li>
                                                     <li><a href="{% url 'causes' %}" class="{% if url_name == 'causes' %}active{% endif %}">
                                                       causes
@@ -421,7 +421,7 @@
               </p>
               <div class="footer-content__logo">
                 <a href="{% url 'home' %}">
-                  <img src="{% static 'img/white-logo.svg' %}" alt="logo" />
+                  <img src="{% static 'img/mico-logo.svg' %}" alt="logo" />
                 </a>
               </div>
             </div>

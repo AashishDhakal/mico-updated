@@ -47,6 +47,10 @@ class DonationAdmin(admin.ModelAdmin, ExportCsvMixin):
 
 
 class TransactionAdmin(admin.ModelAdmin):
+    list_display = ('order_id', 'padded_card_no', 'response_code', 'reason_code_desc', 'auth_code', 'currency',)
+
+    search_fields = ('order_id',)
+
     readonly_fields = (
         'order_id', 'response_code', 'reason_code', 'reason_code_desc',
         'reference_no', 'padded_card_no', 'auth_code', 'cvv2_result',
