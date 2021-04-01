@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('common', '0002_newsletter_subscriber'),
     ]
@@ -13,7 +12,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EmailSetting',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('email_use_tls', models.BooleanField(default=True)),
                 ('email_host', models.CharField(max_length=1024)),
                 ('email_host_user', models.CharField(max_length=255)),

@@ -5,7 +5,6 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('donations', '0004_auto_20200929_0611'),
     ]

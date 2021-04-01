@@ -1,4 +1,5 @@
-from .models import NewsPost, Project, Advertisement, ContentManagement, Project, Popup
+from .models import NewsPost, Project, Advertisement, ContentManagement, \
+    Project, Popup
 from django.db.models import Sum
 
 
@@ -6,7 +7,8 @@ def common(request):
     project = None
     if ContentManagement.objects.first() is not None:
         featured_project = ContentManagement.objects.first().featured_project
-        project = Project.objects.annotate(sum=Sum('projectdonation__amount')).get(id=featured_project.id)
+        project = Project.objects.annotate(
+            sum=Sum('projectdonation__amount')).get(id=featured_project.id)
 
     kwargs = {
         'context_news': NewsPost.objects.all()[:3],

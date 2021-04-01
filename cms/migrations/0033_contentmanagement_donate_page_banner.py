@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0032_remove_contentmanagement_donate_page_banner'),
     ]
@@ -13,6 +12,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contentmanagement',
             name='donate_page_banner',
-            field=models.ImageField(blank=True, null=True, upload_to='doantebanner'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to='doantebanner'),
         ),
     ]

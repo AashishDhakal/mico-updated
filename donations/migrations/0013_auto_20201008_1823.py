@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('donations', '0012_causes_icon'),
     ]
@@ -13,6 +12,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='causes',
             name='icon',
-            field=models.ImageField(default='icon/donateclassroom.png', upload_to='icon'),
+            field=models.ImageField(default='icon/donateclassroom.png',
+                                    upload_to='icon'),
         ),
     ]

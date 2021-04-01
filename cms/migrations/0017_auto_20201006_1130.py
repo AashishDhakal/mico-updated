@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0016_auto_20201006_1043'),
     ]
@@ -14,19 +13,28 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='project',
             name='is_full',
-            field=models.BooleanField(default=True, help_text='Make it true, if want to keep it full width on homepage'),
+            field=models.BooleanField(default=True,
+                                      help_text='Make it true, if want to keep it full width on homepage'),
         ),
         migrations.CreateModel(
             name='HomepageManagement',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('chairman_name', models.CharField(max_length=200)),
                 ('chairman_message', models.TextField()),
-                ('chairman_photo', models.ImageField(upload_to='chairmanphoto')),
+                ('chairman_photo',
+                 models.ImageField(upload_to='chairmanphoto')),
                 ('message_link', models.URLField()),
-                ('project_1', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='project1', to='cms.project')),
-                ('project_2', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='project2', to='cms.project')),
-                ('project_3', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='project3', to='cms.project')),
+                ('project_1',
+                 models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
+                                   related_name='project1', to='cms.project')),
+                ('project_2',
+                 models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
+                                   related_name='project2', to='cms.project')),
+                ('project_3',
+                 models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
+                                   related_name='project3', to='cms.project')),
             ],
         ),
     ]

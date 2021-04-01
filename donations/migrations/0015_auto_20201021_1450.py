@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('donations', '0014_auto_20201021_1337'),
     ]
@@ -13,6 +12,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='projectdonation',
             name='method',
-            field=models.CharField(choices=[('paypal', 'paypal'), ('card', 'card'), ('offline', 'offline')], max_length=50),
+            field=models.CharField(
+                choices=[('paypal', 'paypal'), ('card', 'card'),
+                         ('offline', 'offline')], max_length=50),
         ),
     ]

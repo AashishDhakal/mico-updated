@@ -14,17 +14,17 @@ def payment_notification(sender, **kwargs):
         if ipn.custom == 'cause':
             donation = get_object_or_404(CausesDonation, uuid=ipn.invoice)
         elif ipn.custom == 'project':
-            donation = get_object_or_404(ProjectDonation, uuid = ipn.invoice)
+            donation = get_object_or_404(ProjectDonation, uuid=ipn.invoice)
         if donation.amount == ipn.mc_gross:
             donation.status = 'Paid'
             donation.save()
             send_mail(
-                    subject="Mico Foundation Donation Receipt",
-                    from_email="info@themicofoundationja.com",
-                    recipient_list = [donation.email, ],
-                    message = 'Donation Receipt',
-                    html_message= render_to_string('donation_receipt.html', {
-                        'donation': donation,
-                    }),
-                    fail_silently=True,
-                )
+                subject="Mico Foundation Donation Receipt",
+                from_email="info@themicofoundationja.com",
+                recipient_list=[donation.email, ],
+                message='Donation Receipt',
+                html_message=render_to_string('donation_receipt.html', {
+                    'donation': donation,
+                }),
+                fail_silently=True,
+            )

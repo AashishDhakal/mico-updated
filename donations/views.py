@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.urls import reverse
-from .models import Causes, CausesDonation, ProjectDonation, Project, Transaction
+from .models import Causes, CausesDonation, ProjectDonation, Project, \
+    Transaction
 from django.conf import settings
 from django.shortcuts import reverse
 from decimal import Decimal
@@ -22,104 +23,109 @@ from django.template.loader import render_to_string
 
 from . import exceptions as error
 
+
 # Create your views here.
 def CauseView(request):
     causes = Causes.objects.all()
-    return render(request, 'causes.html', {'causes': causes,})
+    return render(request, 'causes.html', {'causes': causes, })
 
 
 def donate_view(request):
-        projects = Project.objects.all()
-        causes = Causes.objects.all()
-        if request.POST:
-            donation_for = request.POST['donateName']
-            donation_for = str(donation_for).split(',')
-            donation_type = donation_for[0]
-            donation_id = donation_for[1]                
-            amount = request.POST['donateAmount']
-            if amount == 'other':
-                amount = request.POST['customAmount']
-            first_name = request.POST['firstName']
-            last_name = request.POST['lastName']
-            address_one = request.POST['addressOne']
-            address_two = request.POST['addressTwo']
-            if not address_two:
-                address_two = ''
-            email = request.POST['email']
-            country = request.POST['country']
-            postcode = request.POST['postcode']
-            state = request.POST['state']
-            city = request.POST['city']
-            phone = request.POST['phone']
-            subscribe = request.POST['subscribe']
-            if subscribe == '1':
-                Subscriber.objects.get_or_create(email=email, defaults={'first_name': first_name, 'last_name': last_name,},)
-            if not phone:
-                phone = ''
-            method = request.POST['donatePaymentMethod']
-            order_number = msTimeStamp()
-            if [donation_for, amount, first_name, last_name, address_one, email, country, postcode, state, city, method ]:
-                if donation_type == 'project':
-                    project = get_object_or_404(Project, id=donation_id)
-                    donation = ProjectDonation.objects.create(
-                        project = project,
-                        donation_id = order_number,
-                        amount= amount,
-                        first_name= first_name,
-                        last_name= last_name,
-                        address_line_1 = address_one,
-                        address_line_2 = address_two,
-                        city = city,
-                        zip_code = postcode,
-                        country = country,
-                        email = email,
-                        phone = phone,
-                        method = method,
-                        status = "Not Paid"
-                    )
-                else:
-                    cause = get_object_or_404(Causes, id=donation_id)
-                    donation = Causes.objects.create(
-                        cause = cause,
-                        donation_id = order_number,
-                        amount= amount,
-                        first_name= first_name,
-                        last_name= last_name,
-                        address_line_1 = address_one,
-                        address_line_2 = address_two,
-                        city = city,
-                        zip_code = postcode,
-                        country = country,
-                        email = email,
-                        phone = phone,
-                        method = method,
-                        status = "Not Paid"
-                    )
-            if method == 'card':
-                cvv = request.POST['cvv']
-                card_no = request.POST['cardNo']
-                card_no = str(card_no).replace(" ", "")
-                month = request.POST['Month']
-                year = request.POST['Year']
-                expiry = f'{month}{year}'
-                amount = int(donation.amount) * 100
-                amount = f"{amount:012d}"
-                order_number = order_number
-                result = authorize(cvv, expiry, card_no, amount, order_number)
-                #messages.add_message(request,messages.INFO, result)
-                return render(request, 'processcard.html', {'result': result,})
-            elif method=='paypal':
-                return redirect(f'{reverse("process_paypal")}?df={donation_type}&id={donation.uuid}')
-            elif method=='offline':
-                return render(request, 'offlinedonation.html', {})    
-        return render(request, 'donate.html', {
-            'projects': projects,
-            'causes': causes,
-        })
+    projects = Project.objects.all()
+    causes = Causes.objects.all()
+    if request.POST:
+        donation_for = request.POST['donateName']
+        donation_for = str(donation_for).split(',')
+        donation_type = donation_for[0]
+        donation_id = donation_for[1]
+        amount = request.POST['donateAmount']
+        if amount == 'other':
+            amount = request.POST['customAmount']
+        first_name = request.POST['firstName']
+        last_name = request.POST['lastName']
+        address_one = request.POST['addressOne']
+        address_two = request.POST['addressTwo']
+        if not address_two:
+            address_two = ''
+        email = request.POST['email']
+        country = request.POST['country']
+        postcode = request.POST['postcode']
+        state = request.POST['state']
+        city = request.POST['city']
+        phone = request.POST['phone']
+        subscribe = request.POST['subscribe']
+        if subscribe == '1':
+            Subscriber.objects.get_or_create(email=email, defaults={
+                'first_name': first_name, 'last_name': last_name, }, )
+        if not phone:
+            phone = ''
+        method = request.POST['donatePaymentMethod']
+        order_number = msTimeStamp()
+        if [donation_for, amount, first_name, last_name, address_one, email,
+            country, postcode, state, city, method]:
+            if donation_type == 'project':
+                project = get_object_or_404(Project, id=donation_id)
+                donation = ProjectDonation.objects.create(
+                    project=project,
+                    donation_id=order_number,
+                    amount=amount,
+                    first_name=first_name,
+                    last_name=last_name,
+                    address_line_1=address_one,
+                    address_line_2=address_two,
+                    city=city,
+                    zip_code=postcode,
+                    country=country,
+                    email=email,
+                    phone=phone,
+                    method=method,
+                    status="Not Paid"
+                )
+            else:
+                cause = get_object_or_404(Causes, id=donation_id)
+                donation = Causes.objects.create(
+                    cause=cause,
+                    donation_id=order_number,
+                    amount=amount,
+                    first_name=first_name,
+                    last_name=last_name,
+                    address_line_1=address_one,
+                    address_line_2=address_two,
+                    city=city,
+                    zip_code=postcode,
+                    country=country,
+                    email=email,
+                    phone=phone,
+                    method=method,
+                    status="Not Paid"
+                )
+        if method == 'card':
+            cvv = request.POST['cvv']
+            card_no = request.POST['cardNo']
+            card_no = str(card_no).replace(" ", "")
+            month = request.POST['Month']
+            year = request.POST['Year']
+            expiry = f'{month}{year}'
+            amount = int(donation.amount) * 100
+            amount = f"{amount:012d}"
+            order_number = order_number
+            result = authorize(cvv, expiry, card_no, amount, order_number)
+            # messages.add_message(request,messages.INFO, result)
+            return render(request, 'processcard.html', {'result': result, })
+        elif method == 'paypal':
+            return redirect(
+                f'{reverse("process_paypal")}?df={donation_type}&id={donation.uuid}')
+        elif method == 'offline':
+            return render(request, 'offlinedonation.html', {})
+    return render(request, 'donate.html', {
+        'projects': projects,
+        'causes': causes,
+    })
 
 
 def project_donate(request, slug):
-    project = Project.objects.annotate(sum=Sum('projectdonation__amount')).get(slug=slug)
+    project = Project.objects.annotate(sum=Sum('projectdonation__amount')).get(
+        slug=slug)
     if request.POST:
         amount = request.POST['donateAmount']
         if amount == 'other':
@@ -138,27 +144,29 @@ def project_donate(request, slug):
         phone = request.POST['phone']
         subscribe = request.POST['subscribe']
         if subscribe == '1':
-            Subscriber.objects.get_or_create(email=email, defaults={'first_name': first_name, 'last_name': last_name,},)
+            Subscriber.objects.get_or_create(email=email, defaults={
+                'first_name': first_name, 'last_name': last_name, }, )
         if not phone:
             phone = ''
         method = request.POST['donatePaymentMethod']
         order_number = msTimeStamp()
-        if [amount, first_name, last_name, address_one, email, country, postcode, state, city, method ]:     
+        if [amount, first_name, last_name, address_one, email, country,
+            postcode, state, city, method]:
             project_donation = ProjectDonation.objects.create(
-                project = project,
-                donation_id = order_number,
-                amount= amount,
-                first_name= first_name,
-                last_name= last_name,
-                address_line_1 = address_one,
-                address_line_2 = address_two,
-                city = city,
-                zip_code = postcode,
-                country = country,
-                email = email,
-                phone = phone,
-                method = method,
-                status = "Not Paid"
+                project=project,
+                donation_id=order_number,
+                amount=amount,
+                first_name=first_name,
+                last_name=last_name,
+                address_line_1=address_one,
+                address_line_2=address_two,
+                city=city,
+                zip_code=postcode,
+                country=country,
+                email=email,
+                phone=phone,
+                method=method,
+                status="Not Paid"
             )
         if method == 'card':
             cvv = request.POST['cvv']
@@ -171,17 +179,19 @@ def project_donate(request, slug):
             amount = f"{amount:012d}"
             order_number = order_number
             result = authorize(cvv, expiry, card_no, amount, order_number)
-            #messages.add_message(request,messages.INFO, result)
-            return render(request, 'processcard.html', {'result': result,})
-        elif method=='paypal':
-            return redirect(f'{reverse("process_paypal")}?df=project&id={project_donation.uuid}')
-        elif method=='offline':
-            return render(request, 'offlinedonation.html', {})   
+            # messages.add_message(request,messages.INFO, result)
+            return render(request, 'processcard.html', {'result': result, })
+        elif method == 'paypal':
+            return redirect(
+                f'{reverse("process_paypal")}?df=project&id={project_donation.uuid}')
+        elif method == 'offline':
+            return render(request, 'offlinedonation.html', {})
     return render(request, 'projectdonate.html', {'project': project})
 
 
 def causes_donate(request, slug):
-    cause = Causes.objects.annotate(sum=Sum('causedonation__amount')).get(slug=slug)
+    cause = Causes.objects.annotate(sum=Sum('causedonation__amount')).get(
+        slug=slug)
     if request.POST:
         amount = request.POST['donateAmount']
         if amount == 'other':
@@ -200,32 +210,34 @@ def causes_donate(request, slug):
         phone = request.POST['phone']
         subscribe = request.POST['subscribe']
         if subscribe == '1':
-            Subscriber.objects.get_or_create(email=email, defaults={'first_name': first_name, 'last_name': last_name,},)
+            Subscriber.objects.get_or_create(email=email, defaults={
+                'first_name': first_name, 'last_name': last_name, }, )
         if not phone:
             phone = ''
         method = request.POST['donatePaymentMethod']
         order_number = msTimeStamp()
-        if [amount, first_name, last_name, address_one, email, country, postcode, state, city, method ]:     
+        if [amount, first_name, last_name, address_one, email, country,
+            postcode, state, city, method]:
             cause_donation = CausesDonation.objects.create(
-                cause = cause,
-                donation_id = order_number,
-                amount= amount,
-                first_name= first_name,
-                last_name= last_name,
-                address_line_1 = address_one,
-                address_line_2 = address_two,
-                city = city,
-                zip_code = postcode,
-                country = country,
-                email = email,
-                phone = phone,
-                method = method,
-                status = "Not Paid"
+                cause=cause,
+                donation_id=order_number,
+                amount=amount,
+                first_name=first_name,
+                last_name=last_name,
+                address_line_1=address_one,
+                address_line_2=address_two,
+                city=city,
+                zip_code=postcode,
+                country=country,
+                email=email,
+                phone=phone,
+                method=method,
+                status="Not Paid"
             )
         if method == 'card':
             cvv = request.POST['cvv']
             card_no = request.POST['cardNo']
-            card_no = str(card_no).replace(" ", "")          
+            card_no = str(card_no).replace(" ", "")
             month = request.POST['Month']
             year = request.POST['Year']
             expiry = f'{month}{year}'
@@ -233,18 +245,19 @@ def causes_donate(request, slug):
             amount = f"{amount:012d}"
             order_number = order_number
             result = authorize(cvv, expiry, card_no, amount, order_number)
-            #messages.add_message(request,messages.INFO, result)
-            return render(request, 'processcard.html', {'result': result,})
-        elif method=='paypal':
-            return redirect(f'{reverse("process_paypal")}?df=cause&id={cause_donation.uuid}')
-        elif method=='offline':
-            return render(request, 'offlinedonation.html', {})   
+            # messages.add_message(request,messages.INFO, result)
+            return render(request, 'processcard.html', {'result': result, })
+        elif method == 'paypal':
+            return redirect(
+                f'{reverse("process_paypal")}?df=cause&id={cause_donation.uuid}')
+        elif method == 'offline':
+            return render(request, 'offlinedonation.html', {})
     return render(request, 'causedonate.html', {'cause': cause})
 
 
 def process_paypal(request):
     host = request.get_host()
-    donate_for=request.GET.get('df', False)
+    donate_for = request.GET.get('df', False)
     uuid = request.GET.get('id', False)
     if donate_for == 'cause' and uuid:
         donation = get_object_or_404(CausesDonation, uuid=uuid)
@@ -262,11 +275,12 @@ def process_paypal(request):
             'custom': f'{donate_for}',
             'currency_code': 'USD',
             'notify_url': 'http://{}{}'.format(host,
-                                            reverse('paypal-ipn')),
+                                               reverse('paypal-ipn')),
             'return_url': 'http://{}{}'.format(host,
-                                            reverse('payment_done')),
+                                               reverse('payment_done')),
             'cancel_return': 'http://{}{}'.format(host,
-                                                reverse('payment_cancelled')),
+                                                  reverse(
+                                                      'payment_cancelled')),
         }
         form = ExtPayPalPaymentsForm(initial=paypal_dict)
         return render(request, 'process_paypal.html', {'paypal_form': form})
@@ -278,9 +292,11 @@ def process_paypal(request):
 def payment_done(request):
     return render(request, 'payment_done.html')
 
+
 @csrf_exempt
 def payment_canceled(request):
     return render(request, 'payment_cancelled.html')
+
 
 @csrf_exempt
 def save_transaction(request):
@@ -294,7 +310,8 @@ def save_transaction(request):
             if u'OrderID' not in request.POST:
                 raise error.PaymentError('Unable to process donation.')
 
-            if   u'ReferenceNo' not in request.POST or int(request.POST['ResponseCode']) != 1:
+            if u'ReferenceNo' not in request.POST or int(
+                    request.POST['ResponseCode']) != 1:
                 raise error.CardError(request.POST['ReasonCodeDesc'])
 
             order_id = request.POST['OrderID']
@@ -308,7 +325,9 @@ def save_transaction(request):
             original_response = request.POST['OriginalResponseCode']
             signature = request.POST['Signature']
             data = reason_code_desc
-            if [order_id, response_code, reason_code, reason_code_desc, reference_no, padded_card_no, auth_code, cvv2_result, original_response, signature]:
+            if [order_id, response_code, reason_code, reason_code_desc,
+                reference_no, padded_card_no, auth_code, cvv2_result,
+                original_response, signature]:
                 transaction = Transaction.objects.get_or_create(
                     order_id=order_id,
                     response_code=response_code,
@@ -330,7 +349,8 @@ def save_transaction(request):
                         donation.status = reason_code_desc
                     donation.save()
                 except CausesDonation.DoesNotExist:
-                    donation = ProjectDonation.objects.get(donation_id=order_id)
+                    donation = ProjectDonation.objects.get(
+                        donation_id=order_id)
                     if response_code == '1':
                         donation.status = 'Paid'
                     else:
@@ -341,11 +361,12 @@ def save_transaction(request):
                     send_mail(
                         subject="Mico Foundation Donation Receipt",
                         from_email="info@themicofoundationja.com",
-                        recipient_list = [donation.email, ],
-                        message = 'Donation Receipt',
-                        html_message= render_to_string('donation_receipt.html', {
-                            'donation': donation,
-                        }),
+                        recipient_list=[donation.email, ],
+                        message='Donation Receipt',
+                        html_message=render_to_string('donation_receipt.html',
+                                                      {
+                                                          'donation': donation,
+                                                      }),
                     )
         except error.CardError as e:
             request.session['donate_message'] = str(e)
@@ -362,4 +383,3 @@ def save_transaction(request):
         'data': data,
         'donation': donation,
     })
-

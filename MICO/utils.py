@@ -5,16 +5,15 @@ from django.conf import settings
 # from django.core.cache import DEFAULT_CACHE_ALIAS
 from user_agents import parse
 
-
 # `get_cache` function has been deprecated since Django 1.7 in favor of `caches`.
 try:
     from django.core.cache import caches
+
 
     def get_cache(backend, **kwargs):
         return caches[backend]
 except ImportError:
     from django.core.cache import get_cache
-
 
 text_type = str
 
@@ -22,15 +21,15 @@ text_type = str
 # USER_AGENTS_CACHE = getattr(settings, 'USER_AGENTS_CACHE', DEFAULT_CACHE_ALIAS)
 
 # if USER_AGENTS_CACHE:
-    # cache = get_cache(USER_AGENTS_CACHE)
+# cache = get_cache(USER_AGENTS_CACHE)
 # else:
-    # cache = None
+# cache = None
 
 # def get_cache_key(ua_string):
-    # Some user agent strings are longer than 250 characters so we use its MD5
-    # if isinstance(ua_string, text_type):
-        # ua_string = ua_string.encode('utf-8')
-    # return ''.join(['django_user_agents.', md5(ua_string).hexdigest()])
+# Some user agent strings are longer than 250 characters so we use its MD5
+# if isinstance(ua_string, text_type):
+# ua_string = ua_string.encode('utf-8')
+# return ''.join(['django_user_agents.', md5(ua_string).hexdigest()])
 
 
 def get_user_agent(request):
@@ -45,13 +44,13 @@ def get_user_agent(request):
         ua_string = ua_string.decode('utf-8', 'ignore')
     user_agent = parse(ua_string)
     # if cache:
-        # key = get_cache_key(ua_string)
-        # user_agent = cache.get(key)
-        # if user_agent is None:
-            # user_agent = parse(ua_string)
-            # cache.set(key, user_agent)
+    # key = get_cache_key(ua_string)
+    # user_agent = cache.get(key)
+    # if user_agent is None:
+    # user_agent = parse(ua_string)
+    # cache.set(key, user_agent)
     # else:
-        # user_agent = parse(ua_string)
+    # user_agent = parse(ua_string)
     return user_agent
 
 

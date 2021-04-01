@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0006_missionvalue'),
     ]
@@ -13,6 +12,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='resource',
             name='access_level',
-            field=models.CharField(choices=[('Public', 'Public'), ('Directors Only', 'Directors Only')], default='Public', max_length=30),
+            field=models.CharField(choices=[('Public', 'Public'), (
+                'Directors Only', 'Directors Only')], default='Public',
+                                   max_length=30),
         ),
     ]

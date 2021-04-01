@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*', ]
 
-
 # Application definition
 
 DJANGO_APPS = [
@@ -68,8 +67,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
-    
-    #'MICO.middleware.UserActivityLogMiddleware'
+
+    # 'MICO.middleware.UserActivityLogMiddleware'
 ]
 
 ROOT_URLCONF = 'MICO.urls'
@@ -135,7 +134,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -149,7 +147,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-#MEDIA_ROOT = os_path.join(os_path.abspath(os_path.join(__file__ ,"../../../..")), 'public_html/media')
+# MEDIA_ROOT = os_path.join(os_path.abspath(os_path.join(__file__ ,"../../../..")), 'public_html/media')
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -192,9 +190,9 @@ JAZZMIN_SETTINGS = {
 
 MERCHANT_RESPONSE_URL = "https://themicofoundationja.com/donate/transaction/"
 
-FAC_MERCHANT_PASSWORD = '3KNfgohb' 
-FAC_MERCHANT_ID = '88802474' 
-FAC_ACQUIRER_ID = '464748' 
+FAC_MERCHANT_PASSWORD = '3KNfgohb'
+FAC_MERCHANT_ID = '88802474'
+FAC_ACQUIRER_ID = '464748'
 FAC_CURRENCY_CODE = '840'
 
 FAC_MODE_PROD = False

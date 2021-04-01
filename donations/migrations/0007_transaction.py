@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('common', '0001_initial'),
         ('donations', '0006_auto_20200929_0615'),
@@ -15,7 +14,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Transaction',
             fields=[
-                ('micomodel_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='common.micomodel')),
+                ('micomodel_ptr', models.OneToOneField(auto_created=True,
+                                                       on_delete=django.db.models.deletion.CASCADE,
+                                                       parent_link=True,
+                                                       primary_key=True,
+                                                       serialize=False,
+                                                       to='common.micomodel')),
                 ('order_id', models.CharField(max_length=100)),
                 ('response_code', models.CharField(max_length=10)),
                 ('reason_code', models.CharField(max_length=10)),

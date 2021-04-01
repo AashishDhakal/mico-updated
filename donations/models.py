@@ -3,6 +3,7 @@ from common.models import MicoModel
 from cms.models import Project
 import uuid
 
+
 # Create your models here.
 class Causes(MicoModel):
     thumbnail = models.ImageField(upload_to='causes')
@@ -10,8 +11,9 @@ class Causes(MicoModel):
     title = models.CharField(max_length=300)
     description = models.TextField()
     goal = models.IntegerField()
-    icon = models.ImageField(upload_to='icon', default='icon/donateclassroom.png')
-    
+    icon = models.ImageField(upload_to='icon',
+                             default='icon/donateclassroom.png')
+
     def __str__(self):
         return self.title
 
@@ -46,7 +48,8 @@ class ProjectDonation(MicoModel):
 
 
 class CausesDonation(MicoModel):
-    cause = models.ForeignKey(Causes, on_delete=models.PROTECT, related_name='causedonation')
+    cause = models.ForeignKey(Causes, on_delete=models.PROTECT,
+                              related_name='causedonation')
     donation_id = models.CharField(max_length=100, default='')
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     amount = models.CharField(max_length=50)

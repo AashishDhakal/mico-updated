@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0036_auto_20201020_0222'),
     ]
@@ -14,6 +13,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='newspost',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='cms.newscategory'),
+            field=models.ForeignKey(blank=True, null=True,
+                                    on_delete=django.db.models.deletion.CASCADE,
+                                    to='cms.newscategory'),
         ),
     ]

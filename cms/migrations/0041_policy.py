@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('common', '0004_auto_20201014_1119'),
         ('cms', '0040_auto_20201023_0749'),
@@ -15,14 +14,24 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Policy',
             fields=[
-                ('micomodel_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='common.micomodel')),
+                ('micomodel_ptr', models.OneToOneField(auto_created=True,
+                                                       on_delete=django.db.models.deletion.CASCADE,
+                                                       parent_link=True,
+                                                       primary_key=True,
+                                                       serialize=False,
+                                                       to='common.micomodel')),
                 ('title', models.CharField(max_length=300)),
                 ('slug', models.SlugField(blank=True, null=True)),
-                ('type', models.CharField(choices=[('Terms', 'Terms Use'), ('Privacy', 'Privacy Policy'), ('Refund', 'Refund Policy')], default='Terms', max_length=30)),
-                ('published', models.BooleanField(default=True, verbose_name='publish')),
+                ('type', models.CharField(choices=[('Terms', 'Terms Use'), (
+                    'Privacy', 'Privacy Policy'), ('Refund', 'Refund Policy')],
+                                          default='Terms', max_length=30)),
+                ('published',
+                 models.BooleanField(default=True, verbose_name='publish')),
                 ('description', models.TextField()),
-                ('date_updated', models.DateField(auto_now=True, verbose_name='Date Updated')),
-                ('date_created', models.DateField(auto_now=True, verbose_name='Date Updated')),
+                ('date_updated',
+                 models.DateField(auto_now=True, verbose_name='Date Updated')),
+                ('date_created',
+                 models.DateField(auto_now=True, verbose_name='Date Updated')),
             ],
             bases=('common.micomodel',),
         ),

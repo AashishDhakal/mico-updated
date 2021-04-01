@@ -4,7 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0019_auto_20201006_1308'),
     ]
@@ -15,7 +14,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterModelOptions(
             name='faq',
-            options={'verbose_name': 'Endowment Type', 'verbose_name_plural': 'Endowment Types'},
+            options={'verbose_name': 'Endowment Type',
+                     'verbose_name_plural': 'Endowment Types'},
         ),
         migrations.AlterModelOptions(
             name='history',

@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0035_auto_20201020_0212'),
     ]
@@ -13,7 +12,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='NewsCategory',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('category_name', models.CharField(max_length=100)),
             ],
         ),

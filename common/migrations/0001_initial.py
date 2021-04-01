@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -14,9 +13,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MicoModel',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now_add=True, null=True)),
+                ('updated_at',
+                 models.DateTimeField(auto_now_add=True, null=True)),
                 ('is_deleted', models.BooleanField(default=False)),
                 ('deleted_on', models.DateTimeField(blank=True, null=True)),
             ],

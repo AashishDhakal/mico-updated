@@ -3,11 +3,13 @@ from .models import Subscriber, Newsletter, EmailSetting
 
 from django_summernote.admin import SummernoteModelAdmin
 
+
 # Register your models here.
 
 def send_mail(modeladmin, request, queryset):
     for newsletter in queryset:
         newsletter.send(request)
+
 
 send_mail.short_description = "Send selected mail to all subscribers"
 

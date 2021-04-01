@@ -41,15 +41,19 @@ from django.views.decorators.csrf import csrf_exempt
 def maintenance(request):
     return render(request, 'maintenance.html', {})
 
+
 # Create your views here.
 def homepage(request):
     sliders = Slider.objects.all()
     popups = Popup.objects.all()
-    
+
     homepage_content = HomepageManagement.objects.first()
     events = Event.objects.filter(date__date__gte=datetime.datetime.now())
     if request.method == 'POST':
-        sub, created = Subscriber.objects.get_or_create(email=request.POST['email'], defaults={'first_name': request.POST['firstName'], 'last_name': request.POST['lastName'],})
+        sub, created = Subscriber.objects.get_or_create(
+            email=request.POST['email'],
+            defaults={'first_name': request.POST['firstName'],
+                      'last_name': request.POST['lastName'], })
         sub.save()
         send_mail(
             from_email="info@themicofoundationja.com",
@@ -57,9 +61,10 @@ def homepage(request):
             subject='Mico Foundation Mailing List Confirmation',
             message='Thank you for signing up for MICO Foundation mailing list!',
             fail_silently=True,
-            )
+        )
         if created:
-            messages.add_message(request, messages.INFO, 'Successfully Subscribed')
+            messages.add_message(request, messages.INFO,
+                                 'Successfully Subscribed')
         else:
             messages.add_message(request, messages.INFO, 'Email Already Exist')
     return render(request, 'index.html', {
@@ -91,9 +96,12 @@ def directorview(request):
 
 
 def historyview(request):
-    directors = History.objects.filter(is_director=True).order_by('-start_year')
-    chairmans = History.objects.filter(is_chairman=True).order_by('-start_year')
-    secretaries = History.objects.filter(is_secretary=True).order_by('-start_year')
+    directors = History.objects.filter(is_director=True).order_by(
+        '-start_year')
+    chairmans = History.objects.filter(is_chairman=True).order_by(
+        '-start_year')
+    secretaries = History.objects.filter(is_secretary=True).order_by(
+        '-start_year')
     context = {
         'directors': directors,
         'chairmans': chairmans,
@@ -104,12 +112,12 @@ def historyview(request):
 
 def sponsorship(request):
     form = SponsorshipForm()
-    context = {'form':form}
+    context = {'form': form}
     if request.method == 'POST':
         form = SponsorshipForm(request.POST)
 
         if form.is_valid():
-            email=form.cleaned_data.get('email')
+            email = form.cleaned_data.get('email')
             form.save()
             send_mail(
                 from_email="info@themicofoundationja.com",
@@ -119,7 +127,8 @@ def sponsorship(request):
                 fail_silently=True,
             )
             redirect('contact')
-            messages.add_message(request, messages.SUCCESS, "Successfully Submitted the form.")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Successfully Submitted the form.")
         else:
             return render(request, 'sponsorship.html', context)
     else:
@@ -129,7 +138,7 @@ def sponsorship(request):
 
 def contact(request):
     form = ContactForm()
-    context = {'form':form}
+    context = {'form': form}
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
@@ -145,7 +154,8 @@ def contact(request):
             )
             form.save()
             redirect('contact')
-            messages.add_message(request, messages.SUCCESS, "Successfully Submitted the form.")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Successfully Submitted the form.")
         else:
             return render(request, 'contact.html', context)
 
@@ -173,7 +183,7 @@ def newsroom(request):
     news = NewsPost.objects.all().order_by('-date')[:2]
     carousel_news = NewsPost.objects.all().order_by('-date')[2:]
     context = {
-        'news':news,
+        'news': news,
         'carousel_news': carousel_news,
     }
     return render(request, 'newsroom.html', context)
@@ -188,20 +198,20 @@ def missionview(request):
 
 def resources(request):
     resources = Resource.objects.filter(access_level='Public')
-    context = {'resources' : resources}
+    context = {'resources': resources}
     return render(request, 'resource.html', context)
 
 
 def trustees(request):
     trustees = Trustee.objects.all()
     return render(request, 'trustees.html', {
-        'trustees':trustees,
+        'trustees': trustees,
     })
 
 
 def workwithus(request):
     form = WorkwithusForm()
-    context = {'form':form}
+    context = {'form': form}
     if request.method == 'POST':
         form = WorkwithusForm(request.POST)
 
@@ -217,37 +227,40 @@ def workwithus(request):
             )
             form.save()
             redirect('contact')
-            messages.add_message(request, messages.SUCCESS, "Successfully Submitted the form.")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Successfully Submitted the form.")
         else:
             return render(request, 'workwithus.html', context)
     else:
         return render(request, 'workwithus.html', context)
     return render(request, 'workwithus.html', context)
 
+
 def proper_round(num, dec=0):
-    num = str(num)[:str(num).index('.')+dec+2]
-    if num[-1]>='5':
-        return float(num[:-2-(not dec)]+str(int(num[-2-(not dec)])+1))
+    num = str(num)[:str(num).index('.') + dec + 2]
+    if num[-1] >= '5':
+        return float(num[:-2 - (not dec)] + str(int(num[-2 - (not dec)]) + 1))
     return float(num[:-1])
+
 
 def staffs(request):
     teams = Team.objects.all()
 
     count = 0
-    teams_dic = { }
+    teams_dic = {}
     temp = []
-    
+
     for i in range(0, len(teams)):
- 
-        if (count == 2 ):
+
+        if (count == 2):
             count = 0;
-            #temp.append(teams[i-1])
+            # temp.append(teams[i-1])
             teams_dic[len(teams_dic)] = temp
             temp = []
 
         temp.append(teams[i])
-        count +=1
-        if (i == len(teams) - 1 ):
+        count += 1
+        if (i == len(teams) - 1):
             teams_dic[len(teams_dic)] = temp
             break
 
@@ -259,16 +272,18 @@ def staffs(request):
 
 
 def event_view(request):
-    latest = Event.objects.filter(date__gte=datetime.date.today()).order_by('date')
+    latest = Event.objects.filter(date__gte=datetime.date.today()).order_by(
+        'date')
     if len(latest) > 0:
-    	latest = latest.first()
+        latest = latest.first()
     else:
-    	latest = []
+        latest = []
     events = Event.objects.all().order_by('-date')
     return render(request, 'events.html', {
         'events': events,
         'latest': latest,
     })
+
 
 def endowment(request):
     form = EndowmentForm()
@@ -288,7 +303,8 @@ def endowment(request):
             )
             form.save()
             redirect('contact')
-            messages.add_message(request, messages.SUCCESS, "Successfully Submitted the form.")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Successfully Submitted the form.")
         else:
             return render(request, 'endowments.html', context)
 
@@ -348,7 +364,7 @@ def get_involved(request):
         donation_for = request.POST['donateName']
         donation_for = str(donation_for).split(',')
         donation_type = donation_for[0]
-        donation_id = donation_for[1]                
+        donation_id = donation_for[1]
         amount = request.POST['donateAmount']
         if amount == 'other':
             amount = request.POST['customAmount']
@@ -366,47 +382,49 @@ def get_involved(request):
         phone = request.POST['phone']
         subscribe = request.POST['subscribe']
         if subscribe == '1':
-            Subscriber.objects.create(first_name=first_name, last_name=last_name, email=email)
+            Subscriber.objects.create(first_name=first_name,
+                                      last_name=last_name, email=email)
         if not phone:
             phone = ''
         method = request.POST['donatePaymentMethod']
         order_number = msTimeStamp()
-        if [donation_for, amount, first_name, last_name, address_one, email, country, postcode, state, city, method ]:
+        if [donation_for, amount, first_name, last_name, address_one, email,
+            country, postcode, state, city, method]:
             if donation_type == 'project':
                 project = get_object_or_404(Project, id=donation_id)
                 donation = ProjectDonation.objects.create(
-                    project = project,
-                    donation_id = order_number,
-                    amount= amount,
-                    first_name= first_name,
-                    last_name= last_name,
-                    address_line_1 = address_one,
-                    address_line_2 = address_two,
-                    city = city,
-                    zip_code = postcode,
-                    country = country,
-                    email = email,
-                    phone = phone,
-                    method = method,
-                    status = "Not Paid"
+                    project=project,
+                    donation_id=order_number,
+                    amount=amount,
+                    first_name=first_name,
+                    last_name=last_name,
+                    address_line_1=address_one,
+                    address_line_2=address_two,
+                    city=city,
+                    zip_code=postcode,
+                    country=country,
+                    email=email,
+                    phone=phone,
+                    method=method,
+                    status="Not Paid"
                 )
             else:
                 cause = get_object_or_404(Causes, id=donation_id)
                 donation = Causes.objects.create(
-                    cause = cause,
-                    donation_id = order_number,
-                    amount= amount,
-                    first_name= first_name,
-                    last_name= last_name,
-                    address_line_1 = address_one,
-                    address_line_2 = address_two,
-                    city = city,
-                    zip_code = postcode,
-                    country = country,
-                    email = email,
-                    phone = phone,
-                    method = method,
-                    status = "Not Paid"
+                    cause=cause,
+                    donation_id=order_number,
+                    amount=amount,
+                    first_name=first_name,
+                    last_name=last_name,
+                    address_line_1=address_one,
+                    address_line_2=address_two,
+                    city=city,
+                    zip_code=postcode,
+                    country=country,
+                    email=email,
+                    phone=phone,
+                    method=method,
+                    status="Not Paid"
                 )
             if method == 'card':
                 cvv = request.POST['cvv']
@@ -418,12 +436,14 @@ def get_involved(request):
                 amount = f"{amount:012d}"
                 order_number = order_number
                 result = authorize(cvv, expiry, card_no, amount, order_number)
-                #messages.add_message(request,messages.INFO, result)
-                return render(request, 'processcard.html', {'result': result,})
-            elif method=='paypal':
-                return redirect(f'{reverse("process_paypal")}?df={donation_type}&id={donation.uuid}')
-            elif method=='offline':
-                return render(request, 'offlinedonation.html', {})   
+                # messages.add_message(request,messages.INFO, result)
+                return render(request, 'processcard.html',
+                              {'result': result, })
+            elif method == 'paypal':
+                return redirect(
+                    f'{reverse("process_paypal")}?df={donation_type}&id={donation.uuid}')
+            elif method == 'offline':
+                return render(request, 'offlinedonation.html', {})
     return render(request, 'getinvolved.html', {
         'projects': projects,
         'causes': causes,

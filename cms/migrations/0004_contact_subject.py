@@ -6,7 +6,6 @@ from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0003_auto_20200829_1101'),
     ]
@@ -15,7 +14,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contact',
             name='subject',
-            field=models.CharField(default=datetime.datetime(2020, 9, 8, 12, 39, 38, 654572, tzinfo=utc), max_length=200),
+            field=models.CharField(
+                default=datetime.datetime(2020, 9, 8, 12, 39, 38, 654572,
+                                          tzinfo=utc), max_length=200),
             preserve_default=False,
         ),
     ]

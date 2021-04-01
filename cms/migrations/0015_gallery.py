@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0014_remove_advertisement_link'),
     ]
@@ -14,9 +13,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Gallery',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='newsgallery')),
-                ('news', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cms.newspost')),
+                ('news',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='cms.newspost')),
             ],
         ),
     ]

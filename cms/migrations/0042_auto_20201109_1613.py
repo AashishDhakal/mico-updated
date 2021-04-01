@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0041_policy'),
     ]
@@ -12,7 +11,8 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='policy',
-            options={'verbose_name': 'Policy', 'verbose_name_plural': 'Policies'},
+            options={'verbose_name': 'Policy',
+                     'verbose_name_plural': 'Policies'},
         ),
         migrations.AlterField(
             model_name='policy',
@@ -22,6 +22,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='policy',
             name='type',
-            field=models.CharField(choices=[('Terms', 'Terms of Use'), ('Privacy', 'Privacy Policy'), ('Refund', 'Refund Policy')], default='Terms', max_length=30),
+            field=models.CharField(choices=[('Terms', 'Terms of Use'),
+                                            ('Privacy', 'Privacy Policy'),
+                                            ('Refund', 'Refund Policy')],
+                                   default='Terms', max_length=30),
         ),
     ]

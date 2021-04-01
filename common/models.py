@@ -4,6 +4,7 @@ from django.conf import settings
 from common import views
 from django.core.mail import send_mail
 
+
 # Create your models here.
 class MicoModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -54,11 +55,11 @@ class Newsletter(models.Model):
             send_mail(
                 from_email="info@themicofoundationja.com",
                 recipient_list=[sub.email, ],
-                message = '',
+                message='',
                 subject=self.subject,
                 html_message=self.contents,
                 fail_silently=True,
-                )
+            )
 
 
 class EmailSetting(models.Model):

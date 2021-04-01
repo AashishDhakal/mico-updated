@@ -34,6 +34,7 @@ from djsingleton.admin import SingletonAdmin, SingletonActiveAdmin
 
 from django_summernote.admin import SummernoteModelAdmin
 
+
 # summernotes
 
 class GalleryInlineAdmin(admin.TabularInline):
@@ -41,13 +42,13 @@ class GalleryInlineAdmin(admin.TabularInline):
 
 
 class NewsPostAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('title', ), }
+    prepopulated_fields = {'slug': ('title',), }
     summernote_fields = ['description', ]
     inlines = [GalleryInlineAdmin, ]
 
 
 class ResourceAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('title', ), }
+    prepopulated_fields = {'slug': ('title',), }
     summernote_fields = ['description', ]
 
 
@@ -64,7 +65,7 @@ class TrusteeAdmin(SummernoteModelAdmin):
 
 
 class MessageAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('message_by',),}
+    prepopulated_fields = {'slug': ('message_by',), }
     summernote_fields = ['message', ]
 
 
@@ -73,8 +74,8 @@ class HistoryAdmin(SummernoteModelAdmin):
 
 
 class EventAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('title', ), }
-    summernote_fields = ['description',]
+    prepopulated_fields = {'slug': ('title',), }
+    summernote_fields = ['description', ]
 
 
 class EndowmentAdmin(SummernoteModelAdmin):
@@ -86,23 +87,28 @@ class BODAdmin(SummernoteModelAdmin):
 
 
 class WorkAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('title', ), }
+    prepopulated_fields = {'slug': ('title',), }
     summernote_fields = ['detail', ]
 
 
 class ProjectAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('project_name', ), }
+    prepopulated_fields = {'slug': ('project_name',), }
     summernote_fields = ['detail', ]
 
 
 class ContentAdmin(SummernoteModelAdmin):
-    summernote_fields = ['endowment_text', 'sponsorship_who_we_are', 'history_description', 'about_description',
-     'sponsorship_become_sponsor_text', 'workwithus_banner_text_1', 'workwithus_banner_text_2',
-     ]
+    summernote_fields = ['endowment_text', 'sponsorship_who_we_are',
+                         'history_description', 'about_description',
+                         'sponsorship_become_sponsor_text',
+                         'workwithus_banner_text_1',
+                         'workwithus_banner_text_2',
+                         ]
+
 
 class PolicyAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug': ('title', ), }
+    prepopulated_fields = {'slug': ('title',), }
     summernote_fields = ['description', ]
+
 
 admin.site.register(Slider)
 admin.site.register(NewsCategory)

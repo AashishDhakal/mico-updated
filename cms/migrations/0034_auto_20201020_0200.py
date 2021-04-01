@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0033_contentmanagement_donate_page_banner'),
     ]
@@ -13,7 +12,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contentmanagement',
             name='sponsorship_banner',
-            field=models.ImageField(blank=True, null=True, upload_to='sponsorshipbanner'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to='sponsorshipbanner'),
         ),
         migrations.AddField(
             model_name='contentmanagement',
@@ -23,7 +23,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contentmanagement',
             name='sponsorship_become_sponsor_image',
-            field=models.ImageField(blank=True, null=True, upload_to='sponsorshipbanner'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to='sponsorshipbanner'),
         ),
         migrations.AddField(
             model_name='contentmanagement',

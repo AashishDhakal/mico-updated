@@ -69,8 +69,10 @@ class UserActivityLogMiddleware(BaseMiddleware):
                 response_body = response.status_code
                 log_data['response_body'] = response_body
                 log_data['ip_address'] = request.META['REMOTE_ADDR']
-                log_data['browser_used'] = str(request.user_agent.browser.family) + ' ' \
-                                           + str(request.user_agent.browser.version_string)
+                log_data['browser_used'] = str(
+                    request.user_agent.browser.family) + ' ' \
+                                           + str(
+                    request.user_agent.browser.version_string)
                 log_data['device_used'] = request.user_agent.device.family
         elif request.method == 'GET':
             log_data['request_body'] = request.META['QUERY_STRING']
@@ -78,32 +80,41 @@ class UserActivityLogMiddleware(BaseMiddleware):
                 response_body = response.status_code
                 log_data['response_body'] = response_body
                 log_data['ip_address'] = request.META['REMOTE_ADDR']
-                log_data['browser_used'] = str(request.user_agent.browser.family) + ' ' \
-                                           + str(request.user_agent.browser.version_string)
+                log_data['browser_used'] = str(
+                    request.user_agent.browser.family) + ' ' \
+                                           + str(
+                    request.user_agent.browser.version_string)
                 log_data['device_used'] = request.user_agent.device.family
         return log_data
 
     def process_response(self, request, response):
         if request.method in ['GET', 'POST', 'PUT', 'PATCH']:
-                log_data = self.extract_log_info(request=request, response=response)
-                if response.status_code in range(200, 300):
-                    if request.user.is_authenticated:
-                        ActivityLog.objects.create(
-                            user=request.user, method=request.method, data=log_data['request_body'],
-                            url_path=request.get_full_path(), status_code=log_data['response_body'],
-                            ip_address=log_data['ip_address'], browser_used=log_data['browser_used'],
-                            device_used=log_data['device_used']
-                        )
-                    else:
-                        ActivityLog.objects.create(
-                            method=request.method, data=log_data['request_body'],
-                            url_path=request.get_full_path(), status_code=log_data['response_body'],
-                            ip_address=log_data['ip_address'], browser_used=log_data['browser_used'],
-                            device_used=log_data['device_used']
-                        )
+            log_data = self.extract_log_info(request=request,
+                                             response=response)
+            if response.status_code in range(200, 300):
+                if request.user.is_authenticated:
+                    ActivityLog.objects.create(
+                        user=request.user, method=request.method,
+                        data=log_data['request_body'],
+                        url_path=request.get_full_path(),
+                        status_code=log_data['response_body'],
+                        ip_address=log_data['ip_address'],
+                        browser_used=log_data['browser_used'],
+                        device_used=log_data['device_used']
+                    )
+                else:
+                    ActivityLog.objects.create(
+                        method=request.method, data=log_data['request_body'],
+                        url_path=request.get_full_path(),
+                        status_code=log_data['response_body'],
+                        ip_address=log_data['ip_address'],
+                        browser_used=log_data['browser_used'],
+                        device_used=log_data['device_used']
+                    )
         return response
 
-class DisableClientSideCachingMiddleware :
+
+class DisableClientSideCachingMiddleware:
 
     def __init__(self, get_response):
         self.get_response = get_response

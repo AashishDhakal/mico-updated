@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 import html
 from djsingleton.models import SingletonModel, SingletonActiveModel
 
+
 # Create your models here.
 class Slider(models.Model):
     image = models.ImageField(upload_to='sliders')
@@ -26,7 +27,8 @@ class NewsCategory(models.Model):
 
 
 class NewsPost(MicoModel):
-    category = models.ForeignKey(NewsCategory, null=True, blank=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(NewsCategory, null=True, blank=True,
+                                 on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     slug = models.SlugField(blank=True, null=True)
     thumbnail = models.ImageField(upload_to='newsposts')
@@ -60,8 +62,8 @@ class Resource(MicoModel):
     def __str__(self):
         return self.title
 
-class Policy(MicoModel):
 
+class Policy(MicoModel):
     class Meta:
         app_label = "cms"
         verbose_name = _('Policy')
@@ -79,12 +81,13 @@ class Policy(MicoModel):
 
     published = models.BooleanField("Publish", default=True)
     description = models.TextField()
-    
+
     date_updated = models.DateField(_("Date Updated"), auto_now=True)
     date_created = models.DateField(_("Date Updated"), auto_now=True)
-    
+
     def __str__(self):
         return self.title
+
 
 # added subject field to the model
 class Contact(MicoModel):
@@ -97,9 +100,8 @@ class Contact(MicoModel):
     postal_code = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     email_address = models.EmailField()
-    subject = models.CharField(max_length = 200)
+    subject = models.CharField(max_length=200)
     message = models.TextField(blank=True, null=True)
-
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -168,7 +170,7 @@ class Event(models.Model):
         ordering = ['date', ]
 
     def get_short_text(self):
-        return self.description[:100]      
+        return self.description[:100]
 
 
 class BOD(models.Model):
@@ -201,7 +203,8 @@ class Project(models.Model):
     slug = models.SlugField()
     detail = models.TextField()
     goal = models.IntegerField(default=0)
-    icon = models.ImageField(upload_to='icon', default='icon/donateclassroom.png')
+    icon = models.ImageField(upload_to='icon',
+                             default='icon/donateclassroom.png')
 
     def __str__(self):
         return self.project_name
@@ -231,7 +234,6 @@ class FAQ(models.Model):
 class Advertisement(models.Model):
     image = models.ImageField(upload_to='ads')
     title = models.CharField(max_length=100)
-
 
     def __str__(self):
         return self.title
@@ -266,9 +268,12 @@ class HomepageManagement(models.Model):
     chairman_message = models.TextField()
     chairman_photo = models.ImageField(upload_to='chairmanphoto')
     message_link = models.URLField()
-    project_1 = models.ForeignKey(Project, on_delete=models.PROTECT, related_name='project1')
-    project_2 = models.ForeignKey(Project, on_delete=models.PROTECT, related_name='project2')
-    project_3 = models.ForeignKey(Project, on_delete=models.PROTECT, related_name='project3')
+    project_1 = models.ForeignKey(Project, on_delete=models.PROTECT,
+                                  related_name='project1')
+    project_2 = models.ForeignKey(Project, on_delete=models.PROTECT,
+                                  related_name='project2')
+    project_3 = models.ForeignKey(Project, on_delete=models.PROTECT,
+                                  related_name='project3')
 
     def __str__(self):
         return "Click to edit homepage content"
@@ -287,33 +292,40 @@ class ContentManagement(models.Model):
     history_description = models.TextField()
     mission_banner = models.ImageField(upload_to='missionbanner')
     sponsorship_who_we_are = models.TextField()
-    sponsorship_banner = models.ImageField(upload_to='sponsorshipbanner', null=True, blank=True)
+    sponsorship_banner = models.ImageField(upload_to='sponsorshipbanner',
+                                           null=True, blank=True)
     sponsorship_banner_text = models.TextField(default='')
-    sponsorship_become_sponsor_image = models.ImageField(upload_to='sponsorshipbanner', null=True, blank=True)
-    sponsorship_become_sponsor_title = models.CharField(max_length=300, default='')
+    sponsorship_become_sponsor_image = models.ImageField(
+        upload_to='sponsorshipbanner', null=True, blank=True)
+    sponsorship_become_sponsor_title = models.CharField(max_length=300,
+                                                        default='')
     sponsorship_become_sponsor_text = models.TextField(default='')
     endowment_text = models.TextField(default='')
-    featured_project = models.ForeignKey(Project, on_delete=models.PROTECT, null=True, blank=True)
+    featured_project = models.ForeignKey(Project, on_delete=models.PROTECT,
+                                         null=True, blank=True)
     facebook_url = models.URLField(null=True, blank=True)
     instagram_url = models.URLField(null=True, blank=True)
     linkedin_url = models.URLField(null=True, blank=True)
     twitter_url = models.URLField(null=True, blank=True)
     about_description = models.TextField(default='')
-    donate_page_banner = models.ImageField(upload_to='doantebanner', null=True, blank=True)
+    donate_page_banner = models.ImageField(upload_to='doantebanner', null=True,
+                                           blank=True)
     donate_step1_title = models.CharField(max_length=200, default='')
     donate_step1_text = models.TextField(default='')
     donate_step2_title = models.CharField(max_length=200, default='')
     donate_step2_text = models.TextField(default='')
     donate_step3_title = models.CharField(max_length=200, default='')
     donate_step3_text = models.TextField(default='')
-    workwithus_banner = models.ImageField(upload_to='workwithusbanner', null=True, blank=True)
+    workwithus_banner = models.ImageField(upload_to='workwithusbanner',
+                                          null=True, blank=True)
     workwithus_banner_title = models.CharField(max_length=300, default='')
     workwithus_banner_text_1 = models.TextField(default='')
     workwithus_banner_text_2 = models.TextField(default='')
-    getinvolved_banner = models.ImageField(upload_to='getinvolvedbanner', null=True, blank=True)
+    getinvolved_banner = models.ImageField(upload_to='getinvolvedbanner',
+                                           null=True, blank=True)
     getinvolved_banner_title = models.CharField(max_length=500, default='')
     getinvolved_banner_text = models.TextField(default='')
-    
+
     def __str__(self):
         return "Click here to edit"
 
@@ -329,9 +341,8 @@ class WorkWithUs(MicoModel):
     postal_code = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     email_address = models.EmailField()
-    subject = models.CharField(max_length = 200)
+    subject = models.CharField(max_length=200)
     message = models.TextField(blank=True, null=True)
-
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -348,9 +359,8 @@ class Sponsorship(MicoModel):
     postal_code = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     email_address = models.EmailField()
-    subject = models.CharField(max_length = 200)
+    subject = models.CharField(max_length=200)
     message = models.TextField(blank=True, null=True)
-
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -362,6 +372,3 @@ class GetInvolvedImage(models.Model):
 
     def __str__(self):
         return self.caption
-
-
-

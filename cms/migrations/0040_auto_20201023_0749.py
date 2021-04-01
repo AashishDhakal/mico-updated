@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0039_getinvolvedimage'),
     ]
@@ -13,7 +12,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='contentmanagement',
             name='getinvolved_banner',
-            field=models.ImageField(blank=True, null=True, upload_to='getinvolvedbanner'),
+            field=models.ImageField(blank=True, null=True,
+                                    upload_to='getinvolvedbanner'),
         ),
         migrations.AddField(
             model_name='contentmanagement',

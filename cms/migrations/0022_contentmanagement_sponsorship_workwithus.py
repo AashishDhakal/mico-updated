@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('common', '0001_initial'),
         ('cms', '0021_endowment'),
@@ -15,20 +14,29 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ContentManagement',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('history_description', models.TextField()),
-                ('mission_banner', models.ImageField(upload_to='missionbanner')),
+                ('mission_banner',
+                 models.ImageField(upload_to='missionbanner')),
                 ('sponsorship_who_we_are', models.TextField()),
             ],
         ),
         migrations.CreateModel(
             name='Sponsorship',
             fields=[
-                ('micomodel_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='common.micomodel')),
+                ('micomodel_ptr', models.OneToOneField(auto_created=True,
+                                                       on_delete=django.db.models.deletion.CASCADE,
+                                                       parent_link=True,
+                                                       primary_key=True,
+                                                       serialize=False,
+                                                       to='common.micomodel')),
                 ('first_name', models.CharField(max_length=50)),
                 ('last_name', models.CharField(max_length=50)),
-                ('address_line_1', models.CharField(default='address line 1', max_length=500)),
-                ('address_line_2', models.CharField(default='address line 2', max_length=500)),
+                ('address_line_1',
+                 models.CharField(default='address line 1', max_length=500)),
+                ('address_line_2',
+                 models.CharField(default='address line 2', max_length=500)),
                 ('city', models.CharField(max_length=100)),
                 ('state_province', models.CharField(max_length=200)),
                 ('postal_code', models.CharField(max_length=100)),
@@ -42,11 +50,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='WorkWithUs',
             fields=[
-                ('micomodel_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='common.micomodel')),
+                ('micomodel_ptr', models.OneToOneField(auto_created=True,
+                                                       on_delete=django.db.models.deletion.CASCADE,
+                                                       parent_link=True,
+                                                       primary_key=True,
+                                                       serialize=False,
+                                                       to='common.micomodel')),
                 ('first_name', models.CharField(max_length=50)),
                 ('last_name', models.CharField(max_length=50)),
-                ('address_line_1', models.CharField(default='address line 1', max_length=500)),
-                ('address_line_2', models.CharField(default='address line 2', max_length=500)),
+                ('address_line_1',
+                 models.CharField(default='address line 1', max_length=500)),
+                ('address_line_2',
+                 models.CharField(default='address line 2', max_length=500)),
                 ('city', models.CharField(max_length=100)),
                 ('state_province', models.CharField(max_length=200)),
                 ('postal_code', models.CharField(max_length=100)),

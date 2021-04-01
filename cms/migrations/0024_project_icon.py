@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0023_contentmanagement_endowment_text'),
     ]
@@ -13,6 +12,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='project',
             name='icon',
-            field=models.ImageField(default='/static/donateclassroom.png', upload_to='icon'),
+            field=models.ImageField(default='/static/donateclassroom.png',
+                                    upload_to='icon'),
         ),
     ]

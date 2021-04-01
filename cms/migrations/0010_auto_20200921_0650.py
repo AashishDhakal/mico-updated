@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0009_auto_20200920_0206'),
     ]
@@ -22,11 +21,14 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='endowment',
             name='email',
-            field=models.EmailField(default='youremail@yourdomain.com', max_length=254),
+            field=models.EmailField(default='youremail@yourdomain.com',
+                                    max_length=254),
         ),
         migrations.AddField(
             model_name='endowment',
             name='endowment_type',
-            field=models.CharField(choices=[('House', 'House'), ('Land', 'Land')], default='House', max_length=50),
+            field=models.CharField(
+                choices=[('House', 'House'), ('Land', 'Land')],
+                default='House', max_length=50),
         ),
     ]

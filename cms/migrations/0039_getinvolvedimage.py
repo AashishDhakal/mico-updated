@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('cms', '0038_auto_20201020_1758'),
     ]
@@ -13,7 +12,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='GetInvolvedImage',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True,
+                                        serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='getinvolved')),
                 ('caption', models.CharField(max_length=500)),
             ],
